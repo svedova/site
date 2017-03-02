@@ -9,6 +9,7 @@
     "precommit": "npm run test"
   },
   "license": "MIT",
+  "repository": "leo/site",
   "xo": {
     "extends": "xo-react",
     "space": true,
