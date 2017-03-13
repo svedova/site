@@ -8,7 +8,7 @@ const H = ({ level, fontSize, linked, children }) => (
       React.createElement(`h${level}`,
         {
           style: {
-            fontWeight: 500,
+            fontWeight: 700,
             fontSize,
             lineHeight: '1.5em'
           }
