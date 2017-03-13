@@ -343,5 +343,10 @@
     "id": "farewell-muffin",
     "title": "Farewell, Muffin!",
     "date": "21-01-2017"
+  },
+  {
+    "id": "multithreading-node",
+    "title": "Multithreading in Node.js",
+    "date": "13-03-2017"
   }
 ]
