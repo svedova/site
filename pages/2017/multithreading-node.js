@@ -104,6 +104,12 @@ synchronousAction()`}</Code>
     turn, you{`'`}ll get the message logged to the console 60 times
     immediately after the data was downloaded (triggered by the synchronous function).</P>
 
+    <H2>Quick! <InlineCode>await</InlineCode> To the Rescue!</H2>
+
+    <P>To solve this problem, we need to make the operation
+    for pulling the data non-blocking. At the moment,
+    it{`'`}s still synchronous and therefore making the process{`'`} performance plummet.</P>
+
     <FootNotes>
       <Note id="1">If you want to deeply understand the difference between
       concurrency and parallelism and why Node.js only comes with the former way
