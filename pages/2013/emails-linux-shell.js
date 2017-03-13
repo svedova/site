@@ -4,7 +4,7 @@ import Post from '../../layouts/essay'
 // Components
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
-import {Inline, Snippet} from '../../components/code'
+import {InlineCode, Code} from '../../components/code'
 
 export default () => (
   <Post>
@@ -20,7 +20,7 @@ export default () => (
     und funktionsfähig), kann mittels folgendem Kommandos
     eine E-Mail direkt über die Shell versendet werden:</P>
 
-    <Snippet language="bash">{`mail -s "Dein Betreff" mail@domain.tld`}</Snippet>
+    <Code language="bash">{`mail -s "Dein Betreff" mail@domain.tld`}</Code>
 
     <P>Nach der Eingabe sollte der Text-Cursor eine Zeile weiter
     nach unten verschoben werden, was einem die
@@ -38,7 +38,7 @@ export default () => (
     zum allgemeinen Kommando einfach noch {`"`}-a{`"`} sowie
     den Pfad zur Datei hinzu:</P>
 
-    <Snippet language="bash">{`mail -s "Betreff" -a /logs/file.log mail@domain.tld`}</Snippet>
+    <Code language="bash">{`mail -s "Betreff" -a /logs/file.log mail@domain.tld`}</Code>
 
     <P>Das beste an der ganzen Sachen ist ja immer noch, dass
     mit diesen Hilfe dieser Befehle natürlich auch Mails
@@ -51,10 +51,10 @@ export default () => (
     im Script definiert werden. Dies erledigen wir, indem wir
     ein echo an mail weitergeben:</P>
 
-    <Snippet language="bash">{`echo “Deine Nachricht” | mail -s “Betreff” mail@domain.tld`}</Snippet>
+    <Code language="bash">{`echo “Deine Nachricht” | mail -s “Betreff” mail@domain.tld`}</Code>
 
     <P>Wem das ganze dann noch nicht genug ist, der kann
-    sich mittels <Inline>man mail</Inline> alle möglichen Variablen
+    sich mittels <InlineCode>man mail</InlineCode> alle möglichen Variablen
     der Funktion einsehen und natürlich auch welche
     Bedingungen beim Definieren dieser eingehalten werden müssen.</P>
   </Post>

@@ -102,7 +102,7 @@ export default () => (
     on those little tweaks and go make some big steps!</P>
 
     <P>Oh. And before I forget it: No, I was
-    wrong. Snippet <Link href="/2015/snippets-are-the-future">{`aren't`}</Link> the
+    wrong. Code <Link href="/2015/snippets-are-the-future">{`aren't`}</Link> the
     future. Carefully used frameworks are.</P>
   </Post>
 )

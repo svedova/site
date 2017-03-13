@@ -4,7 +4,7 @@ import Post from '../../layouts/essay'
 // Components
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
-import {Snippet} from '../../components/code'
+import {Code} from '../../components/code'
 import Link from '../../components/link'
 
 export default () => (
@@ -49,9 +49,9 @@ export default () => (
     werden, sucht sich das Betriebssystem wahllos Farben sowie eine
     Grafik aus der jeweiligen Seite aus.</P>
 
-    <Snippet language="html">{`<meta name="application-name" content="Name der Webseite"/>
+    <Code language="html">{`<meta name="application-name" content="Name der Webseite"/>
 <meta name="msapplication-TileColor" content="#000000"/>
-<meta name="msapplication-TileImage" content="windowsico.png"/>`}</Snippet>
+<meta name="msapplication-TileImage" content="windowsico.png"/>`}</Code>
 
     <P>Zunächst wird der Titel der Seite gesetzt, dann die Hintergrundfarbe
     der Vorschau, und zuletzt die Grafik, welche dargestellt werden

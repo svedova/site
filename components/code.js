@@ -15,13 +15,13 @@ const styles = {
   WebkitOverflowScrolling: 'touch'
 }
 
-const Snippet = ({ type, children }) => (
+export const Code = ({ type, children }) => (
   <Highlight language={type} style={github} customStyle={styles}>
     { children }
   </Highlight>
 )
 
-const Inline = ({ children }) => (
+export const InlineCode = ({ children }) => (
   <code>
     { children }
 
@@ -37,5 +37,3 @@ const Inline = ({ children }) => (
     `}</style>
   </code>
 )
-
-export { Snippet, Inline }

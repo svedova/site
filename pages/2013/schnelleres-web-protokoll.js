@@ -4,7 +4,7 @@ import Post from '../../layouts/essay'
 // Components
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
-import {Inline} from '../../components/code'
+import {InlineCode} from '../../components/code'
 import Link from '../../components/link'
 
 export default () => (
@@ -32,7 +32,7 @@ export default () => (
     wird derzeit von Google Chrome und Firefox unterstützt.</P>
 
     <P>Klingt eigentlich ganz gut, nicht war? Schade ist
-    nur, dass <Inline>mod_spdy</Inline> bei jeder Verbindung
+    nur, dass <InlineCode>mod_spdy</InlineCode> bei jeder Verbindung
     zwischen Endbenutzer und Server das HTTPS-Protokoll
     erzwingt. Wer das Modul trotzdem ausprobieren möchte, kann
     sich dieses für CentOS sowie für

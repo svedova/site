@@ -5,7 +5,7 @@ import Post from '../../layouts/essay'
 import P from '../../components/paragraph'
 import {Image} from '../../components/figure'
 import Meta from '../../components/meta'
-import {Snippet, Inline} from '../../components/code'
+import {Code, InlineCode} from '../../components/code'
 
 export default () => (
   <Post>
@@ -34,13 +34,13 @@ export default () => (
     Hauptbenutzer des Systems ausgeführt werden sollte. Hierfür
     gilt es zunächst, die Kommandos zu verstehen:</P>
 
-    <Snippet language="bash">{`crontab -e	[Cronjob bearbeiten / neuen erstellen]
+    <Code language="bash">{`crontab -e	[Cronjob bearbeiten / neuen erstellen]
 crontab -r	[Alle Crons eines Benutzers entfernen]
 crontab -u	[Besitzer eines Cronjobs ändern]
-crontab -l	[Alle Cronjobs nach Erstellungsdatum auflisten]`}</Snippet>
+crontab -l	[Alle Cronjobs nach Erstellungsdatum auflisten]`}</Code>
 
     <P>Nun starte ich die Erstellung einer neuen Cron-Aufgabe
-    mittels <Inline>crontab -e</Inline>. Dies wird den Editor
+    mittels <InlineCode>crontab -e</InlineCode>. Dies wird den Editor
     öffnen, in den ich dann den Syntax für den gewünschten
     Cron-Task eingebe. Dieser wird mit Hilfe des folgenden Schemas aufgebaut:</P>
 
@@ -51,20 +51,20 @@ crontab -l	[Alle Cronjobs nach Erstellungsdatum auflisten]`}</Snippet>
     der Zugriffe ermöglicht. Somit müssen die ersten fünf Chars des
     Kommandos wie folgt lauten:</P>
 
-    <Snippet language="bash">{`30 8 * * * // Täglich um 8:30 Uhr wird ausgeführt`}</Snippet>
+    <Code language="bash">{`30 8 * * * // Täglich um 8:30 Uhr wird ausgeführt`}</Code>
 
     <P>Nun fügen die gewünschte Sache ein, die ausgeführt werden soll. Dies
     kann ein Programm, ein Kommando, aber auch - wie in meinem
     Fall - ein ausführbares Script sein. Jetzt muss ich die Datei
     finden, welche es ermöglicht, mein Script zu analysieren und
-    auszuführen. Der Dateipfad für die Executable ist: <Inline>/usr/bin/php</Inline>.</P>
+    auszuführen. Der Dateipfad für die Executable ist: <InlineCode>/usr/bin/php</InlineCode>.</P>
 
     <P>Dahinter fügen wir den Pfad zur PHP-Datei ein, welche
     ausgeführt werden soll. In meinem Fall lautet dieser wie
-    folgt: <Inline>/var/www/html/backup.php</Inline>. Somit sieht das
+    folgt: <InlineCode>/var/www/html/backup.php</InlineCode>. Somit sieht das
     Kommando, welches wir im Editor einfügen, genau so aus:</P>
 
-    <Snippet language="bash">{`30 8 * * * /usr/bin/php /var/www/html/backup.php`}</Snippet>
+    <Code language="bash">{`30 8 * * * /usr/bin/php /var/www/html/backup.php`}</Code>
 
     <P>Nun sind wir fast am Ende angekommen. Jedoch steht noch eine wichtige
     Frage offen: Was passiert mit möglichen Fehlern, welche von
@@ -77,8 +77,8 @@ crontab -l	[Alle Cronjobs nach Erstellungsdatum auflisten]`}</Snippet>
     ermöglichen, füge ich meinem schluss-endlichen Kommando für den
     Cron-Task einen kleinen Text hinzu.</P>
 
-    <Snippet language="bash">{`30 8 * * * /usr/bin/php /var/www/html/backup.php
-> /var/www/html/backup.log 2>&1`}</Snippet>
+    <Code language="bash">{`30 8 * * * /usr/bin/php /var/www/html/backup.php
+> /var/www/html/backup.log 2>&1`}</Code>
 
     <P>Nun bin ich fertig - das Script wird täglich um 8:30 Uhr
     ausgeführt, die Fehler werden in eine .log-Datei abgespeichert, und

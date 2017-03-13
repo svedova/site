@@ -5,7 +5,7 @@ import Post from '../../layouts/essay'
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
 import Link from '../../components/link'
-import {Inline} from '../../components/code'
+import {InlineCode} from '../../components/code'
 import {H2} from '../../components/heading'
 import {UL, LI} from '../../components/list'
 
@@ -45,7 +45,7 @@ export default () => (
     <P>Until now, this was pretty much the best way to create a proper
     website layout (without writing a custom grid of course). Fortunately,
     we{`'`}re now finally getting redeemed from this heavy
-    performance load - thanks to <Inline>grid</Inline>.</P>
+    performance load - thanks to <InlineCode>grid</InlineCode>.</P>
 
     <H2>{`What's So Good about It?`}</H2>
 
@@ -53,7 +53,7 @@ export default () => (
     a <Link href="http://www.w3.org/TR/css-grid-1/">new CSS method</Link> that allows us
     to easily create beautiful web-layouts without a huge
     grid framework. No matter how tiny the budget of the
-    client and how short your available time will be, <Inline>grid</Inline> provides
+    client and how short your available time will be, <InlineCode>grid</InlineCode> provides
     you with many different properties which tell the browser
     how to position an element within the design.</P>
 
@@ -63,7 +63,7 @@ export default () => (
     on the top right edge of the browser window can be placed
     right before the body tag closes (after all other elements).</P>
 
-    <P>It{`'`}s kind of like using <Inline>position: absolute</Inline> but
+    <P>It{`'`}s kind of like using <InlineCode>position: absolute</InlineCode> but
     without needing to specify the position of
     the element with pixels. <i>The grid will figure it
     out by itself.</i> — W3C describes this
@@ -76,13 +76,13 @@ export default () => (
     me if I tell you ... *laughs* ... I just ... okay, it{`'`}s our always
     beloved friend, the Internet Explorer. But no
     worries, you won{`'`}t completely sink into confusion here: You still
-    need to use the <Inline>-ms</Inline> prefix. Now it
+    need to use the <InlineCode>-ms</InlineCode> prefix. Now it
     makes a bit more sense, right? *laughs*</P>
 
     <P>Anyway. If you don{`'`}t use IE (*shame on you*) you{`'`}re also
     able to enable it through the {`"`}experimental Web
     Platform features{`"`} flag
-    in <Inline>chrome://flags</Inline> within Chrome or Opera.</P>
+    in <InlineCode>chrome://flags</InlineCode> within Chrome or Opera.</P>
 
     <H2>So Just an Alternative to Flexbox?</H2>
 
@@ -90,7 +90,7 @@ export default () => (
     flexbox{`'`} around in your office, WE STILL NEED IT!</P>
 
     <P>Those two properties are meant to be used for two
-    completely different cases. The first - <Inline>display: grid</Inline> - can
+    completely different cases. The first - <InlineCode>display: grid</InlineCode> - can
     be used to create the general layout of
     your web- app or -site but not to align the {`"`}boxes{`"`} that contain
     the content. This is where `display: flex` claims
@@ -107,7 +107,7 @@ export default () => (
     <P>I think that{`'`}s pretty easy to understand, isn{`'`}t it? 😸</P>
 
     <P>So what are you waiting for? Open Chrome, enable that
-    experimental flag and try the shit out of <Inline>grid</Inline>! If you get
+    experimental flag and try the shit out of <InlineCode>grid</InlineCode>! If you get
     stuck or simply want to know more about how the property
     exactly works and how it should be used, take a look at
     the <Link href="http://www.w3.org/TR/css-grid-1/">W3C documentation</Link>.</P>

@@ -4,7 +4,7 @@ import Post from '../../layouts/essay'
 // Components
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
-import {Snippet} from '../../components/code'
+import {Code} from '../../components/code'
 
 export default () => (
   <Post>
@@ -24,7 +24,7 @@ export default () => (
 
     <P>Hier die Funktion für das Setzen eines neuen Cookies mit einem Wert:</P>
 
-    <Snippet language="javascript">{`function set_cookie( my_cookie, value, days ) {
+    <Code language="javascript">{`function set_cookie( my_cookie, value, days ) {
 
   if(days) {
     var date = new Date();
@@ -36,11 +36,11 @@ export default () => (
 
   document.cookie = my_cookie + "=" + value + expires + "; path=/";
 
-}`}</Snippet>
+}`}</Code>
 
     <P>Hiermit lässt sich das gesetzte Cookie ganz einfach auslesen:</P>
 
-    <Snippet language="html">{`function read_cookie( my_cookie ) {
+    <Code language="html">{`function read_cookie( my_cookie ) {
 
   var my_cookie_eq = my_cookie + "=";
   var ca = document.cookie.split( ';' );
@@ -60,15 +60,15 @@ export default () => (
 
   return null;
 
-}`}</Snippet>
+}`}</Code>
 
     <P>Diese Funktion setzt die offizielle Haltbarkeit des Cookies ins
     Negative, wodurch dieses logischer Weiße aus dem
     Browser-Cache entfernt wird:</P>
 
-    <Snippet language="javascript">{`function delete_cookie( my_cookie ) {
+    <Code language="javascript">{`function delete_cookie( my_cookie ) {
   set_cookie( my_cookie, "", -1 );
-}`}</Snippet>
+}`}</Code>
 
     <P>Setze die obigen Codes einfach auf deiner Homepage ein und
     beginne damit, von den Vorteilen der Flexibilität von

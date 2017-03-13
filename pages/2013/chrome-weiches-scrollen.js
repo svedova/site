@@ -4,7 +4,7 @@ import Post from '../../layouts/essay'
 // Components
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
-import {Inline} from '../../components/code'
+import {InlineCode} from '../../components/code'
 
 export default () => (
   <Post>
@@ -36,7 +36,7 @@ export default () => (
     standardmäßig deaktiviert.</P>
 
     <P>Somit war es nur notwendig, in einem neuen
-    Tab <Inline>chrome://flags</Inline> einzugeben, enter zu drücken, und
+    Tab <InlineCode>chrome://flags</InlineCode> einzugeben, enter zu drücken, und
     auf der geladenen Seite den Bereich {`"`}Optimiertes Scrollen{`"`} zu
     suchen. Sobald dieser dann gefunden ist, dort einfach
     auf {`"`}Aktivieren{`"`} klicken, und den Browser neu starten. Und

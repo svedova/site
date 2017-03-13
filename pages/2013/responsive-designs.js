@@ -4,7 +4,7 @@ import Post from '../../layouts/essay'
 // Components
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
-import {Snippet} from '../../components/code'
+import {Code} from '../../components/code'
 
 export default () => (
   <Post>
@@ -22,18 +22,18 @@ export default () => (
     fast allen Browsern verfügbar sind.</P>
 
     <P>Das ganze Verfahren lässt sich wohl am besten durch verschiedene
-    Beispiele erklären. Die folgenden Snippets können ganz einfach und
+    Beispiele erklären. Die folgenden Codes können ganz einfach und
     ohne Probleme im CSS-Code der eigenen Webseite eingebettet werden.</P>
 
     <P>Der folgende Code aktiviert die Attributierungen, die er enthält, wenn
     der Bildschirm des aufrufenden Benutzers kleiner als 1220 Pixel ist:</P>
 
-    <Snippet language="css">{`@media only screen and (max-width: 1220px) {
+    <Code language="css">{`@media only screen and (max-width: 1220px) {
   #testelement {
     display: block;
     position: relative;
   }
-}`}</Snippet>
+}`}</Code>
 
     <P>Es lassen sich alle Arten von Attributierungen im Code anbringen, da
     sind absolut keine Grenzen gesetzt. Jedenfalls werden diese
@@ -44,12 +44,12 @@ export default () => (
     können minimale Maße als Anforderungen für den
     Bildschirm gesetzt werden:</P>
 
-    <Snippet language="css">{`@media only screen and (min-width: 660px) {
+    <Code language="css">{`@media only screen and (min-width: 660px) {
   #testelement {
     overflow: hidden;
     border: medium double #000;
   }
-}`}</Snippet>
+}`}</Code>
 
     <P>So können alle Code-Elemente einer Webseite angesprochen
     werden, bis jedes Element an die Maße des Bildschirms

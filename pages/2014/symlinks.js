@@ -7,7 +7,7 @@ import Link from '../../components/link'
 import Meta from '../../components/meta'
 import {H2} from '../../components/heading'
 import {OL, LI} from '../../components/list'
-import {Inline} from '../../components/code'
+import {InlineCode} from '../../components/code'
 
 export default () => (
   <Post>
@@ -39,7 +39,7 @@ export default () => (
       <LI>Öffne die Explorer-Suche und finde {`"`}regedit{`"`} (.exe)</LI>
 
       <LI>Nachdem du die Datei geöffnet hast, navigiere zu
-      folgendem Verzeichnis: <Inline>HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsCurrentVersionExplorer</Inline>. Dort
+      folgendem Verzeichnis: <InlineCode>HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsCurrentVersionExplorer</InlineCode>. Dort
       sollte sich eine Verzeichnis mit
       dem Namen {`"`}Shell Icons{`"`} befinden. (Falls
       selbiges <b>nicht</b> vorhanden ist, erstelle es wie
@@ -53,14 +53,14 @@ export default () => (
       Rechtsklick auf den {`"`}Shell Icons{`"`}-Ordner und wähle
       dann unter {`"`}Neu{`"`} den Punkt {`"`}Zeichenfolge{`"`}. Als Titel
       für die neue Zeichenfolgen gibst du
-      die Zahl <Inline>29</Inline> ein.</LI>
+      die Zahl <InlineCode>29</InlineCode> ein.</LI>
 
       <LI>Als nächstes klickst du doppelt auf die
       angelegte Zahl 29. Jetzt sollte sich ein Fenster
       öffnen, in welchem du den Pfad zum neuen
       Verknüpfungs-Pfeil eingeben kannst. Um den Pfeil ganz verschwinden
       zu lassen, gibst du z.B. folgenden Pfad an (enthält
-      ein leeres Icon): <Inline>C:Windowssystem32imageres.dll,-121</Inline></LI>
+      ein leeres Icon): <InlineCode>C:Windowssystem32imageres.dll,-121</InlineCode></LI>
 
       <LI><b>Achtung:</b> (Falls im {`"`}Shell Icons{`"`}-Ordner bereits
       eine Zeichenfolge mit dem Titel {`"`}(Standard){`"`} vorhanden

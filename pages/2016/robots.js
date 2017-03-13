@@ -8,7 +8,7 @@ import Meta from '../../components/meta'
 import {Image} from '../../components/figure'
 import {H2} from '../../components/heading'
 import {UL, LI} from '../../components/list'
-import {Snippet} from '../../components/code'
+import {Code} from '../../components/code'
 
 export default () => (
   <Post>
@@ -220,8 +220,8 @@ export default () => (
     install <Link href="https://github.com/rwaldron/johnny-five">the library</Link> we’re
     going to use to communicate with the device:</P>
 
-    <Snippet language="bash">{`$ npm init -y
-$ npm install johnny-five -S`}</Snippet>
+    <Code language="bash">{`$ npm init -y
+$ npm install johnny-five -S`}</Code>
 
     <P>If you’re not completely fimilar with these commands: The
     first one creates a file called “package.json” with
@@ -235,8 +235,8 @@ $ npm install johnny-five -S`}</Snippet>
     creating an instance of the “Board” class
     contained within Johnny Five:</P>
 
-    <Snippet language="js">{`const five = require('johnny-five')
-const board = new five.Board()`}</Snippet>
+    <Code language="js">{`const five = require('johnny-five')
+const board = new five.Board()`}</Code>
 
     <P>As soon as you’ve initialized a new
     micro-controller (your Arduino) using the syntax shown
@@ -260,15 +260,15 @@ const board = new five.Board()`}</Snippet>
     the “Led” class imported from the library) and make the
     LED light up every 500 milliseconds using the “.blink” method:</P>
 
-    <Snippet language="js">{`board.on('ready', function() {
+    <Code language="js">{`board.on('ready', function() {
   const led = new five.Led(13)
   led.blink(500)
-})`}</Snippet>
+})`}</Code>
 
     <P>Ready? Great! Then let’s <b>run the program</b> using Node
     and see what happens with our micro controller...</P>
 
-    <Snippet language="bash">{`$ node index`}</Snippet>
+    <Code language="bash">{`$ node index`}</Code>
 
     <P>If everything has been configured correctly and
     the program is running without an error, you

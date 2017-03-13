@@ -10,7 +10,7 @@ import Link from '../../components/link'
 import Meta from '../../components/meta'
 import {Image} from '../../components/figure'
 import {H2} from '../../components/heading'
-import {Inline, Snippet} from '../../components/code'
+import {InlineCode, Code} from '../../components/code'
 import {UL, LI} from '../../components/list'
 
 export default () => (
@@ -75,8 +75,8 @@ export default () => (
 
     <Image src="/static/essays/2016/npm-build-tool/remorse.gif"/>
 
-    <P>At first, I just had a single property in <Inline>package.scripts</Inline> and it was
-    called <Inline>build</Inline>. And what it did
+    <P>At first, I just had a single property in <InlineCode>package.scripts</InlineCode> and it was
+    called <InlineCode>build</InlineCode>. And what it did
     was transpile my ES2015 code using Babel into
     ES5 code. “So far so good!”, I thought.</P>
 
@@ -85,7 +85,7 @@ export default () => (
     server, bundling my ES2015 modules or implementing
     a file watcher), it started getting messy:</P>
 
-    <Snippet language="json">{`"scripts": {
+    <Code language="json">{`"scripts": {
   "install": "npm run build",
   "start": "parallelshell 'livereload dist' 'nodemon index -w views/ -e hbs,js -i assets/'",
   "build:js": "rollup assets/js/app.js > dist/app.js",
@@ -97,7 +97,7 @@ export default () => (
   "watch:scss": "watch 'npm run build:scss' assets/scss",
   "watch:images": "watch 'npm run build:images' assets/images",
   "watch": "parallelshell 'npm run watch:js' 'npm run watch:scss' 'npm run watch:images'"
-}`}</Snippet>
+}`}</Code>
 
     <P>That’s how it looked before I switched back to Gulp. And remember, the
     upper example doesn’t even include tests. If you want to see how that looks,
@@ -194,7 +194,7 @@ export default () => (
     for being delivered to the end user.</P>
 
     <P>So all in all, my personal suggestion is to stay away
-    from too much shell scripting related to <Inline>package.scripts</Inline> and
+    from too much shell scripting related to <InlineCode>package.scripts</InlineCode> and
     rather start “build”-ing your code
     using <Link href="http://gulpjs.com">Gulp</Link> or <Link href="http://broccolijs.com">Broccoli</Link>. But
     at the same time, feel free to control those build tools

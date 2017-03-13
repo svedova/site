@@ -8,7 +8,7 @@ import Meta from '../../components/meta'
 import {Image} from '../../components/figure'
 import {H2} from '../../components/heading'
 import Quote from '../../components/quote'
-import {Snippet} from '../../components/code'
+import {Code} from '../../components/code'
 import {UL, LI} from '../../components/list'
 
 export default () => (
@@ -101,7 +101,7 @@ export default () => (
     require the module, use its API to build a few awesome
     tasks and finally implement a neat command for the whole job:</P>
 
-    <Snippet language="bash">muffin build</Snippet>
+    <Code language="bash">muffin build</Code>
 
     <P>When running this command, Muffin will now look for
     a “brocfile.js” in your site’s root directory and then use the

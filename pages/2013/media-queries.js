@@ -5,7 +5,7 @@ import Post from '../../layouts/essay'
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
 import Link from '../../components/link'
-import {Snippet} from '../../components/code'
+import {Code} from '../../components/code'
 
 export default () => (
   <Post>
@@ -28,18 +28,18 @@ export default () => (
     einfacher machen könnte. Im Folgenden sind die Media Queries
     für einige bekannte, mobile Geräte zu finden:</P>
 
-    <Snippet language="css">{`@media screen and (device-aspect-ratio: 40/71) {} // iPhone 5
+    <Code language="css">{`@media screen and (device-aspect-ratio: 40/71) {} // iPhone 5
 @media only screen and (-webkit-device-pixel-ratio: 2) {} // Galaxy S3
 @media screen and (max-device-width: 480px) {} // BlackBerry Torch
-@media screen and (max-device-width: 480px) {} // HTC HD2, Thunderbolt`}</Snippet>
+@media screen and (max-device-width: 480px) {} // HTC HD2, Thunderbolt`}</Code>
 
     <P>Nun kommen wir zu den etwas größeren Geräten wie z.B. Tablets. Bei
     solchen sind mehrere verschiedene Media Queries vonnöten, da die
     Maße des Bildschirms zwischen der Portrait- und der
     sogenannten {`"`}Landscape{`"`}-Position variieren.</P>
 
-    <Snippet language="css">{`@media (max-device-width: 1024px) and (orientation: landscape) {}
-@media (max-device-width: 768px) and (orientation: portrait) {}`}</Snippet>
+    <Code language="css">{`@media (max-device-width: 1024px) and (orientation: landscape) {}
+@media (max-device-width: 768px) and (orientation: portrait) {}`}</Code>
 
     <P>Wie es den oberen CSS-Codes bereits entnommen werden kann, stehen die beiden
     Media Queries jeweils für die Landscape- sowie für die
@@ -48,9 +48,9 @@ export default () => (
     dem Hause Apple.</P>
 
     <P>Ich hoffe ich konnte mit diesem Artikel denjenigen helfen, die es
-    leid sind, das Internet nach den passenden Snippets zur
+    leid sind, das Internet nach den passenden Codes zur
     Optimierung ihrer Webseite zu suchen. Weitere praktische
-    Snippets sind übrigends
+    Codes sind übrigends
     auch <Link href="http://nmsdvid.com/snippets/">hier</Link> gratis zu finden.</P>
   </Post>
 )

@@ -4,7 +4,7 @@ import Post from '../../layouts/essay'
 // Components
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
-import {Inline, Snippet} from '../../components/code'
+import {InlineCode, Code} from '../../components/code'
 import Link from '../../components/link'
 
 export default () => (
@@ -35,7 +35,7 @@ export default () => (
     100% Höhe, 100% Breite sowie folgendes Attribut
     verpassen, welches später eine Tabelle simuliert:</P>
 
-    <Snippet language="css">display: table;</Snippet>
+    <Code language="css">display: table;</Code>
 
     <P>Als nächstes packen wir in das erstelle DIV-Element
     ein weiteres DIV-Element, welches auch den Inhalt
@@ -44,19 +44,19 @@ export default () => (
     Tabellen-Zelle zu simulieren und deren Inhalt
     vertikal zu zentrieren:</P>
 
-    <Snippet language="css">{`vertical-align: middle;
-display: table-cell;`}</Snippet>
+    <Code language="css">{`vertical-align: middle;
+display: table-cell;`}</Code>
 
     <P>Nun wird der Inhalt des als letztes genannten DIV-Element
     vertikal zentriert. Wenn nun auch noch eine horizontale
     Zentrierung gewünscht ist, kann diese natürlich ganz
-    einfach mit dem <Inline>text-align: center;</Inline>-Attribut
+    einfach mit dem <InlineCode>text-align: center;</InlineCode>-Attribut
     für letzteres Element erreicht werden. Hierzu eine
     kleine <Link href="http://codepen.io/jonsuh/pen/duvgE">Demo</Link>.</P>
 
     <P>Falls die vertikale Zentrierung nicht innerhalb anderer
-    Elemente erfolgt, müssen die Elemente <Inline>html</Inline> und
-    <Inline>body</Inline> in
+    Elemente erfolgt, müssen die Elemente <InlineCode>html</InlineCode> und
+    <InlineCode>body</InlineCode> in
     Sachen Breite und Höhe natürlich noch so angepasst
     werden, dass sie die Browser-Fläche komplett ausfüllen, wie
     in der Demo gezeigt. Viel Spaß beim Coden!</P>

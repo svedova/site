@@ -8,7 +8,7 @@ import Link from '../../components/link'
 import {H2, H3, H4} from '../../components/heading'
 import {Ref, FootNotes, Note} from '../../components/footnotes'
 import {Image} from '../../components/figure'
-import {Inline} from '../../components/code'
+import {InlineCode} from '../../components/code'
 import {UL, LI} from '../../components/list'
 import {Table, Row, Column} from '../../components/table'
 
@@ -160,12 +160,12 @@ export default () => (
     <P>Since I released my first blog posts a few years ago, I always
     stood glued to RSS for providing a feed. Mostly because I didn{`'`}t know
     of any other alternative and maybe also because the
-    themes I{`'`}ve used didn{`'`}t have the Atom feed url in their <Inline>head</Inline> tag
+    themes I{`'`}ve used didn{`'`}t have the Atom feed url in their <InlineCode>head</InlineCode> tag
     yet (therefore I never really got to experiment with it).</P>
 
     <P>But now, because the whole source code of my site is
     public and entirely editable through templates, I came across
-    the <Inline>feed.xml</Inline> file from the default Jekyll theme
+    the <InlineCode>feed.xml</InlineCode> file from the default Jekyll theme
     and started searching for a precise explanation of the
     RSS format. The reason I did this was because I needed
     some information on how to format my post{`'`}s meta-data for the feed.</P>
@@ -203,11 +203,11 @@ export default () => (
 
       <Row>
         <Column>
-          <Inline>{`<rss>`}</Inline>
+          <InlineCode>{`<rss>`}</InlineCode>
         </Column>
 
         <Column>
-          <Inline>{`<feed>`}</Inline>
+          <InlineCode>{`<feed>`}</InlineCode>
         </Column>
       </Row>
     </Table>
@@ -222,7 +222,7 @@ export default () => (
     things which really convinced me:</P>
 
     <UL>
-      <LI>The <Inline>id</Inline> key doesn{`'`}t need a <Inline>isPermaLink</Inline> attribute
+      <LI>The <InlineCode>id</InlineCode> key doesn{`'`}t need a <InlineCode>isPermaLink</InlineCode> attribute
       anymore, if it contains a permalink.</LI>
 
       <LI>I felt like the image-element was really poorly designed
@@ -230,9 +230,9 @@ export default () => (
       Atom introduced the logo- and icon-tags that simply contain
       the URL to the image - no width, height or other specifications.</LI>
 
-      <LI>Space for more information within the <Inline>author</Inline> tag. You{`'`}re free to
-      use <Inline>{`<name>`}</Inline>, <Inline>{`<email>`}</Inline> and&nbsp;
-      <Inline>{`<uri>`}</Inline> tags.</LI>
+      <LI>Space for more information within the <InlineCode>author</InlineCode> tag. You{`'`}re free to
+      use <InlineCode>{`<name>`}</InlineCode>, <InlineCode>{`<email>`}</InlineCode> and&nbsp;
+      <InlineCode>{`<uri>`}</InlineCode> tags.</LI>
     </UL>
 
     <P>So in the End, I{`'`}ve decided to go with Atom. If you
@@ -267,7 +267,7 @@ export default () => (
     want to do so - since I enjoy GitHub Pages and the
     simple way how it wants you to publish content - I{`'`}ll
     ignore this for now. I mean, it{`'`}s not even
-    incorrect. Those <Inline>div</Inline> tags are simply meant to
+    incorrect. Those <InlineCode>div</InlineCode> tags are simply meant to
     represent a flow of content of any form (at least
     that{`'`}s how I{`'`}ve interpreted W3C{`'`}s explanation).</P>
 
@@ -298,7 +298,7 @@ export default () => (
 
     <P>... and I banged my head on the
     table, yelled {`"`}FUCK THE WOOORLD!!{`"`} and changed my post{`'`}s permalink
-    root from <Inline>/blog</Inline> to <Inline>/notes</Inline>, which
+    root from <InlineCode>/blog</InlineCode> to <InlineCode>/notes</InlineCode>, which
     will make all existing links to my posts on the web completely useless.</P>
 
     <H2>What I Learned from This</H2>

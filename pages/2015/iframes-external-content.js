@@ -7,7 +7,7 @@ import Meta from '../../components/meta'
 import Link from '../../components/link'
 import {H2} from '../../components/heading'
 import {Ref, FootNotes, Note} from '../../components/footnotes'
-import {Snippet, Inline} from '../../components/code'
+import {Code, InlineCode} from '../../components/code'
 
 export default () => (
   <Post>
@@ -49,9 +49,9 @@ export default () => (
 
     <P>Okay, let me explain that with an example:</P>
 
-    <Snippet language="css">{`h1 {
+    <Code language="css">{`h1 {
   all: unset;
-}`}</Snippet>
+}`}</Code>
 
     <P>... doesn{`'`}t just change the heading{`'`}s (let{`'`}s say) font-size
     to 2em (which is the default one in
@@ -67,7 +67,7 @@ export default () => (
     <P>Instead of providing a fixed iframe for their embedded
     tweets, Twitter (as an example) could also supply developers with
     a JS script that pulls the tweet through their JSON API and
-    then put it into a simple div (or maybe into an <Inline>blockquote</Inline> tag, if
+    then put it into a simple div (or maybe into an <InlineCode>blockquote</InlineCode> tag, if
     you want it to be semantic). There would only be one
     problem: Twitter couldn{`'`}t provide a pre-defined styling for
     the embedded Tweet because it would be overridden.</P>

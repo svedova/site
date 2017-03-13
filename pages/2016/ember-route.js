@@ -5,7 +5,7 @@ import Post from '../../layouts/essay'
 import P from '../../components/paragraph'
 import Link from '../../components/link'
 import Meta from '../../components/meta'
-import {Snippet} from '../../components/code'
+import {Code} from '../../components/code'
 import HR from '../../components/hr'
 
 export default () => (
@@ -28,9 +28,9 @@ export default () => (
     the list of classes by simply adding them to an array
     available under the “className” property:</P>
 
-    <Snippet language="js">{`export default Ember.route.extend({
+    <Code language="js">{`export default Ember.route.extend({
   classNames: ['strawberry-jam']
-})`}</Snippet>
+})`}</Code>
 
     <P>So all in all a pretty great solution, right? Definitely!</P>
 
@@ -56,7 +56,7 @@ export default () => (
     <P>I’ve generated a new initializer and
     called it “setup-route”. Then I’ve added the following methods to it:</P>
 
-    <Snippet language="js">{`Ember.Route.reopen({
+    <Code language="js">{`Ember.Route.reopen({
   activate () {
     var classes = this.genClasses()
 
@@ -78,7 +78,7 @@ export default () => (
 
     return classes.join(' ')
   }
-})`}</Snippet>
+})`}</Code>
 
     <P>So there you have it!</P>
 

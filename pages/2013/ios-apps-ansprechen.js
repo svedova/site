@@ -4,7 +4,7 @@ import Post from '../../layouts/essay'
 // Components
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
-import {Snippet} from '../../components/code'
+import {Code} from '../../components/code'
 import Link from '../../components/link'
 
 export default () => (
@@ -41,15 +41,15 @@ export default () => (
     Grund bedienen wir uns hierbei mit Javascript. Zunächst versuchen
     wir die App zu erreichen...</P>
 
-    <Snippet language="javascript">{`window.location = "twitter://post?message=zu teilender Text";`}</Snippet>
+    <Code language="javascript">{`window.location = "twitter://post?message=zu teilender Text";`}</Code>
 
     <P>...falls diese nicht erreicht werden kann, soll der Webclient aufgerufen
     werden. (Inklusive zeitlichen Puffer von 300 Millisekunden, damit
     genügend Zeit für die Prüfung der App bleibt.)</P>
 
-    <Snippet language="javascript">{`setTimeout(function () {
+    <Code language="javascript">{`setTimeout(function () {
   window.location = "https://twitter.com/intent/tweet?source=webclient&amp;text=zu teilender Text";
-}, 300);`}</Snippet>
+}, 300);`}</Code>
 
     <P>Das ganze packen wir dann am besten noch in eine eigene
     Funktion, welche wir mit Hilfe des {`"`}OnClick{`"`}-Eventhandlers z.B. durch

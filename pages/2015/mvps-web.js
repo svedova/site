@@ -6,7 +6,7 @@ import P from '../../components/paragraph'
 import Meta from '../../components/meta'
 import Link from '../../components/link'
 import {H2} from '../../components/heading'
-import {Snippet, Inline} from '../../components/code'
+import {Code, InlineCode} from '../../components/code'
 
 export default () => (
   <Post>
@@ -134,10 +134,10 @@ export default () => (
     <P>So I decided to build a few functions around this idea and
     ended up with cookies whose value looked like this:</P>
 
-    <Snippet language="json">{`{
+    <Code language="json">{`{
   "count": 5,
   "sync": false
-}`}</Snippet>
+}`}</Code>
 
     <P>Nothing advanced, just a simple JSON-formatted object which
     contains the amount of stars which the movie got and
@@ -149,7 +149,7 @@ export default () => (
     of the rating script, the only thing I needed to do was check
     the current visitors browser for cookies that are based on
     a movie{`'`}s rating, save the amount of stars to the DB and
-    set the <Inline>sync</Inline> key to <Inline>true</Inline> (so that
+    set the <InlineCode>sync</InlineCode> key to <InlineCode>true</InlineCode> (so that
     it won{`'`}t accidentally be saved again).</P>
 
     <P>Therefore we were able to import all the data that was created

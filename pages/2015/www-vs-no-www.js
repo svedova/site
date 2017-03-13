@@ -5,7 +5,7 @@ import Post from '../../layouts/essay'
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
 import Link from '../../components/link'
-import {Snippet, Inline} from '../../components/code'
+import {Code, InlineCode} from '../../components/code'
 import {H2} from '../../components/heading'
 import HR from '../../components/hr'
 import {Ref, FootNotes, Note} from '../../components/footnotes'
@@ -74,12 +74,12 @@ export default () => (
     <P>To really make a difference, you just need to forward the
     traffic on your domain from „www.“ to the URL without the three letters.</P>
 
-    <P>For example, you can do that by adding a <Inline>.htaccess</Inline> file with the
+    <P>For example, you can do that by adding a <InlineCode>.htaccess</InlineCode> file with the
     following contents to the root directory of your site:</P>
 
-    <Snippet>{`RewriteEngine On
+    <Code>{`RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www.(.+)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]`}</Snippet>
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]`}</Code>
 
     <P>Redirecting all visitors from the old subdomain to the main
     adress will let them know that they don’t need those

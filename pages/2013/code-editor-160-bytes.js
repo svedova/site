@@ -5,7 +5,7 @@ import Post from '../../layouts/essay'
 import P from '../../components/paragraph'
 import Link from '../../components/link'
 import Meta from '../../components/meta'
-import {Snippet} from '../../components/code'
+import {Code} from '../../components/code'
 
 export default () => (
   <Post>
@@ -18,15 +18,15 @@ export default () => (
 
     <P>Der Editor umfasst jeweils ein Textfeld für HTML-, CSS- sowie für
     JavaScript-Codes und kann mittels eines kleinen
-    JS-Snippets aufgerufen werden. Das folgende Snippet umfasst
+    JS-Codes aufgerufen werden. Das folgende Code umfasst
     gerade einmal 169 Bytes und erzeugt trotz dessen einen
     voll funktionsfähigen Code-Editor:</P>
 
     <P>Hier der gesamte Code für das Projekt:</P>
 
-    <Snippet language="html">{`<body oninput='e.firstChild.srcdoc=t2[v="valu` +
+    <Code language="html">{`<body oninput='e.firstChild.srcdoc=t2[v="valu` +
     `e"]+"<script>"+t0[v]+"</script><style>"+t1[v]'onload='for(i=3;` +
-    `i--;)e.innerHTML+="<textarea id=t"+i+" rows=9>"'id=e><iframe>`}</Snippet>
+    `i--;)e.innerHTML+="<textarea id=t"+i+" rows=9>"'id=e><iframe>`}</Code>
 
     <P>Auf der <Link href="http://xem.github.io/miniCodeEditor/minimal.html">Homepage</Link> des
     Projekts kann nach außerdem noch zwischen zwei

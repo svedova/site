@@ -35,7 +35,7 @@ export default () => (
     faster while keeping the same level of awesomeness<Ref id="1"/>.</P>
 
     <P>Great, then let{`'`}s talk about the best compromise I found
-    out about: <b>Snippets</b>. While allowing developers to use
+    out about: <b>Codes</b>. While allowing developers to use
     code from other coders, we still keep the mountain of
     unnecessary clutter that{`'`}s being loaded on each page-request as
     tiny as possible. Stop making clunky libraries, start

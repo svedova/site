@@ -5,7 +5,7 @@ import Post from '../../layouts/essay'
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
 import Quote from '../../components/quote'
-import {Inline} from '../../components/code'
+import {InlineCode} from '../../components/code'
 import {OL, LI} from '../../components/list'
 
 export default () => (
@@ -52,7 +52,7 @@ export default () => (
       Kommando {`"`}regedit{`"`} den registry editor öffnen.</LI>
 
       <LI>Zum untenstehenden Verzeichnis mit Hilfe des linken Menüs
-      navigieren: <Inline>HKEY_CLASSES_ROOTAllFileSystemObjectsshellSPFS.Context menu</Inline></LI>
+      navigieren: <InlineCode>HKEY_CLASSES_ROOTAllFileSystemObjectsshellSPFS.Context menu</InlineCode></LI>
 
       <LI>Den Ordner mit Rechtsklicks und dann einem Klick auf {`"`}Löschen{`"`} entfernen.</LI>
     </OL>

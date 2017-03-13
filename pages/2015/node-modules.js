@@ -6,7 +6,7 @@ import P from '../../components/paragraph'
 import Meta from '../../components/meta'
 import Link from '../../components/link'
 import {Image} from '../../components/figure'
-import {Inline} from '../../components/code'
+import {InlineCode} from '../../components/code'
 import {H2} from '../../components/heading'
 import HR from '../../components/hr'
 import {OL, LI} from '../../components/list'
@@ -48,8 +48,8 @@ export default () => (
     awesome. When installing a module (or {`"`}package{`"`}, if you
     want), the developer usually has the choice between
     installing it within the app{`'`}s directory (then it
-    will be put in the <Inline>node_modules</Inline> folder) or
-    setting it up globally using the <Inline>-g</Inline> parameter
+    will be put in the <InlineCode>node_modules</InlineCode> folder) or
+    setting it up globally using the <InlineCode>-g</InlineCode> parameter
     when installing.</P>
 
     <H2>Problems and Their Solution</H2>
@@ -108,13 +108,13 @@ export default () => (
         about creating a single, global folder for this
         module which contains multiple versions: 1.0.0, 1.0.1
         and 1.0.2 for example, etc. — Because if you ask
-        me, <Inline>latest</Inline> should always be the default, there shouldn{`'`}t
+        me, <InlineCode>latest</InlineCode> should always be the default, there shouldn{`'`}t
         be an excuse. But if it{`'`}s really necessary, than
         the app could also require it.</P>
 
         <P>If a module depends on other modules, NPM will still
         install those automatically if they{`'`}re listed within
-        the <Inline>package.json</Inline> file. Just
+        the <InlineCode>package.json</InlineCode> file. Just
         globally (by default), rather than locally.</P>
       </LI>
     </OL>
@@ -142,7 +142,7 @@ export default () => (
 
     <Quote>... all of your dependencies, and their dependencies, and
     THEIR dependencies will be installed in
-    your project{`'`}s <Inline>node_modules</Inline> folder with no nesting.</Quote>
+    your project{`'`}s <InlineCode>node_modules</InlineCode> folder with no nesting.</Quote>
 
     <P>Okay. Looks like we got this whole nesting-mess solved. I{`'`}m happy
     that they already figured that out by themselves. Now the
