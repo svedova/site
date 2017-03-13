@@ -2,58 +2,72 @@
 import React from 'react'
 import toID from 'to-id'
 
-const H = ({ level, fontSize, linked, children }) => (
-  <div>
-    {
-      React.createElement(`h${level}`,
-        {
-          style: {
-            fontWeight: 700,
-            fontSize,
-            lineHeight: '1.5em'
-          }
-        },
-        linked && <span>
-          <a href={`#${toID(children)}`} id={toID(children)}>#</a>
-        </span>,
-        children
-      )
-    }
+const H = ({ level, fontSize, linked, children }) => {
+  let idBase = children
 
-    <style jsx>{`
-      div {
-        margin-top: 30px;
+  if (Array.isArray(children)) {
+    idBase = children.map(item => {
+      if (typeof item === 'string') {
+        return item
       }
 
-      span {
-        position: absolute;
-        margin-left: -15px;
-        width: 15px;
+      return item.props.children
+    }).join('')
+  }
+
+  return (
+    <div>
+      {
+        React.createElement(`h${level}`,
+          {
+            style: {
+              fontWeight: 700,
+              fontSize,
+              lineHeight: '1.5em'
+            }
+          },
+          linked && <span>
+            <a href={`#${toID(idBase)}`} id={toID(idBase)}>#</a>
+          </span>,
+          children
+        )
       }
 
-      a {
-        text-decoration: none;
-        color: #4492ff;
-        padding-top: 30px;
-      }
+      <style jsx>{`
+        div {
+          margin-top: 30px;
+        }
 
-      a:focus {
-        outline: none;
-      }
+        span {
+          position: absolute;
+          margin-left: -15px;
+          width: 15px;
+        }
 
-      @media (min-width: 922px) {
         a {
-          visibility: hidden;
+          text-decoration: none;
+          color: #4492ff;
+          padding-top: 30px;
         }
 
-        div:hover a,
-        span:hover a {
-          visibility: visible;
+        a:focus {
+          outline: none;
         }
-      }
-    `}</style>
-  </div>
-)
+
+        @media (min-width: 922px) {
+          a {
+            visibility: hidden;
+          }
+
+          div:hover a,
+          span:hover a {
+            visibility: visible;
+          }
+        }
+      `}</style>
+    </div>
+  )
+}
 
 for (let level = 1; level <= 6; level++) {
   const tag = `H${level}`

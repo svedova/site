@@ -30,7 +30,7 @@ export const InlineCode = ({ children }) => (
         background: #f3f3f3;
         padding: 2px 4px;
         border-radius: 3px;
-        font-size: 14px;
+        font-size: 0.9em;
         color: #3a3a3a;
         hyphens: none;
       }
