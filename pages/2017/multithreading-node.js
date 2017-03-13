@@ -64,7 +64,7 @@ export default () => (
 
 synchronousAction()`}</Code>
 
-    <P>As you can see, I{'\''}m handling two tasks: The first three lines
+    <P>As you can see, I{`'`}m handling two tasks: The first three lines
     introduce an interval that gets executed every 1000 milliseconds (one second) and the last line
     calls an arbitrary function which is doing something in a synchronous way.</P>
 
@@ -74,8 +74,8 @@ synchronousAction()`}</Code>
     gets called, the callback inside <InlineCode>setInterval()</InlineCode> won{'\''}t be run before
     {' '}<InlineCode>synchronousAction()</InlineCode> has returned something.</P>
 
-    <P>This is because of Node.js{'\''} concurrent nature. Its backbone consists of a
-    single-threaded event loop and therefore doesn{'\''}t allow for operations running in parallel
+    <P>This is because of Node.js{`'`} concurrent nature. Its backbone consists of a
+    single-threaded event loop and therefore doesn{`'`}t allow for operations running in parallel
     out of the box.</P>
 
     <P>Or as Panu from <Link href="https://bytearcher.com">Byte Archer</Link> puts it:</P>
@@ -88,6 +88,21 @@ synchronousAction()`}</Code>
     request) can be thought as advancing one small step at a time - concurrently. This
     is beneficial in web applications where the majority of the time is spent waiting
     for I/O to complete. It allows single Node.js process to handle huge amounts of requests.</Quote>
+
+    <P>So technically, nothing can guarantee you that intervals in Node.js will always get executed
+    on the exact times you{`'`}ve defined. Instead, the execution of the callback will
+    be enqueued on a certain point in time, but will only start once the thread isn{`'`}t handling
+    any other operation.</P>
+
+    <P>As an example, the <InlineCode>synchronousAction()</InlineCode> function call shown in the
+    code snippet above might take - let{`'`}s say - a whole minute to download some data. This would mean
+    that the callback of <InlineCode>setInterval()</InlineCode> will get enqueued after 1000 milliseconds (one second),
+    but not actually executed until the minute is over.</P>
+
+    <P>Because a minute contains 60 seconds,
+    in our example, the callback execution would therefore get enqueued 60 times. In
+    turn, you{`'`}ll get the message logged to the console 60 times
+    immediately after the data was downloaded (triggered by the synchronous function).</P>
 
     <FootNotes>
       <Note id="1">If you want to deeply understand the difference between
