@@ -5,7 +5,10 @@ import Post from '../../layouts/essay'
 import P from '../../components/paragraph'
 import Link from '../../components/link'
 import Meta from '../../components/meta'
-import {InlineCode} from '../../components/code'
+import {Code, InlineCode} from '../../components/code'
+import {H2} from '../../components/heading'
+import {Ref, FootNotes, Note} from '../../components/footnotes'
+import Quote from '../../components/quote'
 
 export default () => (
   <Post>
@@ -28,7 +31,7 @@ export default () => (
 
     <P>Now, nearly a year later, I came across this topic again because native support
     for both keywords <Link href="https://twitter.com/notquiteleo/status/834330621107433472">has landed</Link> and
-    I spent a lot of time thinking about how we could take advantage of that at <Link href="https://zeit.co">ZEIT</Link>. So I collected all of my thoughts
+    I spent a lot of time thinking about how we could take advantage of that at <Link href="https://zeit.co">ZEIT</Link>. So I collected my thoughts
     and we had a detailed discussion about why everyone should <InlineCode>await</InlineCode> asynchronous functions, rather than
     using sychronous ones (like <InlineCode>fs.statSync</InlineCode>).</P>
 
@@ -39,5 +42,58 @@ export default () => (
     <P>In turn, I thought making my learning progress public could
     help others - who{'\''}re in the same position - to take advantage of this knowledge as well.</P>
 
+    <H2>Node.js Code Is Run Concurrently, Not in Parallel</H2>
+
+    <P>When I first heard about this statement, I got a little confused. Intially, I thought both words
+    would mean the same.</P>
+
+    <P>In the context of computing processes, however, I
+    learned that this assumption is not always true:</P>
+
+    <P>While <b>parallel</b> operations are both started at the
+    same time and literally run simultaneously (which
+    is only possible with multi-core CPUs), <b>concurrent</b> ones
+    might both make process regardless of the other, but cannot
+    run at the same time (suitable for single-core CPUs).<Ref id="1"/></P>
+
+    <P>Let me clarify that with an example:</P>
+
+    <Code>{`setInterval(() => {
+  console.log('interval executed')
+}, 1000)
+
+synchronousAction()`}</Code>
+
+    <P>As you can see, I{'\''}m handling two tasks: The first three lines
+    introduce an interval that gets executed every 1000 milliseconds (one second) and the last line
+    calls an arbitrary function which is doing something in a synchronous way.</P>
+
+    <P>Now the interesting part:</P>
+
+    <P>Although the code for starting the interval gets executed <b>before</b> the synchronous function
+    gets called, the callback inside <InlineCode>setInterval()</InlineCode> won{'\''}t be run before
+    {' '}<InlineCode>synchronousAction()</InlineCode> has returned something.</P>
+
+    <P>This is because of Node.js{'\''} concurrent nature. Its backbone consists of a
+    single-threaded event loop and therefore doesn{'\''}t allow for operations running in parallel
+    out of the box.</P>
+
+    <P>Or as Panu from <Link href="https://bytearcher.com">Byte Archer</Link> puts it:</P>
+
+    <Quote>The event-loop repeatedly takes an event and fires any event handlers listening to that event
+    one at a time. No JavaScript code is ever executed in parallel.
+    <br/><br/>
+    As long as the event handlers are small and frequently wait for yet more events
+    themselves, all computations (for example fulfilling and serving a HTTP
+    request) can be thought as advancing one small step at a time - concurrently. This
+    is beneficial in web applications where the majority of the time is spent waiting
+    for I/O to complete. It allows single Node.js process to handle huge amounts of requests.</Quote>
+
+    <FootNotes>
+      <Note id="1">If you want to deeply understand the difference between
+      concurrency and parallelism and why Node.js only comes with the former way
+      of processing code, I highly recommend
+      reading <Link href="https://bytearcher.com/articles/parallel-vs-concurrent/">this</Link>.</Note>
+    </FootNotes>
   </Post>
 )
