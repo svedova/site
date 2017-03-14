@@ -14,7 +14,7 @@ import HR from '../../components/hr'
 
 export default () => (
   <Post>
-    <Meta id="multithreading-node"/>
+    <Meta id="multithreading-node" hasCover/>
 
     <P>When I wrote one of my first projects for <Link href="https://zeit.co">ZEIT</Link> somewhere
     in the middle of 2016, I was doing a lot of sychronous operations, although I already had put a
@@ -261,7 +261,8 @@ if (cluster.isMaster) {
 
     <P>Big 🤗 to <Link href="https://twitter.com/OVanhoja">Olli</Link> and <Link href="https://twitter.com/rauchg">Guillermo</Link> for
     taking the time to clear up
-    the confusion I had in my mind about this topic (and proofreading this essay).</P>
+    the confusion I had in my mind about this topic (+ proofreading this
+    essay) and <Link href="https://twitter.com/nVoidRayy">Matthias</Link> for the cute cover image!</P>
 
     <P>I'm truly happy to have such amazing mentors!</P>
 
