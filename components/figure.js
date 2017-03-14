@@ -9,6 +9,7 @@ const Image = ({ width, src, isCover }) => (
 
       figure {
         margin: 20px 0;
+        text-align: center;
       }
 
       .cover {
