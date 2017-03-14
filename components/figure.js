@@ -1,10 +1,15 @@
-const Image = ({ width, src, isCover }) => (
+const Image = ({ width, src, isCover, isWindow }) => (
   <figure className={isCover ? 'cover' : ''}>
-    <img width={width} src={src}/>
+    <img width={width} src={src} className={isWindow ? 'window' : ''}/>
 
     <style jsx>{`
       img {
         max-width: 100%;
+      }
+
+      .window {
+        border-radius: 8px;
+        border: 0.5px solid #909090;
       }
 
       figure {

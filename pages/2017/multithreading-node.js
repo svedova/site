@@ -137,7 +137,7 @@ console.log('Data downloaded')`}</Code>
     can be called {`"`}non-blocking{`"`} now. In turn, we got the maximum
     of performance out of our simple script:</P>
 
-    <Image src="/static/essays/2017/multithreading-node/non-blocking.gif" width="500"/>
+    <Image src="/static/essays/2017/multithreading-node/non-blocking.gif" width="380" isWindow/>
 
     <FootNotes>
       <Note id="1">If you want to deeply understand the difference between
