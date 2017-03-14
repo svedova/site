@@ -9,6 +9,7 @@ import {Code, InlineCode} from '../../components/code'
 import {H2} from '../../components/heading'
 import {Ref, FootNotes, Note} from '../../components/footnotes'
 import Quote from '../../components/quote'
+import {Image} from '../../components/figure'
 
 export default () => (
   <Post>
@@ -62,7 +63,7 @@ export default () => (
   console.log('interval executed')
 }, 1000)
 
-synchronousAction()`}</Code>
+loadDataSync()`}</Code>
 
     <P>As you can see, I{`'`}m handling two tasks: The first three lines
     introduce an interval that gets executed every 1000 milliseconds (one second) and the last line
@@ -72,7 +73,7 @@ synchronousAction()`}</Code>
 
     <P>Although the code for starting the interval gets executed <b>before</b> the synchronous function
     gets called, the callback inside <InlineCode>setInterval()</InlineCode> won{'\''}t be run before
-    {' '}<InlineCode>synchronousAction()</InlineCode> has returned something.</P>
+    {' '}<InlineCode>loadDataSync()</InlineCode> has returned something.</P>
 
     <P>This is because of Node.js{`'`} concurrent nature. Its backbone consists of a
     single-threaded event loop and therefore doesn{`'`}t allow for operations running in parallel
@@ -94,7 +95,7 @@ synchronousAction()`}</Code>
     be enqueued on a certain point in time, but will only start once the thread isn{`'`}t handling
     any other operation.</P>
 
-    <P>As an example, the <InlineCode>synchronousAction()</InlineCode> function call shown in the
+    <P>As an example, the <InlineCode>loadDataSync()</InlineCode> function call shown in the
     code snippet above might take - let{`'`}s say - a whole minute to download some data. This would mean
     that the callback of <InlineCode>setInterval()</InlineCode> will get enqueued after 1000 milliseconds (one second),
     but not actually executed until the minute is over.</P>
@@ -109,6 +110,34 @@ synchronousAction()`}</Code>
     <P>To solve this problem, we need to make the operation
     for pulling the data non-blocking. At the moment,
     it{`'`}s still synchronous and therefore making the process{`'`} performance plummet.</P>
+
+    <P>Here{`'`}s how it looks with <InlineCode>await</InlineCode>:</P>
+
+    <Code>{`setInterval(() => {
+  console.log('Interval dispatched')
+}, 1000)
+
+await loadData()
+console.log('Data downloaded')`}</Code>
+
+    <P>To make this work, you would also have to rewrite your sychronous function into an asynchronous
+    one (either a <InlineCode>Promise</InlineCode> or a function
+    prefixed with <InlineCode>async</InlineCode>).</P>
+
+    <P>To make my point clear, I came up with a
+    snippet that simulates the case of <InlineCode>loadData()</InlineCode> taking 5000 milliseconds
+    to finish:</P>
+
+    <Code>{`const loadData = () => new Promise(resolve => {
+  setTimeout(resolve, 5000)
+})`}</Code>
+
+    <P>Now the data is being downloaded <b>while</b> the interval{`'`}s callback
+    gets executed every 1000 milliseconds. The operation
+    can be called {`"`}non-blocking{`"`} now. In turn, we got the maximum
+    of performance out of our simple script:</P>
+
+    <Image src="/static/essays/2017/multithreading-node/non-blocking.gif" width="500"/>
 
     <FootNotes>
       <Note id="1">If you want to deeply understand the difference between
