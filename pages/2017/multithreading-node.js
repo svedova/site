@@ -60,10 +60,11 @@ export default () => (
     <P>Let me clarify that with an example:</P>
 
     <Code>{`setInterval(() => {
-  console.log('interval executed')
+  console.log('Interval dispatched')
 }, 1000)
 
-loadDataSync()`}</Code>
+loadDataSync()
+console.log('Data downloaded')`}</Code>
 
     <P>As you can see, I{`'`}m handling two tasks: The first three lines
     introduce an interval that gets executed every 1000 milliseconds (one second) and the last line
@@ -96,14 +97,16 @@ loadDataSync()`}</Code>
     any other operation.</P>
 
     <P>As an example, the <InlineCode>loadDataSync()</InlineCode> function call shown in the
-    code snippet above might take - let{`'`}s say - a whole minute to download some data. This would mean
-    that the callback of <InlineCode>setInterval()</InlineCode> will get enqueued after 1000 milliseconds (one second),
-    but not actually executed until the minute is over.</P>
+    code snippet above might take - let{`'`}s say - <b>five seconds</b> to download some data. This would mean
+    that the callback of <InlineCode>setInterval()</InlineCode> will get enqueued after <b>1000 milliseconds (1 second)</b>,
+    but not actually executed until five seconds have passed.</P>
 
-    <P>Because a minute contains 60 seconds,
-    in our example, the callback execution would therefore get enqueued 60 times. In
-    turn, you{`'`}ll get the message logged to the console 60 times
-    immediately after the data was downloaded (triggered by the synchronous function).</P>
+    <P>Because one second (1000 ms) fits into five seconds <b>five times</b> (wow, we{`'`}re doing some really heavy stuff here), in
+    our example, the callback execution would therefore get enqueued <b>five times</b>. In
+    turn, you{`'`}ll get the message logged to the console <b>five times</b>{' '}
+    immediately after {`"`}the data was downloaded{`"`}:</P>
+
+    <Image src="/static/essays/2017/multithreading-node/blocking.gif" width="380" isWindow/>
 
     <H2>Quick! <InlineCode>await</InlineCode> To the Rescue!</H2>
 
@@ -135,7 +138,7 @@ console.log('Data downloaded')`}</Code>
     <P>Now the data is being downloaded <b>while</b> the interval{`'`}s callback
     gets executed every 1000 milliseconds. The operation
     can be called {`"`}non-blocking{`"`} now. In turn, we got the maximum
-    of performance out of our simple script:</P>
+    of performance out of our script:</P>
 
     <Image src="/static/essays/2017/multithreading-node/non-blocking.gif" width="380" isWindow/>
 
