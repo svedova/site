@@ -236,6 +236,16 @@ if (cluster.isMaster) {
     are both running in separate processes. In turn, they can
     both make process at the same time.</P>
 
+    <P>That's it!</P>
+
+    <P>By now, you should understand why <InlineCode>await</InlineCode> is
+    a much better idea than synchronous operations
+    what to do if that's not enough.</P>
+
+    <P>I hope this post helped you to sharpen your mindset for
+    being able to choose the best direction when it comes to achieving
+    the maximum of performance for your future projects.</P>
+
     <HR/>
 
     <P>Big 🤗 to <Link href="https://twitter.com/OVanhoja">Olli</Link> and <Link href="https://twitter.com/rauchg">Guillermo</Link> for
