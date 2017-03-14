@@ -6,7 +6,7 @@ import P from '../../components/paragraph'
 import Link from '../../components/link'
 import Meta from '../../components/meta'
 import {Code, InlineCode} from '../../components/code'
-import {H2} from '../../components/heading'
+import {H2, H3} from '../../components/heading'
 import {Ref, FootNotes, Note} from '../../components/footnotes'
 import Quote from '../../components/quote'
 import {Image} from '../../components/figure'
@@ -16,11 +16,10 @@ export default () => (
   <Post>
     <Meta id="multithreading-node"/>
 
-    <P>When I wrote the initial version
-    of <Link href="https://github.com/zeit/serve">serve</Link> (called {'"'}micro-list{'"'} back then) somewhere
+    <P>When I wrote one of my first projects for <Link href="https://zeit.co">ZEIT</Link> somewhere
     in the middle of 2016, I was doing a lot of sychronous operations, although I already had put a
     transpilation setup for <InlineCode>async</InlineCode> and <InlineCode>await</InlineCode> in place. The
-    reason being that I just didn't see a difference.</P>
+    reason being that I just didn't see a difference between these two.</P>
 
     <P>Then, a few days later, when it was time to publish the package, <Link href="https://twitter.com/rauchg">rauchg</Link> wrote
     me on Slack saying that I should write more asynchronous code because I would otherwise be making {'"'}the concurrency of the process plummet{'"'}.</P>
@@ -236,7 +235,19 @@ if (cluster.isMaster) {
     are both running in separate processes. In turn, they can
     both make process at the same time.</P>
 
-    <P>That's it!</P>
+    <H3>A Butter Biscuit</H3>
+
+    <P>If adding that module to your project wasn't easy enough, we actually made
+    multithreading even more straightforward by
+    equipping <Link href="https://zeit.co/now">now</Link> with a really neat scaling
+    algorithm, which seamlessly spawns multipe copies of your project without
+    you even having to touch any code.</P>
+
+    <P>Hence, you don't even need <Link href="https://nodejs.org/api/cluster.html">cluster</Link> if your
+    project is running on our platform. Just ensure that you're applying <Link href="#quick-await-to-the-rescue">this technique</Link> wherever
+    it's possible.</P>
+
+    <H3>That's It!</H3>
 
     <P>By now, you should understand why <InlineCode>await</InlineCode> is
     a much better idea than synchronous operations
