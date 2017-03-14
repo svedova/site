@@ -10,6 +10,7 @@ import {H2} from '../../components/heading'
 import {Ref, FootNotes, Note} from '../../components/footnotes'
 import Quote from '../../components/quote'
 import {Image} from '../../components/figure'
+import HR from '../../components/hr'
 
 export default () => (
   <Post>
@@ -145,7 +146,7 @@ console.log('Data downloaded')`}</Code>
     <P>As you can see, even though the function is now acting asynchronously, the interval output never
     shows up after exact 1000 milliseconds. It{`'`}s always a slightly different number.</P>
 
-    <P>That{`'`}s is because the callback will get triggered after that time, but Node.js takes
+    <P>That{`'`}s because the callback WILL get triggered after that time, but Node.js takes
     some time to actually execute the code inside it. This, however, is as close as we can get
     to raw performance using <InlineCode>async</InlineCode> and <InlineCode>await</InlineCode>.</P>
 
@@ -185,6 +186,14 @@ console.log('Data downloaded')`}</Code>
     of the response received from the kernel and the interval are sharing
     the same thread and are therefore not able to run <b>truly in parallel</b>. Instead, they're basically
     only <b>swapping turns</b> (that{`'`}s the essence of the term {`"`}concurrency{`"`})</P>
+
+    <HR/>
+
+    <P>Big 🤗 to <Link href="https://twitter.com/OVanhoja">Olli</Link> and <Link href="https://twitter.com/rauchg">Guillermo</Link> for
+    taking the time to clear up
+    the confusion I had in my mind about this topic.</P>
+
+    <P>I'm truly happy to have such amazing mentors!</P>
 
     <FootNotes>
       <Note id="1">If you want to deeply understand the difference between
