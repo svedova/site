@@ -26,7 +26,8 @@
       "import/no-unresolved": 0,
       "import/named": 0,
       "react/prop-types": 0,
-      "react/forbid-component-props": 0
+      "react/forbid-component-props": 0,
+      "react/no-unescaped-entities": 0
     }
   },
   "now": {

@@ -32,7 +32,8 @@ const Image = ({ width, src, isCover, isWindow }) => (
 
       .frame img {
         border-radius: 8px;
-        border: 0.5px solid #909090;
+        border: 1px solid #B9B9B9;
+        box-shadow: 0px 0px 30px 1px rgba(170, 170, 170, 1);
       }
 
       .cover {

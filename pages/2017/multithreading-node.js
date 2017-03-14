@@ -142,8 +142,49 @@ console.log('Data downloaded')`}</Code>
 
     <Image src="/static/essays/2017/multithreading-node/non-blocking.gif" width="380" isWindow/>
 
-    <P>As you can see, even though the function is now acting entirely asynchronously, the interval never
-    gets executed after exact 1000 milliseconds. It{`'`}s always a slightly different number.</P>
+    <P>As you can see, even though the function is now acting asynchronously, the interval output never
+    shows up after exact 1000 milliseconds. It{`'`}s always a slightly different number.</P>
+
+    <P>That{`'`}s is because the callback will get triggered after that time, but Node.js takes
+    some time to actually execute the code inside it. This, however, is as close as we can get
+    to raw performance using <InlineCode>async</InlineCode> and <InlineCode>await</InlineCode>.</P>
+
+    <H2>Making Our Way into the Light</H2>
+
+    <P>However, speeding up our code to the maximum isn{`'`}t quite so easy. Although we{`'`}ve
+    fixed the problem of blocking the code by using asynchronous
+    operations (a.k.a. {`"`}unblocking it{`"`}), part of it is still run concurrently.</P>
+
+    <P>To understand this, we need to dive a little deeper:</P>
+
+    <P>In our example, we're handling two operations: Dispatching an interval every 1000 milliseconds
+    and downloading data.</P>
+
+    <P>But since Node.js only comes <b>with a single thread out of the box</b> (like mentioned before), there's just
+    one operation that can be handled at the same time. In turn, it's not possible
+    to run both of these actions completely <b>in parallel</b> without extending Node.js' default behavior.</P>
+
+    <P>Now the tricky part:</P>
+
+    <P>The code I've shown you above introduces a function call of <InlineCode>loadData()</InlineCode> preceded
+    by the <InlineCode>await</InlineCode> keyword. As indicated by the name, it could
+    be used for loading some data from a certain origin (like the web).</P>
+
+    <P>This means that we're dealing with a special kind of operation. Why? Because it
+    won't be fully executed inside that single thread we've talked about.</P>
+
+    <P>Instead, actions like fetching raw data and such are processed
+    directly by the kernel (which can be thought of as a separate "thread" or "process" - independent
+    from the thread the interval is running in).</P>
+
+    <P>Only the remaining "sub operations" required for loading the data (like processing
+    the JSON response, which is mostly blocking) will be left
+    to Node.js and are therefore run in that single-threaded event loop.</P>
+
+    <P>In turn, part of our code is still running concurrently. Both the processing
+    of the response received from the kernel and the interval are sharing
+    the same thread and are therefore not able to run <b>truly in parallel</b>. Instead, they're basically
+    only <b>swapping turns</b> (that{`'`}s the essence of the term {`"`}concurrency{`"`})</P>
 
     <FootNotes>
       <Note id="1">If you want to deeply understand the difference between
