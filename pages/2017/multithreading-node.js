@@ -18,10 +18,11 @@ export default () => (
 
     <P>When I wrote the initial version
     of <Link href="https://github.com/zeit/serve">serve</Link> (called {'"'}micro-list{'"'} back then) somewhere
-    in the middle of 2016, I was doing a lot of sychronous operations although we already had a
-    transpilation setup for <InlineCode>async</InlineCode> and <InlineCode>await</InlineCode> in place.</P>
+    in the middle of 2016, I was doing a lot of sychronous operations, although I already had put a
+    transpilation setup for <InlineCode>async</InlineCode> and <InlineCode>await</InlineCode> in place. The
+    reason being that I just didn't see a difference.</P>
 
-    <P>Then, a few days later when it was time to publish the package, <Link href="https://twitter.com/rauchg">rauchg</Link> wrote
+    <P>Then, a few days later, when it was time to publish the package, <Link href="https://twitter.com/rauchg">rauchg</Link> wrote
     me on Slack saying that I should write more asynchronous code because I would otherwise be making {'"'}the concurrency of the process plummet{'"'}.</P>
 
     <P>Back then, I simply did what he told me and immediately noticed a slight
@@ -41,12 +42,13 @@ export default () => (
     seems very valuable to me, since it brings me closer to understanding the backbone of Node.js and
     allows me to improve the performance of my code drastically.</P>
 
-    <P>In turn, I thought making my learning progress public could
-    help others - who{'\''}re in the same position - to take advantage of this knowledge as well.</P>
+    <P>Therefore, I thought making my learning progress public could
+    make others - who{'\''}re in the same position - profit from this knowledge as well. At the same time,
+    it helps me to strengthen my understanding of it.</P>
 
     <H2>Node.js Code Is Run Concurrently, Not in Parallel</H2>
 
-    <P>When I first heard about this statement, I got a little confused. Intially, I thought both words
+    <P>When I first heard about this statement, I got a little confused. Because, initially, I thought both words
     would mean the same.</P>
 
     <P>In the context of computing processes, however, I
@@ -98,13 +100,13 @@ console.log('Data downloaded')`}</Code>
     any other operation.</P>
 
     <P>As an example, the <InlineCode>loadDataSync()</InlineCode> function call shown in the
-    code snippet above might take - let{`'`}s say - <b>five seconds</b> to download some data. This would mean
-    that the callback of <InlineCode>setInterval()</InlineCode> will get enqueued after <b>1000 milliseconds (1 second)</b>,
-    but not actually executed until five seconds have passed.</P>
+    snippet above might take - let{`'`}s say - <b>five seconds</b> to download some data. This would mean
+    that the callback of <InlineCode>setInterval()</InlineCode> will get enqueued after <b>1000 milliseconds</b>,
+    but not actually executed until <b>five seconds</b> have passed.</P>
 
-    <P>Because one second (1000 ms) fits into five seconds <b>five times</b> (wow, we{`'`}re doing some really heavy stuff here), in
-    our example, the callback execution would therefore get enqueued <b>five times</b>. In
-    turn, you{`'`}ll get the message logged to the console <b>five times</b>{' '}
+    <P>Because 1000 milliseconds fit into five seconds - guess what - five times<Ref id="2"/>, in
+    our example, the callback execution would therefore get enqueued that often. In
+    turn, you{`'`}ll get the message logged to the console five times,{' '}
     immediately after {`"`}the data was downloaded{`"`}:</P>
 
     <Image src="/static/essays/2017/multithreading-node/blocking.gif" width="380" isWindow/>
@@ -128,18 +130,17 @@ console.log('Data downloaded')`}</Code>
     one (either a <InlineCode>Promise</InlineCode> or a function
     prefixed with <InlineCode>async</InlineCode>).</P>
 
-    <P>To make my point clear, I came up with a
-    snippet that simulates the case of <InlineCode>loadData()</InlineCode> taking 5000 milliseconds
+    <P>To make my point clear, I came up with an arrow
+    function that simulates the case of <InlineCode>loadData()</InlineCode> taking 5000 milliseconds
     to finish:</P>
 
     <Code>{`const loadData = () => new Promise(resolve => {
   setTimeout(resolve, 5000)
 })`}</Code>
 
-    <P>Now the data is being downloaded <b>while</b> the interval{`'`}s callback
-    gets executed every 1000 milliseconds. The operation
-    can be called {`"`}non-blocking{`"`} now. In turn, we got the maximum
-    of performance out of our script:</P>
+    <P>Now the data is being downloaded <b>concurrently</b> with the interval{`'`}s callback
+    getting executed every 1000 milliseconds. The operation
+    can be called {`"`}non-blocking{`"`} now. In turn, our script just got much faster:</P>
 
     <Image src="/static/essays/2017/multithreading-node/non-blocking.gif" width="380" isWindow/>
 
@@ -152,7 +153,10 @@ console.log('Data downloaded')`}</Code>
 
     <H2>Making Our Way into the Light</H2>
 
-    <P>However, speeding up our code to the maximum isn{`'`}t quite so easy. Although we{`'`}ve
+    <P>However, speeding up our code to the maximum isn{`'`}t quite so easy. There's still
+    a lot room left for improvement!</P>
+
+    <P>Although we{`'`}ve
     fixed the problem of blocking the code by using asynchronous
     operations (a.k.a. {`"`}unblocking it{`"`}), part of it is still run concurrently.</P>
 
@@ -161,7 +165,8 @@ console.log('Data downloaded')`}</Code>
     <P>In our example, we're handling two operations: Dispatching an interval every 1000 milliseconds
     and downloading data.</P>
 
-    <P>But since Node.js only comes <b>with a single thread out of the box</b> (like mentioned before), there's just
+    <P>But since Node.js only comes <b>with a single thread out of the box</b> (like
+    mentioned <Link href="#node-js-code-is-run-concurrently-not-in-parallel">before</Link>), there's just
     one operation that can be handled at the same time. In turn, it's not possible
     to run both of these actions completely <b>in parallel</b> without extending Node.js' default behavior.</P>
 
@@ -172,10 +177,10 @@ console.log('Data downloaded')`}</Code>
     be used for loading some data from a certain origin (like the web).</P>
 
     <P>This means that we're dealing with a special kind of operation. Why? Because it
-    won't be fully executed inside that single thread we've talked about.</P>
+    won't be happen entirely inside that single thread we've talked about.</P>
 
     <P>Instead, actions like fetching raw data and such are processed
-    directly by the kernel (which can be thought of as a separate "thread" or "process" - independent
+    directly by the <Link href="https://en.wikipedia.org/wiki/Kernel_(operating_system)">kernel</Link> (which can be thought of as a separate "thread" or "process" - independent
     from the thread the interval is running in).</P>
 
     <P>Only the remaining "sub operations" required for loading the data (like processing
@@ -200,6 +205,7 @@ console.log('Data downloaded')`}</Code>
       concurrency and parallelism and why Node.js only comes with the former way
       of processing code, I highly recommend
       reading <Link href="https://bytearcher.com/articles/parallel-vs-concurrent/">this</Link>.</Note>
+      <Note id="2">wow, we{`'`}re doing some really heavy stuff here</Note>
     </FootNotes>
   </Post>
 )
