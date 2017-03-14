@@ -1,20 +1,38 @@
+const getClasses = (isCover, isWindow) => {
+  const list = []
+
+  if (isCover) {
+    list.push('cover')
+  }
+
+  if (isWindow) {
+    list.push('frame')
+  }
+
+  return list.join(' ')
+}
+
 const Image = ({ width, src, isCover, isWindow }) => (
-  <figure className={isCover ? 'cover' : ''}>
-    <img width={width} src={src} className={isWindow ? 'window' : ''}/>
+  <figure className={getClasses(isCover, isWindow)}>
+    <img width={width} src={src}/>
 
     <style jsx>{`
       img {
         max-width: 100%;
       }
 
-      .window {
-        border-radius: 8px;
-        border: 0.5px solid #909090;
-      }
-
       figure {
         margin: 20px 0;
         text-align: center;
+      }
+
+      .frame {
+        margin: 40px 0;
+      }
+
+      .frame img {
+        border-radius: 8px;
+        border: 0.5px solid #909090;
       }
 
       .cover {
@@ -30,6 +48,10 @@ const Image = ({ width, src, isCover, isWindow }) => (
       @media (min-width: 768px) {
         figure {
           margin: 40px 0;
+        }
+
+        .frame {
+          margin: 50px 0;
         }
 
         .cover {

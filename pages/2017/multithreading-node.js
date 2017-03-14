@@ -139,6 +139,9 @@ console.log('Data downloaded')`}</Code>
 
     <Image src="/static/essays/2017/multithreading-node/non-blocking.gif" width="380" isWindow/>
 
+    <P>As you can see, even though the function is now acting entirely asynchronously, the interval never
+    gets executed after exact 1000 milliseconds. It{`'`}s always a slightly different number.</P>
+
     <FootNotes>
       <Note id="1">If you want to deeply understand the difference between
       concurrency and parallelism and why Node.js only comes with the former way
