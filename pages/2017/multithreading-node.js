@@ -261,7 +261,7 @@ if (cluster.isMaster) {
 
     <P>Big 🤗 to <Link href="https://twitter.com/OVanhoja">Olli</Link> and <Link href="https://twitter.com/rauchg">Guillermo</Link> for
     taking the time to clear up
-    the confusion I had in my mind about this topic.</P>
+    the confusion I had in my mind about this topic (and proofreading this essay).</P>
 
     <P>I'm truly happy to have such amazing mentors!</P>
 
