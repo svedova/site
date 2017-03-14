@@ -205,7 +205,7 @@ console.log('Data downloaded')`}</Code>
       concurrency and parallelism and why Node.js only comes with the former way
       of processing code, I highly recommend
       reading <Link href="https://bytearcher.com/articles/parallel-vs-concurrent/">this</Link>.</Note>
-      <Note id="2">wow, we{`'`}re doing some really heavy stuff here</Note>
+      <Note id="2">WOW, we{`'`}re doing some really heavy stuff here...</Note>
     </FootNotes>
   </Post>
 )
