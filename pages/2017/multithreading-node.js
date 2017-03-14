@@ -165,11 +165,6 @@ console.log('Data downloaded')`}</Code>
     <P>In our example, we're handling two operations: Dispatching an interval every 1000 milliseconds
     and downloading data.</P>
 
-    <P>But since Node.js only comes <b>with a single thread out of the box</b> (like
-    mentioned <Link href="#node-js-code-is-run-concurrently-not-in-parallel">before</Link>), there's just
-    one operation that can be handled at the same time. In turn, it's not possible
-    to run both of these actions completely <b>in parallel</b> without extending Node.js' default behavior.</P>
-
     <P>Now the tricky part:</P>
 
     <P>The code I've shown you above introduces a function call of <InlineCode>loadData()</InlineCode> preceded
@@ -177,7 +172,7 @@ console.log('Data downloaded')`}</Code>
     be used for loading some data from a certain origin (like the web).</P>
 
     <P>This means that we're dealing with a special kind of operation. Why? Because it
-    won't be happen entirely inside that single thread we've talked about.</P>
+    won't happen entirely inside that single thread we've talked about.</P>
 
     <P>Instead, actions like fetching raw data and such are processed
     directly by the <Link href="https://en.wikipedia.org/wiki/Kernel_(operating_system)">kernel</Link> (which can be thought of as a separate "thread" or "process" - independent
@@ -190,7 +185,56 @@ console.log('Data downloaded')`}</Code>
     <P>In turn, part of our code is still running concurrently. Both the processing
     of the response received from the kernel and the interval are sharing
     the same thread and are therefore not able to run <b>truly in parallel</b>. Instead, they're basically
-    only <b>swapping turns</b> (that{`'`}s the essence of the term {`"`}concurrency{`"`})</P>
+    only <b>swapping turns</b> (that{`'`}s the essence of the term {`"`}concurrency{`"`}).</P>
+
+    <H2>The Holy Performance Grail</H2>
+
+    <P>A process can contain multiple threads. Each of these threads can
+    only handle one operation at the time. As a consequence, running the two operations
+    in parallel would require creating two threads: One for the
+    inverval and one for downloading the data. Right?</P>
+
+    <P>Yep, that's correct.</P>
+
+    <P>But sadly, a Node.js process only comes <b>with a single thread out of the box</b> (like
+    mentioned <Link href="#node-js-code-is-run-concurrently-not-in-parallel">before</Link>). This means
+    that we can't increase the number of threads and will therefore only ever be able to
+    handle <b>a single operation</b> at the same time.</P>
+
+    <P>As a result, we need to extend its default behavior if we want to run things
+    truly in parallel. And that's where
+    the native <Link href="https://nodejs.org/api/cluster.html">cluster</Link> module comes in:</P>
+
+    <P>Since we can only have one operation per thread (and therefore per process
+    in the case of Node.js), we need
+    to create multiple processes to achieve our goal of parallelism. But that's not very hard.</P>
+
+    <P>Here's an example how this could look:</P>
+
+    <Code>{`const cluster = require('cluster')
+
+if (cluster.isMaster) {
+  setInterval(() => {
+    console.log('Interval dispatched')
+  }, 1000)
+
+  cluster.fork()
+} else {
+  await loadData()
+  console.log('Data downloaded')
+}`}</Code>
+
+    <P>Now we're taking advantage
+    of <Link href="https://nodejs.org/api/cluster.html">cluster</Link>'s
+    built-in <InlineCode>.fork</InlineCode> method to make a copy of the current
+    process. In addition, we're checking if we're still on the main one or
+    on a clone. If we are,
+    we create the interval and if we're not, we load the data.</P>
+
+    <P>The result of these few lines of code are operations that are actually
+    running in parallel. They're not started at the exact same time, bot
+    are both running in separate processes. In turn, they can
+    both make process at the same time.</P>
 
     <HR/>
 
