@@ -3,9 +3,15 @@ import P from './paragraph'
 import HR from './hr'
 
 export const FootNotes = ({ children }) => (
-  <div>
+  <div hidden>
     <HR/>
     { children }
+
+    <style jsx>{`
+      div {
+        display: block;
+      }
+    `}</style>
   </div>
 )
 
