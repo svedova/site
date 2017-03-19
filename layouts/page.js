@@ -62,6 +62,7 @@ export default ({ children }) => (
 
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
       <meta name="description" content="A teenagers view on web development and intuitive UI design."/>
+      <meta name="twitter:site" content="@notquiteleo"/>
     </Head>
 
     {children}
