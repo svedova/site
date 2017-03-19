@@ -347,6 +347,7 @@
   {
     "id": "multithreading-node",
     "title": "Multithreading in Node.js",
+    "description": "Find the path to the holy grail of performance by splitting your app between multiple Node instances.",
     "date": "14-03-2017"
   }
 ]

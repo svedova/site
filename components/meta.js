@@ -1,4 +1,5 @@
-// Helpers
+// Packages
+import Head from 'next/head'
 import moment from 'moment'
 
 // Other
@@ -35,6 +36,13 @@ export default ({ id, hasCover }) => {
 
       <h1 className={headingClass}>{ post.title }</h1>
       <span>{ date.format('MMMM Do YYYY') }</span>
+
+      {
+        post.description &&
+        <Head>
+          <meta name="description" content={post.description}/>
+        </Head>
+      }
 
       <style jsx>{`
         h1 {
