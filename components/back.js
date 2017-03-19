@@ -64,8 +64,10 @@ export default ({to, closer}) => (
           line-height: 66px;
         }
 
+        .closer a:hover,
         a:hover {
           background: #e3e3e3;
+          transform: scale(1.1);
         }
       }
     `}</style>
