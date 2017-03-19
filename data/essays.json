@@ -311,37 +311,44 @@
   },
   {
     "id": "navigation-css",
-    "title": "Unternavigation Ohne Javascript",
+    "title": "Unternavigation Ohne JavaScript",
+    "description": "Mit CSS kann man genauso gut eine Second-Level-Navigation erstellen, wie mit JavaScript.",
     "date": "03-03-2013"
   },
   {
     "id": "attribut-selektoren-css",
     "title": "Attribut-Selektoren in CSS 3",
+    "description": "Seit der dritten Revision von CSS bieten sich einige Möglichkeiten mehr, HTML-Elemente anzusteuern.",
     "date": "02-03-2013"
   },
   {
     "id": "responsive-designs",
     "title": "Responsive-Designs Erstellen",
+    "description": "Hiermit kannst du deine eigene Website so aussehen lassen, dass sie mobil leucht nutzbar ist.",
     "date": "25-02-2013"
   },
   {
     "id": "javascript-cookies",
     "title": "Cookies Ganz Einfach per Javascript Verwalten",
+    "description": "Verstehe, wie du ohne irgendwelche Hilfsmittel Cookies per JavaScript erstellen und löschen kannst.",
     "date": "01-03-2013"
   },
   {
     "id": "its-zeit",
     "title": "It's ZEIT",
+    "description": "I joined Zeit, Inc.",
     "date": "16-08-2016"
   },
   {
     "id": "releasing-on-github",
     "title": "Releasing on GitHub",
+    "description": "Learn how to publish your software using GitHub Releases and `release`.",
     "date": "16-10-2016"
   },
   {
     "id": "farewell-muffin",
     "title": "Farewell, Muffin!",
+    "description": "After various years of creating the best CMS, I have to announce stopping development.",
     "date": "21-01-2017"
   },
   {
