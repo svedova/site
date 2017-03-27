@@ -6,29 +6,33 @@
     "build": "next build",
     "start": "next start",
     "test": "xo",
-    "precommit": "npm run test"
+    "precommit": "lint-staged"
   },
   "license": "MIT",
   "repository": "leo/site",
   "xo": {
-    "extends": "xo-react",
-    "space": true,
-    "semicolon": false,
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "plugin:react/recommended"
+    ],
     "env": [
-      "browser"
+      "browser",
+      "node"
     ],
     "rules": {
       "react/react-in-jsx-scope": 0,
-      "react/jsx-pascal-case": 0,
-      "object-curly-spacing": 0,
-      "react/jsx-curly-spacing": 0,
-      "import/no-extraneous-dependencies": 0,
-      "import/no-unresolved": 0,
       "import/named": 0,
       "react/prop-types": 0,
-      "react/forbid-component-props": 0,
-      "react/no-unescaped-entities": 0
+      "react/display-name": 0
     }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run test",
+      "prettier --single-quote --write",
+      "git add"
+    ]
   },
   "now": {
     "alias": "leo.im"
@@ -46,9 +50,11 @@
     "to-id": "1.0.5"
   },
   "devDependencies": {
-    "eslint-config-xo-react": "0.10.0",
+    "eslint-config-prettier": "1.5.0",
     "eslint-plugin-react": "6.10.0",
     "husky": "0.13.2",
+    "lint-staged": "3.4.0",
+    "prettier": "0.22.0",
     "xo": "0.17.1"
   }
 }
