@@ -1,13 +1,15 @@
 // Components
-import Link from 'next/link'
+import Link from 'next/link';
 
-export default ({to, closer}) => (
+export default ({ to, closer }) => (
   <div className={closer && 'closer'}>
     <Link href={to || '/'} prefetch>
-      <a>&#8617;&#xFE0E;</a>
+      <a>↩︎</a>
     </Link>
 
-    <style jsx>{`
+    <style jsx>
+      {
+        `
       div {
         position: absolute;
         right: 30px;
@@ -70,6 +72,8 @@ export default ({to, closer}) => (
           transform: scale(1.1);
         }
       }
-    `}</style>
+    `
+      }
+    </style>
   </div>
-)
+);

@@ -1,25 +1,31 @@
 // Components
-import P from './paragraph'
-import HR from './hr'
+import P from './paragraph';
+import HR from './hr';
 
 export const FootNotes = ({ children }) => (
   <div hidden>
-    <HR/>
-    { children }
+    <HR />
+    {children}
 
-    <style jsx>{`
+    <style jsx>
+      {
+        `
       div {
         display: block;
       }
-    `}</style>
+    `
+      }
+    </style>
   </div>
-)
+);
 
 export const Ref = ({ id }) => (
   <a href={`#f${id}`} id={`s${id}`}>
-    { id }
+    {id}
 
-    <style jsx>{`
+    <style jsx>
+      {
+        `
       a {
         top: -5px;
         font-size: 10px;
@@ -37,16 +43,20 @@ export const Ref = ({ id }) => (
         color: #fff;
         outline: none;
       }
-    `}</style>
+    `
+      }
+    </style>
   </a>
-)
+);
 
 export const Note = ({ id, children }) => (
   <P>
-    <a href={`#s${id}`} id={`f${id}`}>{ id }</a>
-    { children }
+    <a href={`#s${id}`} id={`f${id}`}>{id}</a>
+    {children}
 
-    <style jsx>{`
+    <style jsx>
+      {
+        `
       a {
         text-decoration: none;
         background: #e9b6e1;
@@ -61,6 +71,8 @@ export const Note = ({ id, children }) => (
         color: #fff;
         outline: none;
       }
-    `}</style>
+    `
+      }
+    </style>
   </P>
-)
+);

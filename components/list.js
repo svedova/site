@@ -1,43 +1,55 @@
 const OL = ({ children }) => (
   <ol>
-    { children }
+    {children}
 
-    <style jsx>{`
+    <style jsx>
+      {
+        `
       ol {
         list-style: decimal;
         margin: 30px 0;
         padding: 0 0 0 22px;
       }
-    `}</style>
+    `
+      }
+    </style>
   </ol>
-)
+);
 
 const UL = ({ children }) => (
   <ul>
-    { children }
+    {children}
 
-    <style jsx>{`
+    <style jsx>
+      {
+        `
       ul {
         margin: 30px 0;
         list-style: disc;
         padding: 0 0 0 18px;
       }
-    `}</style>
+    `
+      }
+    </style>
   </ul>
-)
+);
 
 const LI = ({ children }) => (
   <li>
-    { children }
+    {children}
 
-    <style jsx>{`
+    <style jsx>
+      {
+        `
       li {
         font-size: 15px;
         margin-bottom: 15px;
         line-height: 23px;
       }
-    `}</style>
+    `
+      }
+    </style>
   </li>
-)
+);
 
-export { OL, UL, LI }
+export { OL, UL, LI };

@@ -1,19 +1,23 @@
 // Layouts
-import Page from './page'
+import Page from './page';
 
 export default ({ children }) => (
   <Page>
     <article>
-      { children }
+      {children}
     </article>
 
-    <style jsx>{`
+    <style jsx>
+      {
+        `
       article {
         margin: 0 auto;
         word-wrap: break-word;
         hyphens: auto;
         max-width: 600px;
       }
-    `}</style>
+    `
+      }
+    </style>
   </Page>
-)
+);

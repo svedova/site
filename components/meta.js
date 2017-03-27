@@ -1,50 +1,50 @@
 // Packages
-import Head from 'next/head'
-import moment from 'moment'
+import Head from 'next/head';
+import moment from 'moment';
 
 // Other
-import posts from '../data/essays'
+import posts from '../data/essays';
 
 // Components
-import Title from './title'
-import Back from './back'
-import {Image} from './figure'
+import Title from './title';
+import Back from './back';
+import { Image } from './figure';
 
 // Make date easily readable
-const parseDate = date => moment(date, 'DD-MM-YYYY')
+const parseDate = date => moment(date, 'DD-MM-YYYY');
 
 // Find post using its identifier
-const findPost = id => posts.find(post => post.id === id)
+const findPost = id => posts.find(post => post.id === id);
 
 export default ({ id, hasCover }) => {
-  const post = findPost(id)
-  const headingClass = hasCover ? 'has-cover' : ''
-  const date = parseDate(post.date)
+  const post = findPost(id);
+  const headingClass = hasCover ? 'has-cover' : '';
+  const date = parseDate(post.date);
 
-  let coverURL
+  let coverURL;
 
   if (hasCover) {
-    coverURL = `/static/essays/${date.format('YYYY')}/${id}/cover.png`
+    coverURL = `/static/essays/${date.format('YYYY')}/${id}/cover.png`;
   }
 
   return (
     <aside>
-      <Back to="/essays" closer={hasCover}/>
+      <Back to="/essays" closer={hasCover} />
 
-      {hasCover && <Image src={coverURL} isCover/>}
-      <Title value={post.title}/>
+      {hasCover && <Image src={coverURL} isCover />}
+      <Title value={post.title} />
 
-      <h1 className={headingClass}>{ post.title }</h1>
-      <span>{ date.format('MMMM Do YYYY') }</span>
+      <h1 className={headingClass}>{post.title}</h1>
+      <span>{date.format('MMMM Do YYYY')}</span>
 
-      {
-        post.description &&
+      {post.description &&
         <Head>
-          <meta name="description" content={post.description}/>
-        </Head>
-      }
+          <meta name="description" content={post.description} />
+        </Head>}
 
-      <style jsx>{`
+      <style jsx>
+        {
+          `
         h1 {
           font-weight: 500;
           margin: 0 0 8px 0;
@@ -77,7 +77,9 @@ export default ({ id, hasCover }) => {
             font-size: 14px;
           }
         }
-      `}</style>
+      `
+        }
+      </style>
     </aside>
-  )
-}
+  );
+};

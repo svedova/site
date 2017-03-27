@@ -1,56 +1,61 @@
 // Helpers
-import React from 'react'
+import React from 'react';
 
 const Table = ({ children }) => (
   <table cellSpacing="0" cellPadding="5">
-    { children }
+    {children}
 
-    <style jsx>{`
+    <style jsx>
+      {
+        `
       table {
         table-layout: fixed;
         width: 100%;
         margin: 30px -5px;
         border: none;
       }
-    `}</style>
+    `
+      }
+    </style>
   </table>
-)
+);
 
 class Row extends React.Component {
   getChildContext() {
     return {
       header: this.props.header || false
-    }
+    };
   }
 
   render() {
     return (
       <tr>
-        { this.props.children }
+        {this.props.children}
 
-        <style jsx>{`
+        <style jsx>
+          {
+            `
           tr {
             text-align: left;
             font-size: 15px;
           }
-        `}</style>
+        `
+          }
+        </style>
       </tr>
-    )
+    );
   }
 }
 
 Row.childContextTypes = {
   header: React.PropTypes.bool
-}
+};
 
-const Column = ({ children }, context) => React.createElement(
-  context.header ? 'th' : 'td',
-  {},
-  children
-)
+const Column = ({ children }, context) =>
+  React.createElement(context.header ? 'th' : 'td', {}, children);
 
 Column.contextTypes = {
   header: React.PropTypes.bool
-}
+};
 
-export { Table, Row, Column }
+export { Table, Row, Column };

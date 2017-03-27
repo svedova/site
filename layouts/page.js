@@ -1,28 +1,28 @@
 // Helpers
-import Progress from 'nprogress'
+import Progress from 'nprogress';
 
 // Components
-import Head from 'next/head'
-import Router from 'next/router'
+import Head from 'next/head';
+import Router from 'next/router';
 
 // Other
-import pkg from '../package'
+import pkg from '../package';
 
-let progress
+let progress;
 
 const stopProgress = () => {
-  clearTimeout(progress)
-  Progress.done()
-}
+  clearTimeout(progress);
+  Progress.done();
+};
 
 // Only show progress bar if page
 // transition takes longer than 200 milliseconds
 Router.onRouteChangeStart = () => {
-  progress = setTimeout(Progress.start, 200)
-}
+  progress = setTimeout(Progress.start, 200);
+};
 
-Router.onRouteChangeComplete = stopProgress
-Router.onRouteChangeError = stopProgress
+Router.onRouteChangeComplete = stopProgress;
+Router.onRouteChangeError = stopProgress;
 
 // Log a sweet message in the browser
 // Showing the version and GitHub repository
@@ -31,43 +31,51 @@ if (global.document) {
     `Version: ${pkg.version}`,
     `Find the code here: https://github.com/leo/site`,
     `Have a great day! :)`
-  ]
+  ];
 
   for (const message of info) {
-    console.log(message)
+    console.log(message);
   }
 }
 
 const viewSource = event => {
-  const allowed = [
-    'P',
-    'H1',
-    'SPAN'
-  ]
+  const allowed = ['P', 'H1', 'SPAN'];
 
   if (allowed.includes(event.target.tagName)) {
-    return
+    return;
   }
 
-  document.location = 'https://github.com/leo/site'
-  event.preventDefault()
-}
+  document.location = 'https://github.com/leo/site';
+  event.preventDefault();
+};
 
 export default ({ children }) => (
   <main onDoubleClick={viewSource}>
     <Head>
-      <link rel="mask-icon" href="http://leo.im/static/lightning.svg" color="#000000"/>
-      <link rel="apple-touch-icon" href="/static/touch-icon.png"/>
-      <link rel="icon" href="/static/touch-icon.png" type="image/png"/>
+      <link
+        rel="mask-icon"
+        href="http://leo.im/static/lightning.svg"
+        color="#000000"
+      />
+      <link rel="apple-touch-icon" href="/static/touch-icon.png" />
+      <link rel="icon" href="/static/touch-icon.png" type="image/png" />
 
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-      <meta name="description" content="A teenagers view on web development and intuitive UI design."/>
-      <meta name="twitter:site" content="@notquiteleo"/>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=no"
+      />
+      <meta
+        name="description"
+        content="A teenagers view on web development and intuitive UI design."
+      />
+      <meta name="twitter:site" content="@notquiteleo" />
     </Head>
 
     {children}
 
-    <style jsx global>{`
+    <style jsx global>
+      {
+        `
       body {
         font-family: -apple-system, BlinkMacSystemFont,
         Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
@@ -119,6 +127,8 @@ export default ({ children }) => (
           padding: 45px;
         }
       }
-    `}</style>
+    `
+      }
+    </style>
   </main>
-)
+);

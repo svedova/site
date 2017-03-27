@@ -1,16 +1,16 @@
 // Components
-import P from './paragraph'
+import P from './paragraph';
 
 export default ({ by, children }) => (
   <blockquote>
     <P>
-      { children }
-      {
-        by && <span>— {by}</span>
-      }
+      {children}
+      {by && <span>— {by}</span>}
     </P>
 
-    <style jsx>{`
+    <style jsx>
+      {
+        `
       blockquote {
         margin: 30px 0;
         color: #9B9B9B;
@@ -25,6 +25,8 @@ export default ({ by, children }) => (
         margin-top: 15px;
         font-style: normal;
       }
-    `}</style>
+    `
+      }
+    </style>
   </blockquote>
-)
+);

@@ -1,22 +1,24 @@
 const getClasses = (isCover, isWindow) => {
-  const list = []
+  const list = [];
 
   if (isCover) {
-    list.push('cover')
+    list.push('cover');
   }
 
   if (isWindow) {
-    list.push('frame')
+    list.push('frame');
   }
 
-  return list.join(' ')
-}
+  return list.join(' ');
+};
 
 const Image = ({ width, src, isCover, isWindow }) => (
   <figure className={getClasses(isCover, isWindow)}>
-    <img width={width} src={src}/>
+    <img width={width} src={src} />
 
-    <style jsx>{`
+    <style jsx>
+      {
+        `
       img {
         max-width: 100%;
       }
@@ -64,9 +66,11 @@ const Image = ({ width, src, isCover, isWindow }) => (
           line-height: 0;
         }
       }
-    `}</style>
+    `
+      }
+    </style>
   </figure>
-)
+);
 
-export default Image
-export { Image }
+export default Image;
+export { Image };

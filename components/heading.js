@@ -1,39 +1,43 @@
 // Helpers
-import React from 'react'
-import toID from 'to-id'
+import React from 'react';
+import toID from 'to-id';
 
 const H = ({ level, fontSize, linked, children }) => {
-  let idBase = children
+  let idBase = children;
 
   if (Array.isArray(children)) {
-    idBase = children.map(item => {
-      if (typeof item === 'string') {
-        return item
-      }
+    idBase = children
+      .map(item => {
+        if (typeof item === 'string') {
+          return item;
+        }
 
-      return item.props.children
-    }).join('')
+        return item.props.children;
+      })
+      .join('');
   }
 
   return (
     <div>
-      {
-        React.createElement(`h${level}`,
-          {
-            style: {
-              fontWeight: 700,
-              fontSize,
-              lineHeight: '1.5em'
-            }
-          },
-          linked && <span>
+      {React.createElement(
+        `h${level}`,
+        {
+          style: {
+            fontWeight: 700,
+            fontSize,
+            lineHeight: '1.5em'
+          }
+        },
+        linked &&
+          <span>
             <a href={`#${toID(idBase)}`} id={toID(idBase)}>#</a>
           </span>,
-          children
-        )
-      }
+        children
+      )}
 
-      <style jsx>{`
+      <style jsx>
+        {
+          `
         div {
           margin-top: 30px;
         }
@@ -64,29 +68,25 @@ const H = ({ level, fontSize, linked, children }) => {
             visibility: visible;
           }
         }
-      `}</style>
+      `
+        }
+      </style>
     </div>
-  )
-}
+  );
+};
 
 for (let level = 1; level <= 6; level++) {
-  const tag = `H${level}`
+  const tag = `H${level}`;
 
-  const sizes = [
-    23,
-    18,
-    15,
-    13,
-    10,
-    9
-  ]
+  const sizes = [23, 18, 15, 13, 10, 9];
 
-  const component = props => new H({
-    ...props,
-    level,
-    fontSize: sizes[level - 1],
-    linked: level > 1
-  })
+  const component = props =>
+    new H({
+      ...props,
+      level,
+      fontSize: sizes[level - 1],
+      linked: level > 1
+    });
 
-  exports[tag] = component
+  exports[tag] = component;
 }

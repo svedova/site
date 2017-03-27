@@ -1,46 +1,55 @@
 // Helpers
-import moment from 'moment'
+import moment from 'moment';
 
 // Components
-import Link from 'next/link'
-import Title from '../components/title'
-import Back from '../components/back'
+import Link from 'next/link';
+import Title from '../components/title';
+import Back from '../components/back';
 
 // Layouts
-import Page from '../layouts/page'
+import Page from '../layouts/page';
 
 // Other
-import posts from '../data/essays'
+import posts from '../data/essays';
 
-const parseDate = date => moment(date, 'DD-MM-YYYY')
+const parseDate = date => moment(date, 'DD-MM-YYYY');
 
 // Assign a URL to each post and
 // sort them by date (most recent one first)
-const preparePosts = () => posts.map(post => Object.assign({
-  url: `/${parseDate(post.date).year()}/${post.id}`
-}, post)).sort((a, b) => parseDate(b.date).diff(parseDate(a.date)))
+const preparePosts = () =>
+  posts
+    .map(post =>
+      Object.assign(
+        {
+          url: `/${parseDate(post.date).year()}/${post.id}`
+        },
+        post
+      ))
+    .sort((a, b) => parseDate(b.date).diff(parseDate(a.date)));
 
 export default () => (
   <Page>
-    <Title/>
+    <Title />
 
-    <h1>Leo&#39;s Essays</h1>
-    <Back/>
+    <h1>Leo's Essays</h1>
+    <Back />
 
     <ul>
-      {
-        preparePosts().map(post => (
-          <li key={post.id}>
-            <Link href={post.url} prefetch><a>
+      {preparePosts().map(post => (
+        <li key={post.id}>
+          <Link href={post.url} prefetch>
+            <a>
               <b>{post.title}</b>
               <span>{parseDate(post.date).format('MMMM Do YYYY')}</span>
-            </a></Link>
-          </li>
-        ))
-      }
+            </a>
+          </Link>
+        </li>
+      ))}
     </ul>
 
-    <style jsx>{`
+    <style jsx>
+      {
+        `
       ul {
         margin: 0;
         padding: 0 0 10px 0;
@@ -124,6 +133,8 @@ export default () => (
           opacity: 1;
         }
       }
-    `}</style>
+    `
+      }
+    </style>
   </Page>
-)
+);
