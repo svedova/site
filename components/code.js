@@ -11,8 +11,9 @@ const styles = {
   width: '100%',
   boxSizing: 'border-box',
   wordWrap: 'normal',
-  fontSize: '1.1em',
-  WebkitOverflowScrolling: 'touch'
+  fontSize: '1.04em',
+  WebkitOverflowScrolling: 'touch',
+  fontFamily: 'Menlo, Monaco, Lucida Console, Liberation Mono, Courier New, monospace, serif'
 };
 
 export const Code = ({ type, children }) => (
@@ -32,9 +33,10 @@ export const InlineCode = ({ children }) => (
         background: #f3f3f3;
         padding: 2px 4px;
         border-radius: 3px;
-        font-size: 0.9em;
+        font-size: 0.85em;
         color: #3a3a3a;
         hyphens: none;
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono, Courier New, monospace, serif;
       }
     `
       }
