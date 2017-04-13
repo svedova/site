@@ -1,9 +1,9 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
 
 export default () => (
   <Post>
@@ -84,4 +84,4 @@ export default () => (
 
     <P>Thank you for giving a fuck! 😘</P>
   </Post>
-);
+)

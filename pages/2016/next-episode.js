@@ -1,13 +1,13 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { H2 } from '../../components/heading';
-import HR from '../../components/hr';
-import Quote from '../../components/quote';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { H2 } from '../../components/heading'
+import HR from '../../components/hr'
+import Quote from '../../components/quote'
 
 export default () => (
   <Post>
@@ -116,4 +116,4 @@ export default () => (
       and start right over today!
     </P>
   </Post>
-);
+)

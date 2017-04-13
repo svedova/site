@@ -1,16 +1,16 @@
 // Packages
-import Tweet from 'react-tweet-embed';
+import Tweet from 'react-tweet-embed'
 
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Link from '../../components/link';
-import Quote from '../../components/quote';
-import { OL, LI } from '../../components/list';
-import { H2 } from '../../components/heading';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Link from '../../components/link'
+import Quote from '../../components/quote'
+import { OL, LI } from '../../components/list'
+import { H2 } from '../../components/heading'
 
 export default () => (
   <Post>
@@ -241,4 +241,4 @@ export default () => (
       this for the future.
     </P>
   </Post>
-);
+)

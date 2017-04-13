@@ -1,17 +1,17 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Link from '../../components/link';
-import { Image } from '../../components/figure';
-import { InlineCode } from '../../components/code';
-import { H2 } from '../../components/heading';
-import HR from '../../components/hr';
-import { OL, LI } from '../../components/list';
-import Quote from '../../components/quote';
-import Edit from '../../components/edit';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Link from '../../components/link'
+import { Image } from '../../components/figure'
+import { InlineCode } from '../../components/code'
+import { H2 } from '../../components/heading'
+import HR from '../../components/hr'
+import { OL, LI } from '../../components/list'
+import Quote from '../../components/quote'
+import Edit from '../../components/edit'
 
 export default () => (
   <Post>
@@ -242,4 +242,4 @@ export default () => (
       do you think? Leave a comment!
     </P>
   </Post>
-);
+)

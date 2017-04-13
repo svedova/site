@@ -1,11 +1,11 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { UL, LI } from '../../components/list';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { UL, LI } from '../../components/list'
 
 export default () => (
   <Post>
@@ -98,9 +98,7 @@ export default () => (
       lack the necessary drive and literally
       only
       {' '}
-      <Link
-        href="https://medium.com/@imcatnoone/it-s-called-ship-not-shit-bf5f84d223f9"
-      >
+      <Link href="https://medium.com/@imcatnoone/it-s-called-ship-not-shit-bf5f84d223f9">
         ship shit
       </Link>
       , which
@@ -116,4 +114,4 @@ export default () => (
 
     <P>Otherwise I wouldn’t be here — that’s my job.</P>
   </Post>
-);
+)

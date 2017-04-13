@@ -1,5 +1,5 @@
 // Components
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default ({ to, closer }) => (
   <div className={closer && 'closer'}>
@@ -8,8 +8,7 @@ export default ({ to, closer }) => (
     </Link>
 
     <style jsx>
-      {
-        `
+      {`
       div {
         position: absolute;
         right: 30px;
@@ -72,8 +71,7 @@ export default ({ to, closer }) => (
           transform: scale(1.1);
         }
       }
-    `
-      }
+    `}
     </style>
   </div>
-);
+)

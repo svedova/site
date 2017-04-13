@@ -1,14 +1,14 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import { H2 } from '../../components/heading';
-import HR from '../../components/hr';
-import Link from '../../components/link';
-import { Image } from '../../components/figure';
-import { UL, LI } from '../../components/list';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import { H2 } from '../../components/heading'
+import HR from '../../components/hr'
+import Link from '../../components/link'
+import { Image } from '../../components/figure'
+import { UL, LI } from '../../components/list'
 
 export default () => (
   <Post>
@@ -177,9 +177,7 @@ export default () => (
       first. Just make use of things like Facebook, Twitter and the
       good-ol’
       {' '}
-      <Link
-        href="http://www.guinnessworldrecords.com/60/images/records/1971.jpg"
-      >
+      <Link href="http://www.guinnessworldrecords.com/60/images/records/1971.jpg">
         e-mail
       </Link>
       .
@@ -274,4 +272,4 @@ export default () => (
       up your new company’s customer relationship mechanisms.
     </P>
   </Post>
-);
+)

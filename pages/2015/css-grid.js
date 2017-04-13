@@ -1,13 +1,13 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Link from '../../components/link';
-import { InlineCode } from '../../components/code';
-import { H2 } from '../../components/heading';
-import { UL, LI } from '../../components/list';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Link from '../../components/link'
+import { InlineCode } from '../../components/code'
+import { H2 } from '../../components/heading'
+import { UL, LI } from '../../components/list'
 
 export default () => (
   <Post>
@@ -180,4 +180,4 @@ export default () => (
       that{`'`}s free of performance- and memory-draining CSS frameworks.
     </P>
   </Post>
-);
+)

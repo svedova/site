@@ -1,12 +1,12 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import HR from '../../components/hr';
-import { Code } from '../../components/code';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import HR from '../../components/hr'
+import { Code } from '../../components/code'
 
 export default () => (
   <Post>
@@ -53,9 +53,7 @@ export default () => (
       the font size won’t get automatically adjusted by the system if the user changes to landscape mode. You
       can
       {' '}
-      <Link
-        href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust"
-      >
+      <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust">
         learn more
       </Link>
       {' '}
@@ -72,9 +70,7 @@ export default () => (
     </P>
 
     <Code language="html">
-      {
-        `<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">`
-      }
+      {`<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">`}
     </Code>
 
     <P>
@@ -101,4 +97,4 @@ export default () => (
       solution to make it work on my own site.
     </P>
   </Post>
-);
+)

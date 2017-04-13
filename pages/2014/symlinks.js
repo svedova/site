@@ -1,13 +1,13 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { H2 } from '../../components/heading';
-import { OL, LI } from '../../components/list';
-import { InlineCode } from '../../components/code';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { H2 } from '../../components/heading'
+import { OL, LI } from '../../components/list'
+import { InlineCode } from '../../components/code'
 
 export default () => (
   <Post>
@@ -118,4 +118,4 @@ export default () => (
       geht? Dann lass doch einfach ein Kommentar da!
     </P>
   </Post>
-);
+)

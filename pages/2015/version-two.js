@@ -1,16 +1,16 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Link from '../../components/link';
-import { H2, H3, H4 } from '../../components/heading';
-import { Ref, FootNotes, Note } from '../../components/footnotes';
-import { Image } from '../../components/figure';
-import { InlineCode } from '../../components/code';
-import { UL, LI } from '../../components/list';
-import { Table, Row, Column } from '../../components/table';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Link from '../../components/link'
+import { H2, H3, H4 } from '../../components/heading'
+import { Ref, FootNotes, Note } from '../../components/footnotes'
+import { Image } from '../../components/figure'
+import { InlineCode } from '../../components/code'
+import { UL, LI } from '../../components/list'
+import { Table, Row, Column } from '../../components/table'
 
 export default () => (
   <Post>
@@ -500,4 +500,4 @@ export default () => (
       </Note>
     </FootNotes>
   </Post>
-);
+)

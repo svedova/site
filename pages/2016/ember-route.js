@@ -1,12 +1,12 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { Code } from '../../components/code';
-import HR from '../../components/hr';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { Code } from '../../components/code'
+import HR from '../../components/hr'
 
 export default () => (
   <Post>
@@ -43,11 +43,9 @@ export default () => (
     </P>
 
     <Code language="js">
-      {
-        `export default Ember.route.extend({
+      {`export default Ember.route.extend({
   classNames: ['strawberry-jam']
-})`
-      }
+})`}
     </Code>
 
     <P>So all in all a pretty great solution, right? Definitely!</P>
@@ -62,9 +60,7 @@ export default () => (
       So after looking for ways to solve this problem within an additional add-on, I came
       across
       {' '}
-      <Link
-        href="https://dockyard.com/blog/ember/2013/03/27/body-class-tags-in-ember"
-      >
+      <Link href="https://dockyard.com/blog/ember/2013/03/27/body-class-tags-in-ember">
         DockYard’s solution
       </Link>
       . It
@@ -90,8 +86,7 @@ export default () => (
     </P>
 
     <Code language="js">
-      {
-        `Ember.Route.reopen({
+      {`Ember.Route.reopen({
   activate () {
     var classes = this.genClasses()
 
@@ -113,8 +108,7 @@ export default () => (
 
     return classes.join(' ')
   }
-})`
-      }
+})`}
     </Code>
 
     <P>So there you have it!</P>
@@ -126,4 +120,4 @@ export default () => (
       extend the list of classes by using the “classNames” property on your route.
     </P>
   </Post>
-);
+)

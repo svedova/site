@@ -1,11 +1,11 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import { InlineCode, Code } from '../../components/code';
-import Link from '../../components/link';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import { InlineCode, Code } from '../../components/code'
+import Link from '../../components/link'
 
 export default () => (
   <Post>
@@ -55,10 +55,8 @@ export default () => (
     </P>
 
     <Code language="css">
-      {
-        `vertical-align: middle;
-display: table-cell;`
-      }
+      {`vertical-align: middle;
+display: table-cell;`}
     </Code>
 
     <P>
@@ -79,4 +77,4 @@ display: table-cell;`
       in der Demo gezeigt. Viel Spaß beim Coden!
     </P>
   </Post>
-);
+)

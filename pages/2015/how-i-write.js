@@ -1,9 +1,9 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
 
 export default () => (
   <Post>
@@ -69,4 +69,4 @@ export default () => (
       built his own story around a certain topic, using their imagination.
     </P>
   </Post>
-);
+)

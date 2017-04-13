@@ -1,18 +1,18 @@
 // Helpers
-import moment from 'moment';
+import moment from 'moment'
 
 // Components
-import Link from 'next/link';
-import Title from '../components/title';
-import Back from '../components/back';
+import Link from 'next/link'
+import Title from '../components/title'
+import Back from '../components/back'
 
 // Layouts
-import Page from '../layouts/page';
+import Page from '../layouts/page'
 
 // Other
-import posts from '../data/essays';
+import posts from '../data/essays'
 
-const parseDate = date => moment(date, 'DD-MM-YYYY');
+const parseDate = date => moment(date, 'DD-MM-YYYY')
 
 // Assign a URL to each post and
 // sort them by date (most recent one first)
@@ -24,8 +24,9 @@ const preparePosts = () =>
           url: `/${parseDate(post.date).year()}/${post.id}`
         },
         post
-      ))
-    .sort((a, b) => parseDate(b.date).diff(parseDate(a.date)));
+      )
+    )
+    .sort((a, b) => parseDate(b.date).diff(parseDate(a.date)))
 
 export default () => (
   <Page>
@@ -48,8 +49,7 @@ export default () => (
     </ul>
 
     <style jsx>
-      {
-        `
+      {`
       ul {
         margin: 0;
         padding: 0 0 10px 0;
@@ -133,8 +133,7 @@ export default () => (
           opacity: 1;
         }
       }
-    `
-      }
+    `}
     </style>
   </Page>
-);
+)

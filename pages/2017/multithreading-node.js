@@ -1,16 +1,16 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { Code, InlineCode } from '../../components/code';
-import { H2, H3 } from '../../components/heading';
-import { Ref, FootNotes, Note } from '../../components/footnotes';
-import Quote from '../../components/quote';
-import { Image } from '../../components/figure';
-import HR from '../../components/hr';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { Code, InlineCode } from '../../components/code'
+import { H2, H3 } from '../../components/heading'
+import { Ref, FootNotes, Note } from '../../components/footnotes'
+import Quote from '../../components/quote'
+import { Image } from '../../components/figure'
+import HR from '../../components/hr'
 
 export default () => (
   <Post>
@@ -120,14 +120,12 @@ export default () => (
     <P>Let me clarify that with an example:</P>
 
     <Code>
-      {
-        `setInterval(() => {
+      {`setInterval(() => {
   console.log('Interval dispatched')
 }, 1000)
 
 loadDataSync()
-console.log('Data downloaded')`
-      }
+console.log('Data downloaded')`}
     </Code>
 
     <P>
@@ -250,14 +248,12 @@ console.log('Data downloaded')`
     <P>Here{`'`}s how it looks with <InlineCode>await</InlineCode>:</P>
 
     <Code>
-      {
-        `setInterval(() => {
+      {`setInterval(() => {
   console.log('Interval dispatched')
 }, 1000)
 
 await loadData()
-console.log('Data downloaded')`
-      }
+console.log('Data downloaded')`}
     </Code>
 
     <P>
@@ -277,11 +273,9 @@ console.log('Data downloaded')`
     </P>
 
     <Code>
-      {
-        `const loadData = () => new Promise(resolve => {
+      {`const loadData = () => new Promise(resolve => {
   setTimeout(resolve, 5000)
-})`
-      }
+})`}
     </Code>
 
     <P>
@@ -463,8 +457,7 @@ console.log('Data downloaded')`
     <P>Here's an example how this could look:</P>
 
     <Code>
-      {
-        `const cluster = require('cluster')
+      {`const cluster = require('cluster')
 
 if (cluster.isMaster) {
   setInterval(() => {
@@ -475,8 +468,7 @@ if (cluster.isMaster) {
 } else {
   await loadData()
   console.log('Data downloaded')
-}`
-      }
+}`}
     </Code>
 
     <P>
@@ -579,4 +571,4 @@ if (cluster.isMaster) {
       <Note id="2">WOW, we{`'`}re doing some really heavy stuff here...</Note>
     </FootNotes>
   </Post>
-);
+)

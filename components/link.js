@@ -1,10 +1,10 @@
 // Helpers
-import isAbsolute from 'is-absolute-url';
+import isAbsolute from 'is-absolute-url'
 
 // Components
-import Link from 'next/link';
+import Link from 'next/link'
 
-const isAnchor = href => href.charAt(0) === '#';
+const isAnchor = href => href.charAt(0) === '#'
 
 export default ({ href, children }) => (
   <span>
@@ -17,15 +17,13 @@ export default ({ href, children }) => (
           : <Link href={href} prefetch><a>{children}</a></Link>}
 
     <style jsx>
-      {
-        `
+      {`
       a {
         color: #4492ff;
         text-decoration: none;
         border-bottom: 1px dashed currentColor;
       }
-    `
-      }
+    `}
     </style>
   </span>
-);
+)

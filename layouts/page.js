@@ -1,28 +1,28 @@
 // Helpers
-import Progress from 'nprogress';
+import Progress from 'nprogress'
 
 // Components
-import Head from 'next/head';
-import Router from 'next/router';
+import Head from 'next/head'
+import Router from 'next/router'
 
 // Other
-import pkg from '../package';
+import pkg from '../package'
 
-let progress;
+let progress
 
 const stopProgress = () => {
-  clearTimeout(progress);
-  Progress.done();
-};
+  clearTimeout(progress)
+  Progress.done()
+}
 
 // Only show progress bar if page
 // transition takes longer than 200 milliseconds
 Router.onRouteChangeStart = () => {
-  progress = setTimeout(Progress.start, 200);
-};
+  progress = setTimeout(Progress.start, 200)
+}
 
-Router.onRouteChangeComplete = stopProgress;
-Router.onRouteChangeError = stopProgress;
+Router.onRouteChangeComplete = stopProgress
+Router.onRouteChangeError = stopProgress
 
 // Log a sweet message in the browser
 // Showing the version and GitHub repository
@@ -31,23 +31,23 @@ if (global.document) {
     `Version: ${pkg.version}`,
     `Find the code here: https://github.com/leo/site`,
     `Have a great day! :)`
-  ];
+  ]
 
   for (const message of info) {
-    console.log(message);
+    console.log(message)
   }
 }
 
 const viewSource = event => {
-  const allowed = ['P', 'H1', 'SPAN'];
+  const allowed = ['P', 'H1', 'SPAN']
 
   if (allowed.includes(event.target.tagName)) {
-    return;
+    return
   }
 
-  document.location = 'https://github.com/leo/site';
-  event.preventDefault();
-};
+  document.location = 'https://github.com/leo/site'
+  event.preventDefault()
+}
 
 export default ({ children }) => (
   <main onDoubleClick={viewSource}>
@@ -74,8 +74,7 @@ export default ({ children }) => (
     {children}
 
     <style jsx global>
-      {
-        `
+      {`
       body {
         font-family: -apple-system, BlinkMacSystemFont,
         Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
@@ -86,7 +85,8 @@ export default ({ children }) => (
 
       html, body,
       body > div:first-child,
-      body > div:first-child > div {
+      body > div:first-child > div,
+      body > div:first-child > div > div {
         height: 100%;
       }
 
@@ -127,8 +127,7 @@ export default ({ children }) => (
           padding: 45px;
         }
       }
-    `
-      }
+    `}
     </style>
   </main>
-);
+)

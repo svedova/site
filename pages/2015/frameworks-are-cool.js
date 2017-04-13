@@ -1,12 +1,12 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Link from '../../components/link';
-import { H2 } from '../../components/heading';
-import Quote from '../../components/quote';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Link from '../../components/link'
+import { H2 } from '../../components/heading'
+import Quote from '../../components/quote'
 
 export default () => (
   <Post>
@@ -105,16 +105,12 @@ export default () => (
       into this, too, I recommend you to
       read
       {' '}
-      <Link
-        href="http://tomdale.net/2015/02/youre-missing-the-point-of-server-side-rendered-javascript-apps/"
-      >
+      <Link href="http://tomdale.net/2015/02/youre-missing-the-point-of-server-side-rendered-javascript-apps/">
         this
       </Link>
       {' '}
       and&nbsp;
-      <Link
-        href="http://tomdale.net/2015/11/javascript-frameworks-and-mobile-performance/"
-      >
+      <Link href="http://tomdale.net/2015/11/javascript-frameworks-and-mobile-performance/">
         this
       </Link>
       .
@@ -162,4 +158,4 @@ export default () => (
       future. Carefully used frameworks are.
     </P>
   </Post>
-);
+)

@@ -1,5 +1,5 @@
 // Layouts
-import Page from './page';
+import Page from './page'
 
 export default ({ children }) => (
   <Page>
@@ -8,16 +8,14 @@ export default ({ children }) => (
     </article>
 
     <style jsx>
-      {
-        `
+      {`
       article {
         margin: 0 auto;
         word-wrap: break-word;
         hyphens: auto;
         max-width: 600px;
       }
-    `
-      }
+    `}
     </style>
   </Page>
-);
+)

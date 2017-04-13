@@ -1,12 +1,12 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Quote from '../../components/quote';
-import { InlineCode } from '../../components/code';
-import { OL, LI } from '../../components/list';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Quote from '../../components/quote'
+import { InlineCode } from '../../components/code'
+import { OL, LI } from '../../components/list'
 
 export default () => (
   <Post>
@@ -91,4 +91,4 @@ export default () => (
       meinem Rechtsklick-Menü endlich wieder verschwunden.
     </P>
   </Post>
-);
+)

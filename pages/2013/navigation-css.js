@@ -1,10 +1,10 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import { Code, InlineCode } from '../../components/code';
-import Meta from '../../components/meta';
+import P from '../../components/paragraph'
+import { Code, InlineCode } from '../../components/code'
+import Meta from '../../components/meta'
 
 export default () => (
   <Post>
@@ -31,13 +31,11 @@ export default () => (
     </P>
 
     <Code language="html">
-      {
-        `<ul>
+      {`<ul>
   <li><a href="#">Erster Link</a></li>
   <li><a href="#">Zweiter Link</a></li>
   <li><a href="#">Dritter Link</a></li>
-</ul>`
-      }
+</ul>`}
     </Code>
 
     <P>
@@ -47,16 +45,14 @@ export default () => (
     </P>
 
     <Code language="html">
-      {
-        `<ul>
+      {`<ul>
   <li><a href="#">Zweiter Link</a>
       <ul>
         <li><a href="#">Erster Unterlink</a></li>
         <li><a href="#">Zweiter Unterlink</a></li>
       </ul>
   </li>
-</ul>`
-      }
+</ul>`}
     </Code>
 
     <P>
@@ -69,10 +65,8 @@ export default () => (
     <P>Nun geht es um den CSS-Teil, dieser hat höchste Priorität:</P>
 
     <Code language="css">
-      {
-        `li ul { display: none; }    // UL der Unternavigation ausblenden
-li:hover ul { display: block; }    // UL bei Hover einblenden`
-      }
+      {`li ul { display: none; }    // UL der Unternavigation ausblenden
+li:hover ul { display: block; }    // UL bei Hover einblenden`}
     </Code>
 
     <P>
@@ -91,4 +85,4 @@ li:hover ul { display: block; }    // UL bei Hover einblenden`
       werden. Auch CSS3-Transitions sind erlaubt.
     </P>
   </Post>
-);
+)

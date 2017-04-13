@@ -1,12 +1,12 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Link from '../../components/link';
-import { H2 } from '../../components/heading';
-import { Ref, FootNotes, Note } from '../../components/footnotes';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Link from '../../components/link'
+import { H2 } from '../../components/heading'
+import { Ref, FootNotes, Note } from '../../components/footnotes'
 
 export default () => (
   <Post>
@@ -322,4 +322,4 @@ export default () => (
       <Note id="1">Really, what else?</Note>
     </FootNotes>
   </Post>
-);
+)

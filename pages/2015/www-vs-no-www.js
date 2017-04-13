@@ -1,14 +1,14 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Link from '../../components/link';
-import { Code, InlineCode } from '../../components/code';
-import { H2 } from '../../components/heading';
-import HR from '../../components/hr';
-import { Ref, FootNotes, Note } from '../../components/footnotes';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Link from '../../components/link'
+import { Code, InlineCode } from '../../components/code'
+import { H2 } from '../../components/heading'
+import HR from '../../components/hr'
+import { Ref, FootNotes, Note } from '../../components/footnotes'
 
 export default () => (
   <Post>
@@ -119,11 +119,9 @@ export default () => (
     </P>
 
     <Code>
-      {
-        `RewriteEngine On
+      {`RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www.(.+)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]`
-      }
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]`}
     </Code>
 
     <P>
@@ -153,4 +151,4 @@ RewriteRule ^(.*)$ http://%1/$1 [R=301,L]`
       </Note>
     </FootNotes>
   </Post>
-);
+)

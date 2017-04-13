@@ -1,10 +1,10 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import HR from '../../components/hr';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import HR from '../../components/hr'
 
 export default () => (
   <Post>
@@ -47,4 +47,4 @@ export default () => (
       rhetorical question, you moron.{`"`}
     </P>
   </Post>
-);
+)

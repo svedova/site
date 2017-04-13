@@ -1,15 +1,15 @@
 // Packages
-import Tweet from 'react-tweet-embed';
+import Tweet from 'react-tweet-embed'
 
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { H2 } from '../../components/heading';
-import HR from '../../components/hr';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { H2 } from '../../components/heading'
+import HR from '../../components/hr'
 
 export default () => (
   <Post>
@@ -240,4 +240,4 @@ export default () => (
       recorded on the back-end instead of on the front-end, like it was before.
     </P>
   </Post>
-);
+)

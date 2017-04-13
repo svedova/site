@@ -1,11 +1,11 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import Quote from '../../components/quote';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import Quote from '../../components/quote'
 
 export default () => (
   <Post>
@@ -49,4 +49,4 @@ export default () => (
       sollte. So verpassen sie absolut nichts.
     </P>
   </Post>
-);
+)

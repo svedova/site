@@ -1,10 +1,10 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import { InlineCode, Code } from '../../components/code';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import { InlineCode, Code } from '../../components/code'
 
 export default () => (
   <Post>
@@ -78,4 +78,4 @@ export default () => (
       Bedingungen beim Definieren dieser eingehalten werden müssen.
     </P>
   </Post>
-);
+)

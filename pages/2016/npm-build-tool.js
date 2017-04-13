@@ -1,17 +1,17 @@
 // Packages
-import Tweet from 'react-tweet-embed';
+import Tweet from 'react-tweet-embed'
 
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { Image } from '../../components/figure';
-import { H2 } from '../../components/heading';
-import { InlineCode, Code } from '../../components/code';
-import { UL, LI } from '../../components/list';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { Image } from '../../components/figure'
+import { H2 } from '../../components/heading'
+import { InlineCode, Code } from '../../components/code'
+import { UL, LI } from '../../components/list'
 
 export default () => (
   <Post>
@@ -121,8 +121,7 @@ export default () => (
     </P>
 
     <Code language="json">
-      {
-        `"scripts": {
+      {`"scripts": {
   "install": "npm run build",
   "start": "parallelshell 'livereload dist' 'nodemon index -w views/ -e hbs,js -i assets/'",
   "build:js": "rollup assets/js/app.js > dist/app.js",
@@ -134,8 +133,7 @@ export default () => (
   "watch:scss": "watch 'npm run build:scss' assets/scss",
   "watch:images": "watch 'npm run build:images' assets/images",
   "watch": "parallelshell 'npm run watch:js' 'npm run watch:scss' 'npm run watch:images'"
-}`
-      }
+}`}
     </Code>
 
     <P>
@@ -143,9 +141,7 @@ export default () => (
       upper example doesn’t even include tests. If you want to see how that looks,
       here’s
       {' '}
-      <Link
-        href="https://github.com/testdouble/testdouble.js/blob/d3776200f6f6cc29ae93e3bf94fcfafa94e3380a/package.json#L16"
-      >
+      <Link href="https://github.com/testdouble/testdouble.js/blob/d3776200f6f6cc29ae93e3bf94fcfafa94e3380a/package.json#L16">
         another one
       </Link>
       .
@@ -326,9 +322,7 @@ export default () => (
       files of other awesome projects to understand what they’re doing to keep them
       as
       {' '}
-      <Link
-        href="https://github.com/muffin/cli/blob/d29e99c222e6d2276fd8d3f78f13e37389a68a67/gulpfile.js"
-      >
+      <Link href="https://github.com/muffin/cli/blob/d29e99c222e6d2276fd8d3f78f13e37389a68a67/gulpfile.js">
         simple as possible
       </Link>
       {' '}
@@ -338,4 +332,4 @@ export default () => (
 
     <P>And now a huge “Thank you!” for taking the time to read this!</P>
   </Post>
-);
+)

@@ -1,14 +1,14 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Link from '../../components/link';
-import { H2 } from '../../components/heading';
-import { Ref, FootNotes, Note } from '../../components/footnotes';
-import Quote from '../../components/quote';
-import HR from '../../components/hr';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Link from '../../components/link'
+import { H2 } from '../../components/heading'
+import { Ref, FootNotes, Note } from '../../components/footnotes'
+import Quote from '../../components/quote'
+import HR from '../../components/hr'
 
 export default () => (
   <Post>
@@ -213,9 +213,7 @@ export default () => (
       I wrote about above and
       already
       {' '}
-      <Link
-        href="http://shawnblanc.net/2007/07/why-daring-fireball-is-comment-free/"
-      >
+      <Link href="http://shawnblanc.net/2007/07/why-daring-fireball-is-comment-free/">
         disabled
       </Link>
       {' '}
@@ -238,4 +236,4 @@ export default () => (
       </Note>
     </FootNotes>
   </Post>
-);
+)

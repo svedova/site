@@ -1,11 +1,11 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import { H2 } from '../../components/heading';
-import Link from '../../components/link';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import { H2 } from '../../components/heading'
+import Link from '../../components/link'
 
 export default () => (
   <Post>
@@ -110,9 +110,7 @@ export default () => (
       his website and all users will be able to choose the related password directly out of
       a
       {' '}
-      <Link
-        href="https://9to5mac.com/2014/06/13/ios-8-lets-apps-access-safari-autofill-credentials-for-quick-easy-login/"
-      >
+      <Link href="https://9to5mac.com/2014/06/13/ios-8-lets-apps-access-safari-autofill-credentials-for-quick-easy-login/">
         selection popup
       </Link>
       . So
@@ -152,4 +150,4 @@ export default () => (
       probably won’t agree to use a single iCloud account).
     </P>
   </Post>
-);
+)

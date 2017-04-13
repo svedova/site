@@ -1,11 +1,11 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { Code } from '../../components/code';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { Code } from '../../components/code'
 
 export default () => (
   <Post>
@@ -60,4 +60,4 @@ export default () => (
       Editors natürlich mittels CSS nach Wunsch designtechnisch angepasst werden.
     </P>
   </Post>
-);
+)

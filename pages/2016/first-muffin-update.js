@@ -1,12 +1,12 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { H2 } from '../../components/heading';
-import { Image } from '../../components/figure';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { H2 } from '../../components/heading'
+import { Image } from '../../components/figure'
 
 export default () => (
   <Post>
@@ -114,4 +114,4 @@ export default () => (
       ).
     </P>
   </Post>
-);
+)

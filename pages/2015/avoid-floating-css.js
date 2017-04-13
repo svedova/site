@@ -1,20 +1,20 @@
 // Packages
-import CodePen from 'react-codepen';
+import CodePen from 'react-codepen'
 
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Quote from '../../components/quote';
-import { Code, InlineCode } from '../../components/code';
-import { H2 } from '../../components/heading';
-import Link from '../../components/link';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Quote from '../../components/quote'
+import { Code, InlineCode } from '../../components/code'
+import { H2 } from '../../components/heading'
+import Link from '../../components/link'
 
 const overline = {
   'text-decoration': 'overline'
-};
+}
 
 export default () => (
   <Post>
@@ -140,10 +140,8 @@ export default () => (
     </P>
 
     <Code language="css">
-      {
-        `display: -webkit-flex;
-display: block;`
-      }
+      {`display: -webkit-flex;
+display: block;`}
     </Code>
 
     <P>
@@ -311,9 +309,7 @@ display: block;`
       if you don{`'`}t, read more about
       it
       {' '}
-      <Link
-        href="http://robertnyman.com/2010/02/24/css-display-inline-block-why-it-rocks-and-why-it-sucks/"
-      >
+      <Link href="http://robertnyman.com/2010/02/24/css-display-inline-block-why-it-rocks-and-why-it-sucks/">
         here
       </Link>
       {' '}
@@ -350,4 +346,4 @@ display: block;`
       t fully ready for production yet.
     </P>
   </Post>
-);
+)

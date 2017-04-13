@@ -1,13 +1,13 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Link from '../../components/link';
-import { H2 } from '../../components/heading';
-import { UL, LI } from '../../components/list';
-import { Ref, FootNotes, Note } from '../../components/footnotes';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Link from '../../components/link'
+import { H2 } from '../../components/heading'
+import { UL, LI } from '../../components/list'
+import { Ref, FootNotes, Note } from '../../components/footnotes'
 
 export default () => (
   <Post>
@@ -84,9 +84,7 @@ export default () => (
       pissed off. Later, I also read many articles
       like
       {' '}
-      <Link
-        href="http://www.loopinsight.com/2015/07/22/apple-music-is-a-nightmare-and-im-done-with-it/"
-      >
+      <Link href="http://www.loopinsight.com/2015/07/22/apple-music-is-a-nightmare-and-im-done-with-it/">
         this one
       </Link>
       {' '}
@@ -259,9 +257,7 @@ export default () => (
         can make it visible again by opening your Account in the iTunes Store and then go
         to
         {' '}
-        <Link
-          href="http://9to5mac.files.wordpress.com/2011/10/mac-app-store-view-hidden-purchases.jpg"
-        >
+        <Link href="http://9to5mac.files.wordpress.com/2011/10/mac-app-store-view-hidden-purchases.jpg">
           Hidden Purchases
         </Link>
         .
@@ -275,4 +271,4 @@ export default () => (
       </Note>
     </FootNotes>
   </Post>
-);
+)

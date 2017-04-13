@@ -1,11 +1,11 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Link from '../../components/link';
-import { Code } from '../../components/code';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Link from '../../components/link'
+import { Code } from '../../components/code'
 
 export default () => (
   <Post>
@@ -35,12 +35,10 @@ export default () => (
     </P>
 
     <Code language="css">
-      {
-        `@media screen and (device-aspect-ratio: 40/71) {} // iPhone 5
+      {`@media screen and (device-aspect-ratio: 40/71) {} // iPhone 5
 @media only screen and (-webkit-device-pixel-ratio: 2) {} // Galaxy S3
 @media screen and (max-device-width: 480px) {} // BlackBerry Torch
-@media screen and (max-device-width: 480px) {} // HTC HD2, Thunderbolt`
-      }
+@media screen and (max-device-width: 480px) {} // HTC HD2, Thunderbolt`}
     </Code>
 
     <P>
@@ -51,10 +49,8 @@ export default () => (
     </P>
 
     <Code language="css">
-      {
-        `@media (max-device-width: 1024px) and (orientation: landscape) {}
-@media (max-device-width: 768px) and (orientation: portrait) {}`
-      }
+      {`@media (max-device-width: 1024px) and (orientation: landscape) {}
+@media (max-device-width: 768px) and (orientation: portrait) {}`}
     </Code>
 
     <P>
@@ -77,4 +73,4 @@ export default () => (
       gratis zu finden.
     </P>
   </Post>
-);
+)

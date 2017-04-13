@@ -1,12 +1,12 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { Image } from '../../components/figure';
-import HR from '../../components/hr';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { Image } from '../../components/figure'
+import HR from '../../components/hr'
 
 export default () => (
   <Post>
@@ -95,4 +95,4 @@ export default () => (
 
     <P>So, what can I say? “Stay tuned!”, I guess.</P>
   </Post>
-);
+)

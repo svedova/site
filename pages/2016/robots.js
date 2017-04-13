@@ -1,14 +1,14 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { Image } from '../../components/figure';
-import { H2 } from '../../components/heading';
-import { UL, LI } from '../../components/list';
-import { Code } from '../../components/code';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { Image } from '../../components/figure'
+import { H2 } from '../../components/heading'
+import { UL, LI } from '../../components/list'
+import { Code } from '../../components/code'
 
 export default () => (
   <Post>
@@ -90,9 +90,7 @@ export default () => (
       of the US, it’s called “Genuino” because of
       a
       {' '}
-      <Link
-        href="http://www.open-electronics.org/from-arduino-to-genuino-the-reasons-for-a-choice/"
-      >
+      <Link href="http://www.open-electronics.org/from-arduino-to-genuino-the-reasons-for-a-choice/">
         trademark issue
       </Link>
       ). Besides
@@ -162,9 +160,7 @@ export default () => (
       hasn’t arrived yet, make sure
       to
       {' '}
-      <Link
-        href="https://help.medium.com/hc/en-us/articles/214993247-Bookmarks"
-      >
+      <Link href="https://help.medium.com/hc/en-us/articles/214993247-Bookmarks">
         bookmark
       </Link>
       {' '}
@@ -339,10 +335,8 @@ export default () => (
     </P>
 
     <Code language="bash">
-      {
-        `$ npm init -y
-$ npm install johnny-five -S`
-      }
+      {`$ npm init -y
+$ npm install johnny-five -S`}
     </Code>
 
     <P>
@@ -362,10 +356,8 @@ $ npm install johnny-five -S`
     </P>
 
     <Code language="js">
-      {
-        `const five = require('johnny-five')
-const board = new five.Board()`
-      }
+      {`const five = require('johnny-five')
+const board = new five.Board()`}
     </Code>
 
     <P>
@@ -399,12 +391,10 @@ const board = new five.Board()`
     </P>
 
     <Code language="js">
-      {
-        `board.on('ready', function() {
+      {`board.on('ready', function() {
   const led = new five.Led(13)
   led.blink(500)
-})`
-      }
+})`}
     </Code>
 
     <P>
@@ -498,4 +488,4 @@ const board = new five.Board()`
       with their knowledge, the easier, faster and better it gets!
     </P>
   </Post>
-);
+)

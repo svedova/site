@@ -1,15 +1,15 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { Image } from '../../components/figure';
-import { H2 } from '../../components/heading';
-import Quote from '../../components/quote';
-import { Code } from '../../components/code';
-import { UL, LI } from '../../components/list';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { Image } from '../../components/figure'
+import { H2 } from '../../components/heading'
+import Quote from '../../components/quote'
+import { Code } from '../../components/code'
+import { UL, LI } from '../../components/list'
 
 export default () => (
   <Post>
@@ -239,4 +239,4 @@ export default () => (
       and tools, the easier and more fun it will get for all of us.
     </P>
   </Post>
-);
+)

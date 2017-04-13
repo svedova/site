@@ -1,14 +1,14 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { Image } from '../../components/figure';
-import HR from '../../components/hr';
-import { H2 } from '../../components/heading';
-import { OL, LI } from '../../components/list';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { Image } from '../../components/figure'
+import HR from '../../components/hr'
+import { H2 } from '../../components/heading'
+import { OL, LI } from '../../components/list'
 
 export default () => (
   <Post>
@@ -195,4 +195,4 @@ export default () => (
       authentication by implementing it into your own application!
     </P>
   </Post>
-);
+)

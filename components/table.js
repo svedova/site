@@ -1,30 +1,29 @@
 // Helpers
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Table = ({ children }) => (
   <table cellSpacing="0" cellPadding="5">
     {children}
 
     <style jsx>
-      {
-        `
+      {`
       table {
         table-layout: fixed;
         width: 100%;
         margin: 30px -5px;
         border: none;
       }
-    `
-      }
+    `}
     </style>
   </table>
-);
+)
 
 class Row extends React.Component {
   getChildContext() {
     return {
       header: this.props.header || false
-    };
+    }
   }
 
   render() {
@@ -33,29 +32,27 @@ class Row extends React.Component {
         {this.props.children}
 
         <style jsx>
-          {
-            `
+          {`
           tr {
             text-align: left;
             font-size: 15px;
           }
-        `
-          }
+        `}
         </style>
       </tr>
-    );
+    )
   }
 }
 
 Row.childContextTypes = {
-  header: React.PropTypes.bool
-};
+  header: PropTypes.bool
+}
 
 const Column = ({ children }, context) =>
-  React.createElement(context.header ? 'th' : 'td', {}, children);
+  React.createElement(context.header ? 'th' : 'td', {}, children)
 
 Column.contextTypes = {
-  header: React.PropTypes.bool
-};
+  header: PropTypes.bool
+}
 
-export { Table, Row, Column };
+export { Table, Row, Column }

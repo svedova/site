@@ -1,9 +1,9 @@
 // Components
-import Link from 'next/link';
-import Title from '../components/title';
+import Link from 'next/link'
+import Title from '../components/title'
 
 // Layouts
-import Page from '../layouts/page';
+import Page from '../layouts/page'
 
 export default () => (
   <Page>
@@ -22,8 +22,7 @@ export default () => (
     </nav>
 
     <style jsx>
-      {
-        `
+      {`
       section h1 {
         font-size: 57px;
         left: 35px;
@@ -140,8 +139,7 @@ export default () => (
           display: none;
         }
       }
-    `
-      }
+    `}
     </style>
   </Page>
-);
+)

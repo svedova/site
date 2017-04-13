@@ -1,11 +1,11 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import { Image } from '../../components/figure';
-import Meta from '../../components/meta';
-import { Code, InlineCode } from '../../components/code';
+import P from '../../components/paragraph'
+import { Image } from '../../components/figure'
+import Meta from '../../components/meta'
+import { Code, InlineCode } from '../../components/code'
 
 export default () => (
   <Post>
@@ -43,12 +43,10 @@ export default () => (
     </P>
 
     <Code language="bash">
-      {
-        `crontab -e	[Cronjob bearbeiten / neuen erstellen]
+      {`crontab -e	[Cronjob bearbeiten / neuen erstellen]
 crontab -r	[Alle Crons eines Benutzers entfernen]
 crontab -u	[Besitzer eines Cronjobs ändern]
-crontab -l	[Alle Cronjobs nach Erstellungsdatum auflisten]`
-      }
+crontab -l	[Alle Cronjobs nach Erstellungsdatum auflisten]`}
     </Code>
 
     <P>
@@ -109,10 +107,8 @@ crontab -l	[Alle Cronjobs nach Erstellungsdatum auflisten]`
     </P>
 
     <Code language="bash">
-      {
-        `30 8 * * * /usr/bin/php /var/www/html/backup.php
-> /var/www/html/backup.log 2>&1`
-      }
+      {`30 8 * * * /usr/bin/php /var/www/html/backup.php
+> /var/www/html/backup.log 2>&1`}
     </Code>
 
     <P>
@@ -121,4 +117,4 @@ crontab -l	[Alle Cronjobs nach Erstellungsdatum auflisten]`
       ich kann in Ruhe fernsehen gehen.
     </P>
   </Post>
-);
+)

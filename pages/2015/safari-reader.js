@@ -1,13 +1,13 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { Image } from '../../components/figure';
-import { UL, LI } from '../../components/list';
-import { InlineCode } from '../../components/code';
+import P from '../../components/paragraph'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { Image } from '../../components/figure'
+import { UL, LI } from '../../components/list'
+import { InlineCode } from '../../components/code'
 
 export default () => (
   <Post>
@@ -80,9 +80,7 @@ export default () => (
         Firstly, you need to add the
         attribute
         {' '}
-        <Link
-          href="https://developer.mozilla.org/de/docs/Web/HTML/Globale_Attribute/hidden"
-        >
+        <Link href="https://developer.mozilla.org/de/docs/Web/HTML/Globale_Attribute/hidden">
           hidden
         </Link>
         {' '}
@@ -120,4 +118,4 @@ export default () => (
       a date and a divider line, but the Reader view doesn’t.
     </P>
   </Post>
-);
+)

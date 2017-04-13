@@ -1,10 +1,10 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import { Ref, FootNotes, Note } from '../../components/footnotes';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import { Ref, FootNotes, Note } from '../../components/footnotes'
 
 export default () => (
   <Post>
@@ -65,4 +65,4 @@ export default () => (
       <Note id="1">That{`'`}s what she said 😂 ... 😯</Note>
     </FootNotes>
   </Post>
-);
+)

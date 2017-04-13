@@ -1,8 +1,8 @@
 // Components
-import Highlight from 'react-syntax-highlighter';
+import Highlight from 'react-syntax-highlighter'
 
 // Other
-import { github } from 'react-syntax-highlighter/dist/styles';
+import { github } from 'react-syntax-highlighter/dist/styles'
 
 const styles = {
   margin: '30px 0',
@@ -14,21 +14,20 @@ const styles = {
   fontSize: '1.04em',
   WebkitOverflowScrolling: 'touch',
   fontFamily: 'Menlo, Monaco, Lucida Console, Liberation Mono, Courier New, monospace, serif'
-};
+}
 
 export const Code = ({ type, children }) => (
   <Highlight language={type} style={github} customStyle={styles}>
     {children}
   </Highlight>
-);
+)
 
 export const InlineCode = ({ children }) => (
   <code>
     {children}
 
     <style jsx>
-      {
-        `
+      {`
       code {
         background: #f3f3f3;
         padding: 2px 4px;
@@ -38,8 +37,7 @@ export const InlineCode = ({ children }) => (
         hyphens: none;
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono, Courier New, monospace, serif;
       }
-    `
-      }
+    `}
     </style>
   </code>
-);
+)

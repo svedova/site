@@ -1,10 +1,10 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import { Code } from '../../components/code';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import { Code } from '../../components/code'
 
 export default () => (
   <Post>
@@ -43,14 +43,12 @@ export default () => (
     </P>
 
     <Code language="css">
-      {
-        `@media only screen and (max-width: 1220px) {
+      {`@media only screen and (max-width: 1220px) {
   #testelement {
     display: block;
     position: relative;
   }
-}`
-      }
+}`}
     </Code>
 
     <P>
@@ -67,14 +65,12 @@ export default () => (
     </P>
 
     <Code language="css">
-      {
-        `@media only screen and (min-width: 660px) {
+      {`@media only screen and (min-width: 660px) {
   #testelement {
     overflow: hidden;
     border: medium double #000;
   }
-}`
-      }
+}`}
     </Code>
 
     <P>
@@ -83,4 +79,4 @@ export default () => (
       angepasst ist. Und schon sind sie fertig!
     </P>
   </Post>
-);
+)

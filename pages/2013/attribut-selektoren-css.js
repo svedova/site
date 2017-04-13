@@ -1,10 +1,10 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import { Code } from '../../components/code';
-import Meta from '../../components/meta';
+import P from '../../components/paragraph'
+import { Code } from '../../components/code'
+import Meta from '../../components/meta'
 
 export default () => (
   <Post>
@@ -33,15 +33,13 @@ export default () => (
     </P>
 
     <Code language="css">
-      {
-        `E[attr] { display: block; }
+      {`E[attr] { display: block; }
 E[attr="xyz"] { display: block; }
 E[attr~="xyz"] { display: block; }
 E[lang|="xyz"] { display: block; }
 E[attrˆ="xyz"] { display: block; }
 E[attr$="xyz"] { display: block; }
-E[attr*="xyz"] { display: block; }`
-      }
+E[attr*="xyz"] { display: block; }`}
     </Code>
 
     <P>
@@ -53,25 +51,21 @@ E[attr*="xyz"] { display: block; }`
     </P>
 
     <Code>
-      {
-        `Die E-Elemente, deren "attr"-Attribut gesetzt ist (gleich, mit welchem Wert).
+      {`Die E-Elemente, deren "attr"-Attribut gesetzt ist (gleich, mit welchem Wert).
 Die E-Elemente, deren "attr"-Attribut exakt den Wert "xyz" aufweist
 Die E-Elemente, in deren "attr"-Attribut der Wert "xyz" enthalten ist
 Jedes E-Element, dessen "lang"-Attribut einen Bindestrich-geteilten Wert hat.
 Die E-Elemente, deren "attr"-Attribut mit "xyz" beginnt
 Die E-Elemente, deren "attr"-Attribut mit "xyz" endet
-Die E-Elemente, deren "attr"-Attribut die Zeichenkette "xyz" enthält`
-      }
+Die E-Elemente, deren "attr"-Attribut die Zeichenkette "xyz" enthält`}
     </Code>
 
     <P>Hier ein kurzes Beispiel zur Anwendung solche Attribut-Selektoren:</P>
 
     <Code language="html">
-      {
-        `<h4 lang="de">Deutsche Überschrift</h4>
+      {`<h4 lang="de">Deutsche Überschrift</h4>
 <h4 lang="fr">Französische Überschrift</h4>
-<h4 lang="dk">Dänische Überschrift</h4>`
-      }
+<h4 lang="dk">Dänische Überschrift</h4>`}
     </Code>
 
     <P>
@@ -80,4 +74,4 @@ Die E-Elemente, deren "attr"-Attribut die Zeichenkette "xyz" enthält`
       CSS-Code angesprochen, und - wie in diesem Fall - eingefärbt werden.
     </P>
   </Post>
-);
+)

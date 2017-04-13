@@ -1,11 +1,11 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import { Code } from '../../components/code';
-import Link from '../../components/link';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import { Code } from '../../components/code'
+import Link from '../../components/link'
 
 export default () => (
   <Post>
@@ -64,11 +64,9 @@ export default () => (
     </P>
 
     <Code language="javascript">
-      {
-        `setTimeout(function () {
+      {`setTimeout(function () {
   window.location = "https://twitter.com/intent/tweet?source=webclient&amp;text=zu teilender Text";
-}, 300);`
-      }
+}, 300);`}
     </Code>
 
     <P>
@@ -91,4 +89,4 @@ export default () => (
       entsprechende App nicht verwendet.
     </P>
   </Post>
-);
+)

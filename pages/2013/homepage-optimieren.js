@@ -1,11 +1,11 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import { Code } from '../../components/code';
-import Link from '../../components/link';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import { Code } from '../../components/code'
+import Link from '../../components/link'
 
 export default () => (
   <Post>
@@ -47,9 +47,9 @@ export default () => (
       müssen, bevor der fertige Code in den Head-Bereich der eigenen
       Webseite eingebaut werden kann. Dieser ist seit einigen Monaten
       im <b>zweiten Teil</b> der
-      offiziellen <Link
-        href="https://developers.facebook.com/docs/reference/plugins/like/"
-      >
+      offiziellen
+      {' '}
+      <Link href="https://developers.facebook.com/docs/reference/plugins/like/">
         Social
         Plugins-Doku
       </Link> zu finden.
@@ -68,11 +68,9 @@ export default () => (
     </P>
 
     <Code language="html">
-      {
-        `<meta name="application-name" content="Name der Webseite"/>
+      {`<meta name="application-name" content="Name der Webseite"/>
 <meta name="msapplication-TileColor" content="#000000"/>
-<meta name="msapplication-TileImage" content="windowsico.png"/>`
-      }
+<meta name="msapplication-TileImage" content="windowsico.png"/>`}
     </Code>
 
     <P>
@@ -82,4 +80,4 @@ export default () => (
       die Dateiendung {`"`}.png{`"`} optimal.
     </P>
   </Post>
-);
+)

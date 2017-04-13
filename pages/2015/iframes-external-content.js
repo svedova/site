@@ -1,13 +1,13 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Link from '../../components/link';
-import { H2 } from '../../components/heading';
-import { Ref, FootNotes, Note } from '../../components/footnotes';
-import { Code, InlineCode } from '../../components/code';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Link from '../../components/link'
+import { H2 } from '../../components/heading'
+import { Ref, FootNotes, Note } from '../../components/footnotes'
+import { Code, InlineCode } from '../../components/code'
 
 export default () => (
   <Post>
@@ -76,11 +76,9 @@ export default () => (
     <P>Okay, let me explain that with an example:</P>
 
     <Code language="css">
-      {
-        `h1 {
+      {`h1 {
   all: unset;
-}`
-      }
+}`}
     </Code>
 
     <P>
@@ -147,4 +145,4 @@ export default () => (
       </Note>
     </FootNotes>
   </Post>
-);
+)

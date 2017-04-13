@@ -1,11 +1,11 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import Meta from '../../components/meta';
-import Quote from '../../components/quote';
-import Link from '../../components/link';
+import P from '../../components/paragraph'
+import Meta from '../../components/meta'
+import Quote from '../../components/quote'
+import Link from '../../components/link'
 
 export default () => (
   <Post>
@@ -77,4 +77,4 @@ export default () => (
       RSS-Feeds dann auch zwischen allen Geräten synchronisiert.
     </P>
   </Post>
-);
+)

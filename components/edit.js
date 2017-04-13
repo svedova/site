@@ -1,13 +1,12 @@
 export default ({ id }) => {
-  const count = id ? ` ${id}` : '';
+  const count = id ? ` ${id}` : ''
 
   return (
     <b>
       {`EDIT${count}:`}
 
       <style jsx>
-        {
-          `
+        {`
         b {
           background: #e9b6e1;
           padding: 1px 3px;
@@ -16,9 +15,8 @@ export default ({ id }) => {
           font-weight: bold;
           color: #fff;
         }
-      `
-        }
+      `}
       </style>
     </b>
-  );
-};
+  )
+}

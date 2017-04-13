@@ -1,15 +1,15 @@
 // Layouts
-import Post from '../../layouts/essay';
+import Post from '../../layouts/essay'
 
 // Components
-import P from '../../components/paragraph';
-import { H2, H3 } from '../../components/heading';
-import { Image } from '../../components/figure';
-import Link from '../../components/link';
-import Meta from '../../components/meta';
-import { UL, LI } from '../../components/list';
-import HR from '../../components/hr';
-import Edit from '../../components/edit';
+import P from '../../components/paragraph'
+import { H2, H3 } from '../../components/heading'
+import { Image } from '../../components/figure'
+import Link from '../../components/link'
+import Meta from '../../components/meta'
+import { UL, LI } from '../../components/list'
+import HR from '../../components/hr'
+import Edit from '../../components/edit'
 
 export default () => (
   <Post>
@@ -291,4 +291,4 @@ export default () => (
       made) with just a single command.
     </P>
   </Post>
-);
+)
