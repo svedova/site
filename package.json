@@ -30,7 +30,7 @@
   "lint-staged": {
     "*.js": [
       "npm run test",
-      "prettier --single-quote --write",
+      "prettier --single-quote --no-semi --write",
       "git add"
     ]
   },
@@ -54,7 +54,7 @@
     "eslint-plugin-react": "6.10.3",
     "husky": "0.13.3",
     "lint-staged": "3.4.0",
-    "prettier": "0.22.0",
+    "prettier": "1.0.2",
     "xo": "0.18.1"
   }
 }
