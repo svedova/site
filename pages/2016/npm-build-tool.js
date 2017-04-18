@@ -1,3 +1,6 @@
+// Syntax
+import json from 'highlight.js/lib/languages/json'
+
 // Packages
 import Tweet from 'react-tweet-embed'
 
@@ -120,7 +123,7 @@ export default () => (
       a file watcher), it started getting messy:
     </P>
 
-    <Code language="json">
+    <Code language="json" syntax={json}>
       {`"scripts": {
   "install": "npm run build",
   "start": "parallelshell 'livereload dist' 'nodemon index -w views/ -e hbs,js -i assets/'",

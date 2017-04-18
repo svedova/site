@@ -1,3 +1,7 @@
+// Syntax
+import js from 'highlight.js/lib/languages/javascript'
+import xml from 'highlight.js/lib/languages/xml'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -28,7 +32,7 @@ export default () => (
 
     <P>Hier die Funktion für das Setzen eines neuen Cookies mit einem Wert:</P>
 
-    <Code language="javascript">
+    <Code language="javascript" syntax={js}>
       {`function set_cookie( my_cookie, value, days ) {
 
   if(days) {
@@ -46,7 +50,7 @@ export default () => (
 
     <P>Hiermit lässt sich das gesetzte Cookie ganz einfach auslesen:</P>
 
-    <Code language="html">
+    <Code language="xml" syntax={xml}>
       {`function read_cookie( my_cookie ) {
 
   var my_cookie_eq = my_cookie + "=";
@@ -76,7 +80,7 @@ export default () => (
       Browser-Cache entfernt wird:
     </P>
 
-    <Code language="javascript">
+    <Code language="javascript" syntax={js}>
       {`function delete_cookie( my_cookie ) {
   set_cookie( my_cookie, "", -1 );
 }`}

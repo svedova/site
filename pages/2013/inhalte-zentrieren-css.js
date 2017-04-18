@@ -1,3 +1,6 @@
+// Syntax
+import css from 'highlight.js/lib/languages/css'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -43,7 +46,7 @@ export default () => (
       verpassen, welches später eine Tabelle simuliert:
     </P>
 
-    <Code language="css">display: table;</Code>
+    <Code language="css" syntax={css}>display: table;</Code>
 
     <P>
       Als nächstes packen wir in das erstelle DIV-Element
@@ -54,7 +57,7 @@ export default () => (
       vertikal zu zentrieren:
     </P>
 
-    <Code language="css">
+    <Code language="css" syntax={css}>
       {`vertical-align: middle;
 display: table-cell;`}
     </Code>

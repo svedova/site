@@ -1,3 +1,6 @@
+// Syntax
+import css from 'highlight.js/lib/languages/css'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -42,7 +45,7 @@ export default () => (
       der Bildschirm des aufrufenden Benutzers kleiner als 1220 Pixel ist:
     </P>
 
-    <Code language="css">
+    <Code language="css" syntax={css}>
       {`@media only screen and (max-width: 1220px) {
   #testelement {
     display: block;
@@ -64,7 +67,7 @@ export default () => (
       Bildschirm gesetzt werden:
     </P>
 
-    <Code language="css">
+    <Code language="css" syntax={css}>
       {`@media only screen and (min-width: 660px) {
   #testelement {
     overflow: hidden;

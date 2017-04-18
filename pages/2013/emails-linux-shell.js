@@ -1,3 +1,6 @@
+// Syntax
+import bash from 'highlight.js/lib/languages/bash'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -24,7 +27,10 @@ export default () => (
       eine E-Mail direkt über die Shell versendet werden:
     </P>
 
-    <Code language="bash">{`mail -s "Dein Betreff" mail@domain.tld`}</Code>
+    <Code
+      language="bash"
+      syntax={bash}
+    >{`mail -s "Dein Betreff" mail@domain.tld`}</Code>
 
     <P>
       Nach der Eingabe sollte der Text-Cursor eine Zeile weiter
@@ -48,7 +54,7 @@ export default () => (
       den Pfad zur Datei hinzu:
     </P>
 
-    <Code language="bash">
+    <Code language="bash" syntax={bash}>
       {`mail -s "Betreff" -a /logs/file.log mail@domain.tld`}
     </Code>
 
@@ -67,7 +73,7 @@ export default () => (
       ein echo an mail weitergeben:
     </P>
 
-    <Code language="bash">
+    <Code language="bash" syntax={bash}>
       {`echo “Deine Nachricht” | mail -s “Betreff” mail@domain.tld`}
     </Code>
 

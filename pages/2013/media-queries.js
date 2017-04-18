@@ -1,3 +1,6 @@
+// Syntax
+import css from 'highlight.js/lib/languages/css'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -34,7 +37,7 @@ export default () => (
       für einige bekannte, mobile Geräte zu finden:
     </P>
 
-    <Code language="css">
+    <Code language="css" syntax={css}>
       {`@media screen and (device-aspect-ratio: 40/71) {} // iPhone 5
 @media only screen and (-webkit-device-pixel-ratio: 2) {} // Galaxy S3
 @media screen and (max-device-width: 480px) {} // BlackBerry Torch
@@ -48,7 +51,7 @@ export default () => (
       sogenannten {`"`}Landscape{`"`}-Position variieren.
     </P>
 
-    <Code language="css">
+    <Code language="css" syntax={css}>
       {`@media (max-device-width: 1024px) and (orientation: landscape) {}
 @media (max-device-width: 768px) and (orientation: portrait) {}`}
     </Code>

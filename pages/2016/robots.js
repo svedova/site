@@ -1,3 +1,7 @@
+// Syntax
+import bash from 'highlight.js/lib/languages/bash'
+import js from 'highlight.js/lib/languages/javascript'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -334,7 +338,7 @@ export default () => (
       going to use to communicate with the device:
     </P>
 
-    <Code language="bash">
+    <Code language="bash" syntax={bash}>
       {`$ npm init -y
 $ npm install johnny-five -S`}
     </Code>
@@ -355,7 +359,7 @@ $ npm install johnny-five -S`}
       contained within Johnny Five:
     </P>
 
-    <Code language="js">
+    <Code language="javascript" syntax={js}>
       {`const five = require('johnny-five')
 const board = new five.Board()`}
     </Code>
@@ -390,7 +394,7 @@ const board = new five.Board()`}
       LED light up every 500 milliseconds using the “.blink” method:
     </P>
 
-    <Code language="js">
+    <Code language="javascript" syntax={js}>
       {`board.on('ready', function() {
   const led = new five.Led(13)
   led.blink(500)
@@ -402,7 +406,7 @@ const board = new five.Board()`}
       and see what happens with our micro controller...
     </P>
 
-    <Code language="bash">{`$ node index`}</Code>
+    <Code language="bash" syntax={bash}>{`$ node index`}</Code>
 
     <P>
       If everything has been configured correctly and

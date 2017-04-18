@@ -1,3 +1,6 @@
+// Syntax
+import js from 'highlight.js/lib/languages/javascript'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -85,7 +88,7 @@ export default () => (
       The reason why I
       {"'"}
       m writing this post is because this newly aquired skill
-      seems very valuable to me, since it brings me closer to understanding the backbone of Node.js and
+      seems very valuable to me, since it brings me closer to understanding the backbone of Node.JavaScript and
       allows me to improve the performance of my code drastically.
     </P>
 
@@ -97,7 +100,7 @@ export default () => (
       it helps me to strengthen my understanding of it.
     </P>
 
-    <H2>Node.js Code Is Run Concurrently, Not in Parallel</H2>
+    <H2>Node.JavaScript Code Is Run Concurrently, Not in Parallel</H2>
 
     <P>
       When I first heard about this statement, I got a little confused. Because, initially, I thought both words
@@ -119,7 +122,7 @@ export default () => (
 
     <P>Let me clarify that with an example:</P>
 
-    <Code>
+    <Code language="javascript" syntax={js}>
       {`setInterval(() => {
   console.log('Interval dispatched')
 }, 1000)
@@ -153,7 +156,7 @@ console.log('Data downloaded')`}
     </P>
 
     <P>
-      This is because of Node.js
+      This is because of Node.JavaScript
       {`'`}
       {' '}
       concurrent nature. Its backbone consists of a
@@ -179,11 +182,11 @@ console.log('Data downloaded')`}
       themselves, all computations (for example fulfilling and serving a HTTP
       request) can be thought as advancing one small step at a time - concurrently. This
       is beneficial in web applications where the majority of the time is spent waiting
-      for I/O to complete. It allows single Node.js process to handle huge amounts of requests.
+      for I/O to complete. It allows single Node.JavaScript process to handle huge amounts of requests.
     </Quote>
 
     <P>
-      So technically, nothing can guarantee you that intervals in Node.js will always get executed
+      So technically, nothing can guarantee you that intervals in Node.JavaScript will always get executed
       on the exact times you
       {`'`}
       ve defined. Instead, the execution of the callback will
@@ -247,7 +250,7 @@ console.log('Data downloaded')`}
 
     <P>Here{`'`}s how it looks with <InlineCode>await</InlineCode>:</P>
 
-    <Code>
+    <Code language="javascript" syntax={js}>
       {`setInterval(() => {
   console.log('Interval dispatched')
 }, 1000)
@@ -272,7 +275,7 @@ console.log('Data downloaded')`}
       to finish:
     </P>
 
-    <Code>
+    <Code language="javascript" syntax={js}>
       {`const loadData = () => new Promise(resolve => {
   setTimeout(resolve, 5000)
 })`}
@@ -312,7 +315,7 @@ console.log('Data downloaded')`}
     <P>
       That
       {`'`}
-      s because the callback WILL get triggered after that time, but Node.js takes
+      s because the callback WILL get triggered after that time, but Node.JavaScript takes
       some time to actually execute the code inside it. This, however, is as close as we can get
       to raw performance using
       {' '}
@@ -386,8 +389,8 @@ console.log('Data downloaded')`}
 
     <P>
       Only the remaining "sub operations" required for loading the data (like processing
-      the JSON response, which is mostly blocking) will be left
-      to Node.js and are therefore run in that single-threaded event loop.
+      the JavaScriptON response, which is mostly blocking) will be left
+      to Node.JavaScript and are therefore run in that single-threaded event loop.
     </P>
 
     <P>
@@ -423,14 +426,14 @@ console.log('Data downloaded')`}
     <P>Yep, that's correct.</P>
 
     <P>
-      But sadly, a Node.js process only comes
+      But sadly, a Node.JavaScript process only comes
       {' '}
       <b>with a single thread out of the box</b>
       {' '}
       (like
       mentioned
       {' '}
-      <Link href="#node-js-code-is-run-concurrently-not-in-parallel">
+      <Link href="#node-JavaScript-code-is-run-concurrently-not-in-parallel">
         before
       </Link>
       ). This means
@@ -443,20 +446,20 @@ console.log('Data downloaded')`}
       truly in parallel. And that's where
       the native
       {' '}
-      <Link href="https://nodejs.org/api/cluster.html">cluster</Link>
+      <Link href="https://nodeJavaScript.org/api/cluster.html">cluster</Link>
       {' '}
       module comes in:
     </P>
 
     <P>
       Since we can only have one operation per thread (and therefore per process
-      in the case of Node.js), we need
+      in the case of Node.JavaScript), we need
       to create multiple processes to achieve our goal of parallelism. But that's not very hard.
     </P>
 
     <P>Here's an example how this could look:</P>
 
-    <Code>
+    <Code language="javascript" syntax={js}>
       {`const cluster = require('cluster')
 
 if (cluster.isMaster) {
@@ -473,7 +476,10 @@ if (cluster.isMaster) {
 
     <P>
       Now we're taking advantage
-      of <Link href="https://nodejs.org/api/cluster.html">cluster</Link>'s
+      of
+      {' '}
+      <Link href="https://nodeJavaScript.org/api/cluster.html">cluster</Link>
+      's
       built-in
       {' '}
       <InlineCode>.fork</InlineCode>
@@ -508,7 +514,7 @@ if (cluster.isMaster) {
     <P>
       Hence, you don't even need
       {' '}
-      <Link href="https://nodejs.org/api/cluster.html">cluster</Link>
+      <Link href="https://nodeJavaScript.org/api/cluster.html">cluster</Link>
       {' '}
       if your
       project is running on our platform. Just ensure that you're applying
@@ -559,7 +565,7 @@ if (cluster.isMaster) {
     <FootNotes>
       <Note id="1">
         If you want to deeply understand the difference between
-        concurrency and parallelism and why Node.js only comes with the former way
+        concurrency and parallelism and why Node.JavaScript only comes with the former way
         of processing code, I highly recommend
         reading
         {' '}

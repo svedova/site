@@ -1,3 +1,6 @@
+// Syntax
+import bash from 'highlight.js/lib/languages/bash'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -133,7 +136,7 @@ export default () => (
       tasks and finally implement a neat command for the whole job:
     </P>
 
-    <Code language="bash">muffin build</Code>
+    <Code language="bash" syntax={bash}>muffin build</Code>
 
     <P>
       When running this command, Muffin will now look for

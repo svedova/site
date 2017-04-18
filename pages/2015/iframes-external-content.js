@@ -1,3 +1,6 @@
+// Syntax
+import css from 'highlight.js/lib/languages/css'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -75,7 +78,7 @@ export default () => (
 
     <P>Okay, let me explain that with an example:</P>
 
-    <Code language="css">
+    <Code language="css" syntax={css}>
       {`h1 {
   all: unset;
 }`}

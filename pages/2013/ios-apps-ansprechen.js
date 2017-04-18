@@ -1,3 +1,6 @@
+// Syntax
+import js from 'highlight.js/lib/languages/javascript'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -53,7 +56,7 @@ export default () => (
       wir die App zu erreichen...
     </P>
 
-    <Code language="javascript">
+    <Code language="javascript" syntax={js}>
       {`window.location = "twitter://post?message=zu teilender Text";`}
     </Code>
 
@@ -63,7 +66,7 @@ export default () => (
       genügend Zeit für die Prüfung der App bleibt.)
     </P>
 
-    <Code language="javascript">
+    <Code language="javascript" syntax={js}>
       {`setTimeout(function () {
   window.location = "https://twitter.com/intent/tweet?source=webclient&amp;text=zu teilender Text";
 }, 300);`}

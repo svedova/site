@@ -1,3 +1,6 @@
+// Syntax
+import css from 'highlight.js/lib/languages/css'
+
 // Packages
 import CodePen from 'react-codepen'
 
@@ -139,7 +142,7 @@ export default () => (
       and add the following to the parent element:
     </P>
 
-    <Code language="css">
+    <Code language="css" syntax={css}>
       {`display: -webkit-flex;
 display: block;`}
     </Code>

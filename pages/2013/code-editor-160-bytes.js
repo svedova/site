@@ -1,3 +1,6 @@
+// Syntax
+import xml from 'highlight.js/lib/languages/xml'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -28,7 +31,7 @@ export default () => (
 
     <P>Hier der gesamte Code für das Projekt:</P>
 
-    <Code language="html">
+    <Code language="xml" syntax={xml}>
       {`<body oninput='e.firstChild.srcdoc=t2[v="valu` +
         `e"]+"<script>"+t0[v]+"</script><style>"+t1[v]'onload='for(i=3;` +
         `i--;)e.innerHTML+="<textarea id=t"+i+" rows=9>"'id=e><iframe>`}

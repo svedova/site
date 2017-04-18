@@ -1,9 +1,14 @@
+// Syntax
+import css from 'highlight.js/lib/languages/css'
+import xml from 'highlight.js/lib/languages/xml'
+
 // Layouts
 import Post from '../../layouts/essay'
 
 // Components
 import P from '../../components/paragraph'
 import { Code } from '../../components/code'
+import { UL, LI } from '../../components/list'
 import Meta from '../../components/meta'
 
 export default () => (
@@ -32,7 +37,7 @@ export default () => (
       CSS-Stil im Code zu verpassen:
     </P>
 
-    <Code language="css">
+    <Code language="css" syntax={css}>
       {`E[attr] { display: block; }
 E[attr="xyz"] { display: block; }
 E[attr~="xyz"] { display: block; }
@@ -50,19 +55,29 @@ E[attr*="xyz"] { display: block; }`}
       dafür jeder Name verwendet werden.
     </P>
 
-    <Code>
-      {`Die E-Elemente, deren "attr"-Attribut gesetzt ist (gleich, mit welchem Wert).
-Die E-Elemente, deren "attr"-Attribut exakt den Wert "xyz" aufweist
-Die E-Elemente, in deren "attr"-Attribut der Wert "xyz" enthalten ist
-Jedes E-Element, dessen "lang"-Attribut einen Bindestrich-geteilten Wert hat.
-Die E-Elemente, deren "attr"-Attribut mit "xyz" beginnt
-Die E-Elemente, deren "attr"-Attribut mit "xyz" endet
-Die E-Elemente, deren "attr"-Attribut die Zeichenkette "xyz" enthält`}
-    </Code>
+    <UL>
+      <LI>
+        Die E-Elemente, deren "attr"-Attribut gesetzt ist (gleich, mit welchem Wert)
+      </LI>
+      <LI>
+        Die E-Elemente, deren "attr"-Attribut exakt den Wert "xyz" aufweist
+      </LI>
+      <LI>
+        Die E-Elemente, in deren "attr"-Attribut der Wert "xyz" enthalten ist
+      </LI>
+      <LI>
+        Jedes E-Element, dessen "lang"-Attribut einen Bindestrich-geteilten Wert hat
+      </LI>
+      <LI>Die E-Elemente, deren "attr"-Attribut mit "xyz" beginnt</LI>
+      <LI>Die E-Elemente, deren "attr"-Attribut mit "xyz" endet</LI>
+      <LI>
+        Die E-Elemente, deren "attr"-Attribut die Zeichenkette "xyz" enthält
+      </LI>
+    </UL>
 
     <P>Hier ein kurzes Beispiel zur Anwendung solche Attribut-Selektoren:</P>
 
-    <Code language="html">
+    <Code language="xml" syntax={xml}>
       {`<h4 lang="de">Deutsche Überschrift</h4>
 <h4 lang="fr">Französische Überschrift</h4>
 <h4 lang="dk">Dänische Überschrift</h4>`}

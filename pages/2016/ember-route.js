@@ -1,3 +1,6 @@
+// Syntax
+import js from 'highlight.js/lib/languages/javascript'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -42,7 +45,7 @@ export default () => (
       available under the “className” property:
     </P>
 
-    <Code language="js">
+    <Code language="javascript" syntax={js}>
       {`export default Ember.route.extend({
   classNames: ['strawberry-jam']
 })`}
@@ -85,7 +88,7 @@ export default () => (
       called it “setup-route”. Then I’ve added the following methods to it:
     </P>
 
-    <Code language="js">
+    <Code language="javascript" syntax={js}>
       {`Ember.Route.reopen({
   activate () {
     var classes = this.genClasses()

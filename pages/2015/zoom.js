@@ -1,3 +1,7 @@
+// Syntax
+import xml from 'highlight.js/lib/languages/xml'
+import css from 'highlight.js/lib/languages/css'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -61,7 +65,7 @@ export default () => (
       why it’s exactly needed and how you can achieve the same on a different mobile OS:
     </P>
 
-    <Code language="css">{`-webkit-text-size-adjust: 100%;`}</Code>
+    <Code language="css" syntax={css}>{`-webkit-text-size-adjust: 100%;`}</Code>
 
     <P>
       After you did that, you just need to also make sure that you
@@ -69,7 +73,7 @@ export default () => (
       end, it should roughly like this:
     </P>
 
-    <Code language="html">
+    <Code language="xml" syntax={xml}>
       {`<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">`}
     </Code>
 

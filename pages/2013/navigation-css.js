@@ -1,3 +1,7 @@
+// Syntax
+import css from 'highlight.js/lib/languages/css'
+import xml from 'highlight.js/lib/languages/xml'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -30,7 +34,7 @@ export default () => (
       ohne eine CSS-Formatierung dar):
     </P>
 
-    <Code language="html">
+    <Code language="xml" syntax={xml}>
       {`<ul>
   <li><a href="#">Erster Link</a></li>
   <li><a href="#">Zweiter Link</a></li>
@@ -44,7 +48,7 @@ export default () => (
       zunächst den HTML-Code auf:
     </P>
 
-    <Code language="html">
+    <Code language="xml" syntax={xml}>
       {`<ul>
   <li><a href="#">Zweiter Link</a>
       <ul>
@@ -64,7 +68,7 @@ export default () => (
 
     <P>Nun geht es um den CSS-Teil, dieser hat höchste Priorität:</P>
 
-    <Code language="css">
+    <Code language="css" syntax={css}>
       {`li ul { display: none; }    // UL der Unternavigation ausblenden
 li:hover ul { display: block; }    // UL bei Hover einblenden`}
     </Code>

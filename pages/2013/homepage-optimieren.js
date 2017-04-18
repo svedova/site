@@ -1,3 +1,6 @@
+// Syntax
+import xml from 'highlight.js/lib/languages/xml'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -67,7 +70,7 @@ export default () => (
       Grafik aus der jeweiligen Seite aus.
     </P>
 
-    <Code language="html">
+    <Code language="xml" syntax={xml}>
       {`<meta name="application-name" content="Name der Webseite"/>
 <meta name="msapplication-TileColor" content="#000000"/>
 <meta name="msapplication-TileImage" content="windowsico.png"/>`}

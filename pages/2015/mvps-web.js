@@ -1,3 +1,6 @@
+// Syntax
+import json from 'highlight.js/lib/languages/json'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -189,7 +192,7 @@ export default () => (
       ended up with cookies whose value looked like this:
     </P>
 
-    <Code language="json">
+    <Code language="json" syntax={json}>
       {`{
   "count": 5,
   "sync": false

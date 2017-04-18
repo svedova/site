@@ -1,7 +1,10 @@
 // Components
-import Highlight from 'react-syntax-highlighter'
+import SyntaxHighlighter, {
+  registerLanguage
+} from 'react-syntax-highlighter/dist/light'
 
-// Other
+// Helpers
+import { Component } from 'react'
 import { github } from 'react-syntax-highlighter/dist/styles'
 
 const styles = {
@@ -16,13 +19,31 @@ const styles = {
   fontFamily: 'Menlo, Monaco, Lucida Console, Liberation Mono, Courier New, monospace, serif'
 }
 
-export const Code = ({ type, children }) => (
-  <Highlight language={type} style={github} customStyle={styles}>
-    {children}
-  </Highlight>
-)
+class Code extends Component {
+  constructor(props) {
+    super(props)
 
-export const InlineCode = ({ children }) => (
+    if (!props.language || !props.syntax) {
+      throw new Error('Please define the `language` and `syntax`')
+    }
+
+    registerLanguage(props.language, props.syntax)
+  }
+
+  render() {
+    return (
+      <SyntaxHighlighter
+        language={this.props.language}
+        style={github}
+        customStyle={styles}
+      >
+        {this.props.children}
+      </SyntaxHighlighter>
+    )
+  }
+}
+
+const InlineCode = ({ children }) => (
   <code>
     {children}
 
@@ -41,3 +62,5 @@ export const InlineCode = ({ children }) => (
     </style>
   </code>
 )
+
+export { Code, InlineCode }

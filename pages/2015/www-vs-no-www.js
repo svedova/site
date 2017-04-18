@@ -1,3 +1,6 @@
+// Syntax
+import apache from 'highlight.js/lib/languages/apache'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -118,7 +121,7 @@ export default () => (
       following contents to the root directory of your site:
     </P>
 
-    <Code>
+    <Code language="apache" syntax={apache}>
       {`RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www.(.+)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]`}

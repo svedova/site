@@ -1,3 +1,6 @@
+// Syntax
+import bash from 'highlight.js/lib/languages/bash'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -42,7 +45,7 @@ export default () => (
       gilt es zunächst, die Kommandos zu verstehen:
     </P>
 
-    <Code language="bash">
+    <Code language="bash" syntax={bash}>
       {`crontab -e	[Cronjob bearbeiten / neuen erstellen]
 crontab -r	[Alle Crons eines Benutzers entfernen]
 crontab -u	[Besitzer eines Cronjobs ändern]
@@ -65,7 +68,7 @@ crontab -l	[Alle Cronjobs nach Erstellungsdatum auflisten]`}
       Kommandos wie folgt lauten:
     </P>
 
-    <Code language="bash">
+    <Code language="bash" syntax={bash}>
       {`30 8 * * * // Täglich um 8:30 Uhr wird ausgeführt`}
     </Code>
 
@@ -87,7 +90,7 @@ crontab -l	[Alle Cronjobs nach Erstellungsdatum auflisten]`}
       Kommando, welches wir im Editor einfügen, genau so aus:
     </P>
 
-    <Code language="bash">
+    <Code language="bash" syntax={bash}>
       {`30 8 * * * /usr/bin/php /var/www/html/backup.php`}
     </Code>
 
@@ -106,7 +109,7 @@ crontab -l	[Alle Cronjobs nach Erstellungsdatum auflisten]`}
       Cron-Task einen kleinen Text hinzu.
     </P>
 
-    <Code language="bash">
+    <Code language="bash" syntax={bash}>
       {`30 8 * * * /usr/bin/php /var/www/html/backup.php
 > /var/www/html/backup.log 2>&1`}
     </Code>
