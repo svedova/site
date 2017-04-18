@@ -1,6 +1,6 @@
 // Helpers
-import React from 'react'
-import PropTypes from 'prop-types'
+import { createElement, Component } from 'react'
+import { bool } from 'prop-types'
 
 const Table = ({ children }) => (
   <table cellSpacing="0" cellPadding="5">
@@ -19,7 +19,7 @@ const Table = ({ children }) => (
   </table>
 )
 
-class Row extends React.Component {
+class Row extends Component {
   getChildContext() {
     return {
       header: this.props.header || false
@@ -45,14 +45,14 @@ class Row extends React.Component {
 }
 
 Row.childContextTypes = {
-  header: PropTypes.bool
+  header: bool
 }
 
 const Column = ({ children }, context) =>
-  React.createElement(context.header ? 'th' : 'td', {}, children)
+  createElement(context.header ? 'th' : 'td', {}, children)
 
 Column.contextTypes = {
-  header: PropTypes.bool
+  header: bool
 }
 
 export { Table, Row, Column }

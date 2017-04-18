@@ -1,5 +1,5 @@
 // Helpers
-import React from 'react'
+import { createElement } from 'react'
 import toID from 'to-id'
 
 const H = ({ level, fontSize, linked, children }) => {
@@ -19,7 +19,7 @@ const H = ({ level, fontSize, linked, children }) => {
 
   return (
     <div>
-      {React.createElement(
+      {createElement(
         `h${level}`,
         {
           style: {

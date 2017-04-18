@@ -6,7 +6,7 @@ import Head from 'next/head'
 import Router from 'next/router'
 
 // Other
-import pkg from '../package'
+import { version } from '../package'
 
 let progress
 
@@ -28,7 +28,7 @@ Router.onRouteChangeError = stopProgress
 // Showing the version and GitHub repository
 if (global.document) {
   const info = [
-    `Version: ${pkg.version}`,
+    `Version: ${version}`,
     `Find the code here: https://github.com/leo/site`,
     `Have a great day! :)`
   ]
