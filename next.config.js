@@ -1,9 +1,16 @@
+const BabiliPlugin = require('babili-webpack-plugin')
+
 module.exports = {
-  webpack(cfg) {
-    cfg.plugins = cfg.plugins.filter(plugin => {
+  webpack(config, { dev }) {
+    config.plugins = config.plugins.filter(plugin => {
       return plugin.constructor.name !== 'UglifyJsPlugin'
     })
 
-    return cfg
+    if (!dev) {
+      // Minify the code in production
+      config.plugins.push(new BabiliPlugin())
+    }
+
+    return config
   }
 }
