@@ -111,8 +111,10 @@ export default () => (
     </P>
 
     <P>
-      Then I waited for about 4 hours: I called my mum, answered a few Slack messages, and even pushed Now Desktop forward. All despite the fact that I was completely dizzy from the flight. When the train ultimately came, I dropped into my seat like I was about to take a endless sleep. I was so tired, but happy to finally get back home!
+      Then I waited for about 4 hours: I called my mum, answered a few Slack messages, and even pushed Now Desktop forward. All despite the fact that I was completely dizzy from the flight. When the train ultimately came, I dropped into my seat like I was about to take a endless sleep.
     </P>
+
+    <P>I was so tired, but happy to finally get back home!</P>
 
     <P>
       Hours over hours passed while I was facing into the opposite direction to where the train was going. All of this waiting while moving at about 300 km/h while sitting wrong (I always need to face into the direction of travel), made me even more dizzy and my head started feeling really heavy until I couldn
@@ -139,7 +141,11 @@ export default () => (
     </P>
 
     <P>
-      But then I the taxi cars showed up, but we were walking into a completely different direction. I asked him where his taxi is and he pointed a dented, big and grey car parking in a thin street. I instantly got suspicious and asked him for his taxi driver license. He showed me a simple receipt form with the word
+      But then I the taxi cars showed up, but we were walking into a completely different direction. I asked him where his taxi is and he pointed a dented, big and grey car parking in a thin street.
+    </P>
+
+    <P>
+      I instantly got suspicious and asked him for his taxi driver license. He showed me a simple receipt form with the word
       {' '}
       {`"`}
       Taxi driving
