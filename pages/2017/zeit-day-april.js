@@ -6,10 +6,11 @@ import P from '../../components/paragraph'
 import Quote from '../../components/quote'
 import Meta from '../../components/meta'
 import HR from '../../components/hr'
+import { Image } from '../../components/figure'
 
 export default () => (
   <Post>
-    <Meta id="zeit-day-april" />
+    <Meta id="zeit-day-april" hasCover />
 
     <P>
       When we had out first internal discussion about potentially making a conference happen around ZEIT, its products and its community, I got very excited and was looking forward to the date. Not just because we haven
@@ -22,8 +23,10 @@ export default () => (
     <P>
       Suddenly, it was April the 23th (a week before the conference), I packed my clothing and was driven to the Nuremberg airport, where I arrived at about 3 am. After checking in and eating something (didn
       {`'`}
-      t have breakfast), I had to say goodbye to my mum and the plane departed.
+      t have breakfast), I had to say goodbye to my mum and entered the plane:
     </P>
+
+    <Image src="/static/essays/2017/zeit-day-april/nuremberg.png" />
 
     <P>
       The last time I took a flight to a different country was about 7 years ago, so I wasn
@@ -34,7 +37,7 @@ export default () => (
     <P>
       But hell, the last few minutes were pure crap. The plane changed to descend and it felt like I was loosing the ground below my feet. At that time, I slowly started noticing that my body wasn
       {`'`}
-      t ready at all and my stomach was feeling really bad. I quickly grabbed the paper bag at the back of the seat in front of me and puked all over it.
+      t ready at all and my stomach was feeling really bad. I quickly grabbed the paper bag at the back of the seat in front of me and puked all over it. Niiiice! 😌
     </P>
 
     <P>
@@ -48,7 +51,7 @@ export default () => (
     <P>
       And that
       {`'`}
-      s exactly what I did: I left the plane, took the exit door in the overpass to the SF plane (Paris was my stopover) and then reached the conveyor belt for the baggage.
+      s exactly what I did: I left the plane, took the exit door in the overpass to the SF plane (Paris was my stopover) and then reached the conveyor belt for getting my baggage.
     </P>
 
     <P>
@@ -61,7 +64,7 @@ export default () => (
     </P>
 
     <P>
-      Because I knew that the plane to SF would be departing in just a few minutes from that time, I got into a rush and tried all kinds of ways to tell the airport folks to not move my stuff to the next plane (because I wanted to stay in Paris). Sadly, none of the special baggage phones or computers there helped me, because they were only being used for telling the flight provider about baggage that somehow got lost.
+      Because I knew that the plane to SF would be departing in just a few minutes from that time, I got into a rush and tried all kinds of ways to tell the airport folks to not move my stuff to the next plane (because I wanted to stay in Paris). Sadly, none of the special baggage phones or computers there helped me, because they were only being used for telling the flight provider about baggage that got lost.
     </P>
 
     <P>
@@ -78,7 +81,7 @@ export default () => (
       guys and it took me a long time to explain who I was and what my baggage was. Why? Because I left the fucking boarding card in the other room.
     </P>
 
-    <P>Gotdammit, Leo!</P>
+    <P>GOTDAMMIT, LEO! 🤦</P>
 
     <P>
       Thankfully, they
@@ -105,10 +108,16 @@ export default () => (
     <P>
       It also took me about half an hour to even get that ticket, because I firstly tried the information centre, where I was standing in line, just to be told that the fucking printer doesn
       {`'`}
-      t work anymore. But thankfully, they had a special shop in place which was designed specifically for getting such tickets, so that
-      {`'`}
-      s where I finally bought it.
+      t work anymore.
     </P>
+
+    <P>
+      But thankfully, they had a special shop in place which was designed specifically for getting such tickets, so that
+      {`'`}
+      s where I finally bought them:
+    </P>
+
+    <Image src="/static/essays/2017/zeit-day-april/tickets.png" width="380" />
 
     <P>
       Then I waited for about 4 hours: I called my mum, answered a few Slack messages, and even pushed Now Desktop forward. All despite the fact that I was completely dizzy from the flight. When the train ultimately came, I dropped into my seat like I was about to take a endless sleep.
@@ -123,7 +132,10 @@ export default () => (
     </P>
 
     <Quote>
-      Ok. Calm down, Leo. Get some fresh air! Also... What the hell are you doing in Brussels? 600 km away from home?! It
+      Ok. Calm down, Leo. Get some fresh air!
+      <br />
+      <br />
+      Also... What the hell are you doing in Brussels? 600 km away from home?! It
       {`'`}
       s getting pretty late, man!
     </Quote>
@@ -213,6 +225,8 @@ export default () => (
       t looking suspicious.
     </P>
 
+    <Image src="/static/essays/2017/zeit-day-april/hotel.png" />
+
     <P>
       But then, finally, I noticed that the train station had a build-in 4-star hotel!
       {' '}
@@ -233,6 +247,8 @@ export default () => (
     <P>
       Then, on the next morning, I booked yet another train ticket to a city close to my hometown (because I wanted to travel with train as less as possible, since I still felt very dizzy). I got on the train and picked the only seat that was facing into the direction of travel: One reserved for disabled people (I waited until the train gained momentum, of course, before choosing that seat - it was free).
     </P>
+
+    <Image src="/static/essays/2017/zeit-day-april/frankfurt.png" />
 
     <P>
       Just a few hours later, I arrived in Frankfurt, where I was supposed to get on another train to Bavaria. However, the guy who booked my ticket in Brussels chose the next train from a different train station in Frankfurt (the train was starting at the main station, but I arrived at the airport station). Since that was a mistake (not enough time to get to the other one), I had to buy YET ANOTHER train ticket. I even paid 4,50€ (what the hell?) for a simple bun with salmon on it.
