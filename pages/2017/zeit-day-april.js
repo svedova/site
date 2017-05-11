@@ -160,11 +160,11 @@ export default () => (
     </P>
 
     <P>
-      I was immediately approached my a rather old man, who asked me if I was looking for a taxi. I was, so I followed him. Firstly, everything felt normal.
+      I was immediately approached my a rather old man, who asked me if I was looking for a taxi. I was, so I followed him.
     </P>
 
     <P>
-      But then I the taxi cars showed up, but we were walking into a completely different direction. I asked him where his taxi is and he pointed a dented, big and grey car parking in a thin street.
+      Firstly, everything felt normal. But when the taxi cars showed up, we were walking into a completely different direction. I asked him where his taxi was and he pointed at a dented, big and grey car parking in a thin street.
     </P>
 
     <P>
