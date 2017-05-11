@@ -356,5 +356,11 @@
     "title": "Multithreading in Node.js",
     "description": "Find the path to the holy grail of performance by splitting your app between multiple Node instances.",
     "date": "14-03-2017"
+  },
+  {
+    "id": "zeit-day-april",
+    "title": "Why I Didn't Attend ZEIT Day",
+    "description": "Although I had the chance to attend our recent ZEIT Day in San Francisco, I didn't. Here's why!",
+    "date": "11-05-2017"
   }
 ]
