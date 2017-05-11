@@ -12,6 +12,28 @@ const getClasses = (isCover, isWindow) => {
   return list.join(' ')
 }
 
+const Embed = ({ src, width, height }) => (
+  <aside>
+    <iframe
+      src={src}
+      width={width}
+      height={height}
+      frameBorder="0"
+      allowFullScreen
+    />
+    <style jsx>
+      {`
+      aside {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 40px 0;
+      }
+    `}
+    </style>
+  </aside>
+)
+
 const Image = ({ width, src, isCover, isWindow }) => (
   <figure className={getClasses(isCover, isWindow)}>
     <img width={width} src={src} />
@@ -71,4 +93,4 @@ const Image = ({ width, src, isCover, isWindow }) => (
 )
 
 export default Image
-export { Image }
+export { Image, Embed }

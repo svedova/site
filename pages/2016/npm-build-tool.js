@@ -11,7 +11,7 @@ import Post from '../../layouts/essay'
 import P from '../../components/paragraph'
 import Link from '../../components/link'
 import Meta from '../../components/meta'
-import { Image } from '../../components/figure'
+import { Embed } from '../../components/figure'
 import { H2 } from '../../components/heading'
 import { InlineCode, Code } from '../../components/code'
 import { UL, LI } from '../../components/list'
@@ -103,7 +103,11 @@ export default () => (
       started to get shitty again:
     </P>
 
-    <Image src="/static/essays/2016/npm-build-tool/remorse.gif" />
+    <Embed
+      src="https://giphy.com/embed/EmB4QtACPVBpS"
+      width="480"
+      height="195"
+    />
 
     <P>
       At first, I just had a single property in
