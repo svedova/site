@@ -43,11 +43,11 @@
     "moment": "2.18.1",
     "next": "2.3.1",
     "nprogress": "0.2.0",
-    "prop-types": "15.5.8",
+    "prop-types": "15.5.9",
     "react": "15.5.4",
     "react-codepen": "0.1.0",
     "react-dom": "15.5.4",
-    "react-syntax-highlighter": "5.5.1",
+    "react-syntax-highlighter": "5.5.2",
     "react-tweet-embed": "1.0.5",
     "to-id": "1.0.5"
   },
