@@ -57,21 +57,68 @@ E[attr*="xyz"] { display: block; }`}
 
     <UL>
       <LI>
-        Die E-Elemente, deren "attr"-Attribut gesetzt ist (gleich, mit welchem Wert)
+        Die E-Elemente, deren
+        {' '}
+        {`"`}
+        attr
+        {`"`}
+        -Attribut gesetzt ist (gleich, mit welchem Wert)
       </LI>
       <LI>
-        Die E-Elemente, deren "attr"-Attribut exakt den Wert "xyz" aufweist
+        Die E-Elemente, deren
+        {' '}
+        {`"`}
+        attr
+        {`"`}
+        -Attribut exakt den Wert
+        {' '}
+        {`"`}
+        xyz
+        {`"`}
+        {' '}
+        aufweist
       </LI>
       <LI>
-        Die E-Elemente, in deren "attr"-Attribut der Wert "xyz" enthalten ist
+        Die E-Elemente, in deren
+        {' '}
+        {`"`}
+        attr
+        {`"`}
+        -Attribut der Wert
+        {' '}
+        {`"`}
+        xyz
+        {`"`}
+        {' '}
+        enthalten ist
       </LI>
       <LI>
-        Jedes E-Element, dessen "lang"-Attribut einen Bindestrich-geteilten Wert hat
+        Jedes E-Element, dessen
+        {' '}
+        {`"`}
+        lang
+        {`"`}
+        -Attribut einen Bindestrich-geteilten Wert hat
       </LI>
-      <LI>Die E-Elemente, deren "attr"-Attribut mit "xyz" beginnt</LI>
-      <LI>Die E-Elemente, deren "attr"-Attribut mit "xyz" endet</LI>
       <LI>
-        Die E-Elemente, deren "attr"-Attribut die Zeichenkette "xyz" enthält
+        Die E-Elemente, deren {`"`}attr{`"`}-Attribut mit {`"`}xyz{`"`} beginnt
+      </LI>
+      <LI>
+        Die E-Elemente, deren {`"`}attr{`"`}-Attribut mit {`"`}xyz{`"`} endet
+      </LI>
+      <LI>
+        Die E-Elemente, deren
+        {' '}
+        {`"`}
+        attr
+        {`"`}
+        -Attribut die Zeichenkette
+        {' '}
+        {`"`}
+        xyz
+        {`"`}
+        {' '}
+        enthält
       </LI>
     </UL>
 

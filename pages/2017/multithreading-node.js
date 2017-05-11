@@ -35,7 +35,7 @@ export default () => (
       <InlineCode>await</InlineCode>
       {' '}
       in place. The
-      reason being that I just didn't see a difference between these two.
+      reason being that I just didn{`'`}t see a difference between these two.
     </P>
 
     <P>
@@ -332,7 +332,7 @@ console.log('Data downloaded')`}
     <P>
       However, speeding up our code to the maximum isn
       {`'`}
-      t quite so easy. There's still
+      t quite so easy. There{`'`}s still
       a lot room left for improvement!
     </P>
 
@@ -350,14 +350,16 @@ console.log('Data downloaded')`}
     <P>To understand this, we need to dive a little deeper:</P>
 
     <P>
-      In our example, we're handling two operations: Dispatching an interval every 1000 milliseconds
+      In our example, we
+      {`'`}
+      re handling two operations: Dispatching an interval every 1000 milliseconds
       and downloading data.
     </P>
 
     <P>Now the tricky part:</P>
 
     <P>
-      The code I've shown you above introduces a function call of
+      The code I{`'`}ve shown you above introduces a function call of
       {' '}
       <InlineCode>loadData()</InlineCode>
       {' '}
@@ -371,8 +373,14 @@ console.log('Data downloaded')`}
     </P>
 
     <P>
-      This means that we're dealing with a special kind of operation. Why? Because it
-      won't happen entirely inside that single thread we've talked about.
+      This means that we
+      {`'`}
+      re dealing with a special kind of operation. Why? Because it
+      won
+      {`'`}
+      t happen entirely inside that single thread we
+      {`'`}
+      ve talked about.
     </P>
 
     <P>
@@ -383,12 +391,30 @@ console.log('Data downloaded')`}
         kernel
       </Link>
       {' '}
-      (which can be thought of as a separate "thread" or "process" - independent
+      (which can be thought of as a separate
+      {' '}
+      {`"`}
+      thread
+      {`"`}
+      {' '}
+      or
+      {' '}
+      {`"`}
+      process
+      {`"`}
+      {' '}
+      - independent
       from the thread the interval is running in).
     </P>
 
     <P>
-      Only the remaining "sub operations" required for loading the data (like processing
+      Only the remaining
+      {' '}
+      {`"`}
+      sub operations
+      {`"`}
+      {' '}
+      required for loading the data (like processing
       the JavaScriptON response, which is mostly blocking) will be left
       to Node.JavaScript and are therefore run in that single-threaded event loop.
     </P>
@@ -399,7 +425,7 @@ console.log('Data downloaded')`}
       the same thread and are therefore not able to run
       {' '}
       <b>truly in parallel</b>
-      . Instead, they're basically
+      . Instead, they{`'`}re basically
       only
       {' '}
       <b>swapping turns</b>
@@ -423,7 +449,7 @@ console.log('Data downloaded')`}
       inverval and one for downloading the data. Right?
     </P>
 
-    <P>Yep, that's correct.</P>
+    <P>Yep, that{`'`}s correct.</P>
 
     <P>
       But sadly, a Node.JavaScript process only comes
@@ -437,13 +463,15 @@ console.log('Data downloaded')`}
         before
       </Link>
       ). This means
-      that we can't increase the number of threads and will therefore only ever be able to
+      that we can
+      {`'`}
+      t increase the number of threads and will therefore only ever be able to
       handle <b>a single operation</b> at the same time.
     </P>
 
     <P>
       As a result, we need to extend its default behavior if we want to run things
-      truly in parallel. And that's where
+      truly in parallel. And that{`'`}s where
       the native
       {' '}
       <Link href="https://nodeJavaScript.org/api/cluster.html">cluster</Link>
@@ -454,10 +482,12 @@ console.log('Data downloaded')`}
     <P>
       Since we can only have one operation per thread (and therefore per process
       in the case of Node.JavaScript), we need
-      to create multiple processes to achieve our goal of parallelism. But that's not very hard.
+      to create multiple processes to achieve our goal of parallelism. But that
+      {`'`}
+      s not very hard.
     </P>
 
-    <P>Here's an example how this could look:</P>
+    <P>Here{`'`}s an example how this could look:</P>
 
     <Code language="javascript" syntax={js}>
       {`const cluster = require('cluster')
@@ -475,24 +505,28 @@ if (cluster.isMaster) {
     </Code>
 
     <P>
-      Now we're taking advantage
+      Now we{`'`}re taking advantage
       of
       {' '}
       <Link href="https://nodeJavaScript.org/api/cluster.html">cluster</Link>
-      's
+      {`'`}s
       built-in
       {' '}
       <InlineCode>.fork</InlineCode>
       {' '}
       method to make a copy of the current
-      process. In addition, we're checking if we're still on the main one or
+      process. In addition, we
+      {`'`}
+      re checking if we
+      {`'`}
+      re still on the main one or
       on a clone. If we are,
-      we create the interval and if we're not, we load the data.
+      we create the interval and if we{`'`}re not, we load the data.
     </P>
 
     <P>
       The result of these few lines of code are operations that are actually
-      running in parallel. They're not started at the exact same time, bot
+      running in parallel. They{`'`}re not started at the exact same time, bot
       are both running in separate processes. In turn, they can
       both make process at the same time.
     </P>
@@ -500,7 +534,9 @@ if (cluster.isMaster) {
     <H3>A Butter Biscuit</H3>
 
     <P>
-      If adding that module to your project wasn't easy enough, we actually made
+      If adding that module to your project wasn
+      {`'`}
+      t easy enough, we actually made
       multithreading even more straightforward by
       equipping
       {' '}
@@ -512,25 +548,25 @@ if (cluster.isMaster) {
     </P>
 
     <P>
-      Hence, you don't even need
+      Hence, you don{`'`}t even need
       {' '}
       <Link href="https://nodeJavaScript.org/api/cluster.html">cluster</Link>
       {' '}
       if your
-      project is running on our platform. Just ensure that you're applying
+      project is running on our platform. Just ensure that you{`'`}re applying
       {' '}
       <Link href="#quick-await-to-the-rescue">this technique</Link>
       {' '}
       wherever
-      it's possible.
+      it{`'`}s possible.
     </P>
 
-    <H3>That's It!</H3>
+    <H3>That{`'`}s It!</H3>
 
     <P>
       By now, you should understand why <InlineCode>await</InlineCode> is
       a much better idea than synchronous operations
-      what to do if that's not enough.
+      what to do if that{`'`}s not enough.
     </P>
 
     <P>
@@ -560,7 +596,7 @@ if (cluster.isMaster) {
       for the cute cover image!
     </P>
 
-    <P>I'm truly happy to have such amazing mentors!</P>
+    <P>I{`'`}m truly happy to have such amazing mentors!</P>
 
     <FootNotes>
       <Note id="1">
