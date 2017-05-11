@@ -27,7 +27,12 @@ const Embed = ({ src, width, height }) => (
         display: flex;
         justify-content: center;
         width: 100%;
-        margin: 40px 0;
+      }
+
+      @media (min-width: 768px) {
+        aside {
+          margin: 40px 0;
+        }
       }
     `}
     </style>
