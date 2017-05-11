@@ -7,17 +7,25 @@ import Quote from '../../components/quote'
 import Meta from '../../components/meta'
 import HR from '../../components/hr'
 import { Image } from '../../components/figure'
+import Link from '../../components/link'
 
 export default () => (
   <Post>
     <Meta id="zeit-day-april" hasCover />
 
     <P>
-      When we had out first internal discussion about potentially making a conference happen around ZEIT, its products and its community, I got very excited and was looking forward to the date. Not just because we haven
+      When we had our first internal discussion about potentially making a conference happen around
+      {' '}
+      <Link href="https://zeit.co">ZEIT</Link>
+      , its
+      products and
+      {' '}
+      <Link href="https://zeit.chat">its community</Link>
+      , I got very excited and was looking forward to the date. Not just because we haven
       {`'`}
-      t held one of these before, but also because it would
+      t had one of these before, but also because it would
       {`'`}
-      ve been my first time to meet the entire team in person.
+      ve be my first time to meet the team in person.
     </P>
 
     <P>
@@ -31,13 +39,16 @@ export default () => (
     <P>
       The last time I took a flight to a different country was about 7 years ago, so I wasn
       {`'`}
-      t familiar at all with the feeling anymore. However, the first half of the flight was pretty easy to handle for me: As the plane got higher and higher over the clouds, I tried to focus and keep calm, to make my body adapt to the different circumstances.
+      t familiar at all with the feeling anymore. However, the first half of the flight was pretty easy to handle for me: As the plane got higher and higher over the clouds, I tried to focus and keep calm, to make my body adapt to the different circumstances with ease.
     </P>
 
     <P>
       But hell, the last few minutes were pure crap. The plane changed to descend and it felt like I was loosing the ground below my feet. At that time, I slowly started noticing that my body wasn
       {`'`}
-      t ready at all and my stomach was feeling really bad. I quickly grabbed the paper bag at the back of the seat in front of me and puked all over it. Niiiice! 😌
+      t ready at all and my stomach was feeling really bad. I quickly grabbed the paper bag at the back of the seat in front of me and puked all over it.
+      {' '}
+      <Link href="https://www.youtube.com/watch?v=a8c5wmeOL9o">Noice</Link>
+      , right? 😌
     </P>
 
     <P>
@@ -45,7 +56,7 @@ export default () => (
     </P>
 
     <P>
-      I felt like pure shit and was laughing at the same time. Why? Because I knew that my body was sending me a signal and that I had to listen to it. In this case, it mean leaving the plane and not entering the one that goes to San Francisco. I wanted to stay in Paris and calm down before going on with anything else.
+      I felt like pure shit and was laughing at the same time. Why? Because I knew that my body was sending me a signal and that I had to listen to it. In this case, it meant leaving the plane and not entering the one that goes to San Francisco. I wanted to stay in Paris and calm down before going on with anything else.
     </P>
 
     <P>
@@ -68,7 +79,7 @@ export default () => (
     </P>
 
     <P>
-      While trying to reach someone from their team on one of these phones, I placed my boarding card on the table next to me (which also had the baggage id placed on it using a sticker). Then I got tired of not having achieved anything to get my stuff back and left the area with the conveyor belt.
+      While trying to reach someone from their team on one of these phones, I placed my boarding card on the table next to me (which also had the baggage identification on it). Then I got tired of not having achieved anything to get my stuff back and left the area with the conveyor belt.
     </P>
 
     <P>
@@ -267,15 +278,19 @@ export default () => (
       {`'`}
       m back again and healthy. I just thought it would be funny to share this story with you, so that you can understand why I didn
       {`'`}
-      t make it to ZEIT Day this time.
+      t make it to the conference this time.
     </P>
 
     <P>
       I
       {`'`}
-      ll just leave this one thing here: There will be another ZEIT Day soon - and I
+      ll just leave this one thing here: There will be another
+      {' '}
+      <Link href="https://zeit.co/day">ZEIT Day</Link>
+      {' '}
+      soon - and I
       {`'`}
-      ll be there, no doubt!
+      ll be there, no doubt! 😜
     </P>
   </Post>
 )
