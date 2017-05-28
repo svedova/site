@@ -80,6 +80,13 @@ const Image = ({ width, src, isCover, isWindow }) => (
         object-fit: cover;
       }
 
+      @media (min-width: 660px) {
+        .cover img {
+          border-bottom-left-radius: 6px;
+          border-bottom-right-radius: 6px;
+        }
+      }
+
       @media (min-width: 768px) {
         figure {
           margin: 40px 0;
@@ -96,6 +103,10 @@ const Image = ({ width, src, isCover, isWindow }) => (
           overflow: hidden;
           font-size: 0;
           line-height: 0;
+        }
+
+        .cover img {
+          border-radius: 0;
         }
       }
     `}
