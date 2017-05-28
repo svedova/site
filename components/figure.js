@@ -1,3 +1,6 @@
+// Components
+import Back from './back'
+
 const getClasses = (isCover, isWindow) => {
   const list = []
 
@@ -43,6 +46,8 @@ const Image = ({ width, src, isCover, isWindow }) => (
   <figure className={getClasses(isCover, isWindow)}>
     <img width={width} src={src} />
 
+    {isCover && <Back to="/essays" insideCover />}
+
     <style jsx>
       {`
       img {
@@ -66,6 +71,7 @@ const Image = ({ width, src, isCover, isWindow }) => (
 
       .cover {
         margin: -45px -30px 30px -30px;
+        position: relative;
       }
 
       .cover img {

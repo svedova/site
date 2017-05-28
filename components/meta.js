@@ -29,7 +29,7 @@ export default ({ id, hasCover }) => {
 
   return (
     <aside>
-      <Back to="/essays" closer={hasCover} />
+      <Back to="/essays" outsideCover={hasCover} />
 
       {hasCover && <Image src={coverURL} isCover />}
       <Title value={post.title} />
