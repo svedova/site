@@ -80,7 +80,7 @@ const Image = ({ width, src, isCover, isWindow }) => (
         object-fit: cover;
       }
 
-      @media (min-width: 660px) {
+      @media (min-width: 680px) {
         .cover img {
           border-bottom-left-radius: 6px;
           border-bottom-right-radius: 6px;
