@@ -156,8 +156,8 @@ console.log('Data downloaded')`}
     </P>
 
     <P>
-      This is because of Node.JavaScript
-      {`'`}
+      This is because of Node/JavaScript
+      {`'`}s
       {' '}
       concurrent nature. Its backbone consists of a
       single-threaded event loop and therefore doesn
