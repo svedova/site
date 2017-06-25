@@ -362,5 +362,11 @@
     "title": "Why I Didn't Attend ZEIT Day",
     "description": "Although I had the chance to attend our recent ZEIT Day in San Francisco, I didn't. Here's why!",
     "date": "11-05-2017"
+  },
+  {
+    "id": "electron-next",
+    "title": "Building Electron Apps with Next.js",
+    "description": "Next.js makes using React for building electron apps easy it has never been before.",
+    "date": "25-06-2017"
   }
 ]
