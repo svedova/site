@@ -13,7 +13,7 @@ import { Code } from '../../components/code'
 
 export default () =>
   <Post>
-    <Meta id="electron-next" />
+    <Meta id="electron-next" hasCover />
 
     <P>
       Since the first release of Electron{' '}
