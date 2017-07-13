@@ -30,20 +30,31 @@ const UL = ({ children }) => (
   </ul>
 )
 
-const LI = ({ children }) => (
-  <li>
-    {children}
+const LI = ({ children, shallow }) => {
+  const classes = []
 
-    <style jsx>
-      {`
-      li {
-        font-size: 15px;
-        margin-bottom: 15px;
-        line-height: 23px;
-      }
-    `}
-    </style>
-  </li>
-)
+  if (shallow) {
+    classes.push('shallow')
+  }
+
+  return (
+    <li className={classes.join(' ')}>
+      {children}
+
+      <style jsx>
+        {`
+        li {
+          margin-bottom: 15px;
+          line-height: 25px;
+        }
+
+        li.shallow {
+          margin-bottom: 10px;
+        }
+      `}
+      </style>
+    </li>
+  )
+}
 
 export { OL, UL, LI }

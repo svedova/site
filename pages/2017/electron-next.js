@@ -12,8 +12,8 @@ import Link from '../../components/link'
 import { Code } from '../../components/code'
 import {H2, H3, H4} from '../../components/heading'
 import { UL, LI } from '../../components/list'
-import { Embed } from '../../components/figure'
 import { Image } from '../../components/figure'
+import { InlineCode } from '../../components/code'
 
 export default () =>
   <Post>
@@ -78,14 +78,10 @@ export default () =>
     <P>Sure, all of this has been very difficult and time consuming.</P>
 
     <P>
-      But let{`'`}s not rest now!
+      But <Link href="https://www.youtube.com/watch?v=oRojY4uZNI8&t=15s">
+        let{`'`}s not rest
+      </Link> now!
     </P>
-
-    <Embed
-      src="https://www.youtube.com/embed/oRojY4uZNI8?showinfo=0&start=15"
-      width="620"
-      height="300"
-    />
 
     <P>
       There{`'`}s still a long way ahead of us: More operating systems and
@@ -126,5 +122,22 @@ export default () =>
       development environment away into a tiny toolbet.
     </P>
 
-    <P><Link href="https://github.com/zeit/next.js">Next.js</Link> will take care of a lot of things for you:</P>
+    <P>Once implemented, <Link href="https://github.com/zeit/next.js">Next.js</Link> will take care of:</P>
+
+    <UL>
+      <LI shallow>Handling the <Link href="https://github.com/zeit/next.js#routing">routing</Link> and <Link href="https://github.com/zeit/next.js#prefetching-pages">prefetching</Link> of pre-defined pages</LI>
+      <LI shallow>Transpiling, bundling and minifying your code</LI>
+      <LI shallow>Live-reloading all <InlineCode>BrowserWindow</InlineCode> instances that are pointing to Next.js pages</LI>
+      <LI shallow>Automatically <Link href="https://github.com/zeit/next.js#automatic-code-splitting">splitting</Link> your code</LI>
+      <LI shallow>Built-in support for <Link href="https://github.com/zeit/next.js#css">styling</Link> components and pages using <Link href="https://github.com/zeit/styled-jsx">styled-jsx</Link></LI>
+    </UL>
+
+    <P>In order for Next.js bundles to fit perfectly into how we're building
+    Electron apps (and to make deploying easier), we also released <Link href="https://zeit.co/blog/next3-preview">a feature</Link> that
+    lets you export static files for the use in the production version of your app.</P>
+
+    <P>And that's <Link href="https://zeit.co/blog/next">not even all</Link> yet!</P>
+
+    <P>So why can't we have these wonderful features
+    inside an Electron app without a complicated configuration setup? Well... Starting today, it's actually possible! 🎉</P>
   </Post>
