@@ -82,7 +82,7 @@ export default () =>
     </P>
 
     <Embed
-      src="https://www.youtube.com/embed/oRojY4uZNI8?showinfo=0"
+      src="https://www.youtube.com/embed/oRojY4uZNI8?showinfo=0&start=15"
       width="620"
       height="300"
     />

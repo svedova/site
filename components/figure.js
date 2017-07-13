@@ -45,6 +45,12 @@ const Embed = ({ src, width, height }) => {
           width: 100%;
           height: 100%;
         }
+
+        @media (min-width: 768px) {
+          aside {
+            margin: 40px 0;
+          }
+        }
       `}
       </style>
     </aside>
