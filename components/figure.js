@@ -15,32 +15,41 @@ const getClasses = (isCover, isWindow) => {
   return list.join(' ')
 }
 
-const Embed = ({ src, width, height }) => (
-  <aside>
-    <iframe
-      src={src}
-      width={width}
-      height={height}
-      frameBorder="0"
-      allowFullScreen
-    />
-    <style jsx>
-      {`
-      aside {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-      }
+const Embed = ({ src, width, height }) => {
+  if (!width || !height) {
+    throw new Error('Please define the height and width')
+  }
 
-      @media (min-width: 768px) {
+  const padding = (height / width) * 100
+
+  const containerStyle = {
+    paddingBottom: `${padding}%`
+  }
+
+  return (
+    <aside style={containerStyle}>
+      <iframe src={src} frameBorder="0" allowFullScreen/>
+
+      <style jsx>
+        {`
         aside {
-          margin: 40px 0;
+          height: 0;
+          overflow: hidden;
+          position: relative;
         }
-      }
-    `}
-    </style>
-  </aside>
-)
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      `}
+      </style>
+    </aside>
+  )
+}
 
 const Image = ({ width, src, isCover, isWindow }) => (
   <figure className={getClasses(isCover, isWindow)}>
