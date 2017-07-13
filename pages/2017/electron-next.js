@@ -8,9 +8,10 @@ import Post from '../../layouts/essay'
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
 import Link from '../../components/link'
-import {H2} from '../../components/heading'
+import {H2, H3} from '../../components/heading'
 import { UL, LI } from '../../components/list'
-import { InlineCode } from '../../components/code'
+import { Code, InlineCode } from '../../components/code'
+import {Image} from '../../components/figure'
 
 export default () =>
   <Post>
@@ -86,7 +87,7 @@ export default () =>
       to discover!
     </P>
 
-    <H2>The Idea</H2>
+    <H2>The Dream</H2>
 
     <P>
       But enough of the 👏 cheering 👏 now. With the above in mind, I{`'`}d like
@@ -137,4 +138,54 @@ export default () =>
 
     <P>So why can't we have these wonderful features
     inside an Electron app without a complicated configuration setup? Well... Starting today, it's actually possible! 🎉</P>
+
+    <H2>Making the Dream Come True</H2>
+
+    <P>As the first step into the light, we'll spin up a fresh Electron boilerplate. This will make you
+    understand how to create the perfect renderer process using Next.js, but also how to implement it
+    into your existing application.</P>
+
+    <P>Thankfully, they already provide a
+    suitable <Link href="https://github.com/electron/electron-quick-start">skeleton app</Link> which
+    can easily clone to our device using this command (<Link href="https://git-scm.com">Git</Link> and <Link href="https://nodejs.org/en/">Node.js</Link> need to be installed):</P>
+
+    <Code language="bash" syntax={bash}>git clone https://github.com/electron/electron-quick-start</Code>
+
+    <P>Once it has finished setting up a clone that you can interact with on your local machine, move into
+    the directory of the repository:</P>
+
+    <Code language="bash" syntax={bash}>{`cd electron-quick-start`}</Code>
+
+    <H3>Installing the Dependencies</H3>
+
+    <P>Now that we got the boilerplate, let's make sure that the pre-defined dependencies are installed. To do so, you
+    only need to run the following command:</P>
+
+    <Code language="bash" syntax={bash}>{`npm install`}</Code>
+
+    <P>Next, install the remaining dependencies that we'll need to the renderer. First, we'll
+    start with the <InlineCode>devDependencies</InlineCode>: The core package
+    of <Link href="https://github.com/zeit/next.js">Next.js</Link> (used in development), <Link href="https://github.com/facebook/react">react</Link> and <Link href="https://github.com/facebook/react/tree/master/packages/react-dom">react-dom</Link> (bundled
+    with the production version of your app):</P>
+
+    <Code language="bash" syntax={bash}>{`npm install next react react-dom --save-dev`}</Code>
+
+    <P>As the last installation step, we need to define <Link href="https://github.com/leo/electron-next">electron-next</Link>, which
+    ensures that Electron can handle Next.js' output in the renderer. It will be used both in production and development, so
+    it needs to be a normal dependency:</P>
+
+    <Code language="bash" syntax={bash}>{`npm install electron-next --save`}</Code>
+
+    <H3>Testing the Boilerplate</H3>
+
+    <P>Before we go on, I suggest ensuring that you've followed the instructions carefully. To do so,
+    you can start the boilerplate application:</P>
+
+    <Code language="bash" syntax={bash}>{`npm start`}</Code>
+
+    <P>If you've done everything right, a window like this one should open:</P>
+
+    <Image src="/static/essays/2017/electron-next/boilerplate.png" width="512"/>
+
+    <P>Saw it? Perfect, you can go on with the next section and skip the next sentence. If not, please repeat the steps from <Link href="#making-the-dream-come-true">here</Link>.</P>
   </Post>
