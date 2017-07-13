@@ -10,6 +10,10 @@ import Meta from '../../components/meta'
 import HR from '../../components/hr'
 import Link from '../../components/link'
 import { Code } from '../../components/code'
+import {H2, H3, H4} from '../../components/heading'
+import { UL, LI } from '../../components/list'
+import { Embed } from '../../components/figure'
+import { Image } from '../../components/figure'
 
 export default () =>
   <Post>
@@ -51,9 +55,8 @@ export default () =>
       </Link>!
     </P>
 
-    <HR />
-
     <P>Of course, these achievements weren{`'`}t completely free of charge:</P>
+
     <P>
       We{`'`}ve spent hours
       convincing our fellow coworkers that a rewrite was worth it. We held
@@ -75,18 +78,22 @@ export default () =>
     <P>Sure, all of this has been very difficult and time consuming.</P>
 
     <P>
-      <b>
-        But let{`'`}s not rest
-        now!
-      </b>
+      But let{`'`}s not rest now!
     </P>
+
+    <Embed
+      src="https://www.youtube.com/embed/oRojY4uZNI8?showinfo=0"
+      width="620"
+      height="355"
+    />
+
     <P>
       There{`'`}s still a long way ahead of us: More operating systems and
       devices are waiting for us! We{`'`}re barely halfway there. So much more
       to discover!
     </P>
 
-    <HR />
+    <H2>The Idea</H2>
 
     <P>
       But enough of the 👏 cheering 👏 now. With the above in mind, I{`'`}d like
@@ -116,25 +123,8 @@ export default () =>
       but it also makes creating Electron apps as easy as you{`'`}ve never
       seen it before. That{`'`}s because it allows us - as app developers - to
       abstract most of the complex
-      development environment away into two packages.
+      development environment away into a tiny toolbet.
     </P>
 
-    <P>
-      Let{`'`}s jump right in by installing those two in your app{`'`}s
-      directory:
-    </P>
-
-    <Code language="bash" syntax={bash}>
-      npm install --save next electron-next
-    </Code>
-
-    <P>
-      This first one is the{' '}
-      <Link href="https://github.com/zeit/next.js">core package</Link> of
-      Next.js, while
-      the second one is{' '}
-      <Link href="https://github.com/leo/electron-next">a helper</Link> of mine
-      that I{`'`}ve built
-      specifically for making the core package adapt to Electron.
-    </P>
+    <P><Link href="https://github.com/zeit/next.js">Next.js</Link> will take care of a lot of things for you:</P>
   </Post>
