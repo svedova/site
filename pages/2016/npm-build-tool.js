@@ -273,7 +273,7 @@ export default () => (
       problems which we didn’t even have before.
     </P>
 
-    <Tweet id="700320306053935104" />
+    <Tweet id="700320306053935104" className="tweet"/>
 
     <P>
       What’s the next logical step after moving your tasks into

@@ -1,6 +1,9 @@
 // Syntax
 import bash from 'highlight.js/lib/languages/bash'
 
+// Packages
+import Tweet from 'react-tweet-embed'
+
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -41,8 +44,10 @@ export default () =>
       and even
       complex things like running commands (<Link href="https://hyper.is">
         Hyper
-      </Link>).
+      </Link>):
     </P>
+
+    <Tweet id="812011746638569472" className="tweet"/>
 
     <P>
       To sum this up, I don{`'`}t think I have to tell you anymore how important

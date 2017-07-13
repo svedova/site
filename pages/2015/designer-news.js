@@ -22,7 +22,7 @@ export default () => (
       of Joel Califa finally caught my attention:
     </P>
 
-    <Tweet id="617104311890251776" />
+    <Tweet id="617104311890251776" className="tweet"/>
 
     <P>
       I{`'`}m not entirely sure about how he exactly meant this. He either

@@ -163,7 +163,7 @@ export default () => (
       from, compared to companies like Google).
     </P>
 
-    <Tweet id="624669416299589635" />
+    <Tweet id="624669416299589635" className="tweet"/>
 
     <P>
       I’m sure that he wasn’t talking about the way how Google uses the
