@@ -176,8 +176,12 @@ export default () =>
     <Code language="bash" syntax={bash}>{`npm install next react react-dom --save-dev`}</Code>
 
     <P>As the last installation step, we need to define <Link href="https://github.com/leo/electron-next">electron-next</Link>, which
-    ensures that Electron can handle Next.js' output in the renderer. It will be used both in production and development, so
-    it needs to be a normal dependency:</P>
+    ensures that Electron can handle Next.js' output in the renderer:</P>
+
+    <Tweet id="881783902691577856" className="tweet"/>
+
+    <P>It will be used both in production and development, so
+    it needs to be installed as a normal dependency:</P>
 
     <Code language="bash" syntax={bash}>{`npm install electron-next --save`}</Code>
 
