@@ -84,7 +84,7 @@ export default () =>
     <Embed
       src="https://www.youtube.com/embed/oRojY4uZNI8?showinfo=0"
       width="620"
-      height="355"
+      height="300"
     />
 
     <P>
