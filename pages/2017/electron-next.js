@@ -7,12 +7,9 @@ import Post from '../../layouts/essay'
 // Components
 import P from '../../components/paragraph'
 import Meta from '../../components/meta'
-import HR from '../../components/hr'
 import Link from '../../components/link'
-import { Code } from '../../components/code'
-import {H2, H3, H4} from '../../components/heading'
+import {H2} from '../../components/heading'
 import { UL, LI } from '../../components/list'
-import { Image } from '../../components/figure'
 import { InlineCode } from '../../components/code'
 
 export default () =>
