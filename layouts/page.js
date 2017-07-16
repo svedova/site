@@ -69,6 +69,7 @@ export default ({ children }) =>
         content="A teenagers view on web development and intuitive UI design."
       />
       <meta name="twitter:site" content="@notquiteleo" />
+      <meta name="twitter:creator" content="@notquiteleo" />
     </Head>
 
     {children}
