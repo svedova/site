@@ -29,7 +29,7 @@ Router.onRouteChangeError = stopProgress
 if (global.document) {
   const info = [
     `Version: ${version}`,
-    `Find the code here: https://github.com/leo/site`,
+    `You can find the code here: https://github.com/leo/site`,
     `Have a great day! :)`
   ]
 
