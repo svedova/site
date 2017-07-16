@@ -603,9 +603,11 @@ mainWindow.loadURL(entry)`}</Code>
 
     <P>
       In order for you to better understand how all of this comes together in
-      the end, I also created <Link href="#">a boilerplate</Link>, which sums
-      all of the stuff you{`'`}ve just learned up in one repository - feel free
-      to clone it and try it out by yourself!
+      the end, I also created{' '}
+      <Link href="https://github.com/leo/electron-next-skeleton">
+        a boilerplate
+      </Link>, which sums all of the stuff you{`'`}ve just learned up in one
+      repository - feel free to clone it and try it out by yourself!
     </P>
 
     <P>
