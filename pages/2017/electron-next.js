@@ -331,19 +331,10 @@ export default () =>
     <P>
       After you{`'`}re done, create the configuration file named{' '}
       <InlineCode>next.config.js</InlineCode>. Inside it, you only need to do
-      handle two topics:
+      handle one thing:
     </P>
 
     <Code language="javascript" syntax={javascript}>{`module.exports = {
-  webpack(config) {
-    // Tell webpack that you're building code
-    // for the Electron renderer. This allows
-    // it to make better decisions by itself
-    config.target = 'electron-renderer'
-
-    // Hand the config back to webpack
-    return config
-  },
   exportPathMap() {
     // Let Next.js know where to find the entry page
     // when it's exporting the static bundle for the use
@@ -444,7 +435,7 @@ if (isDev) {
   entry = 'http://localhost:8000/start'
 } else {
   entry = url.format({
-    pathname: path.resolve('./renderer/start/index.html'),
+    pathname: path.join(__dirname, './renderer/start/index.html'),
     protocol: 'file:',
     slashes: true
   })
