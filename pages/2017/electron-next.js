@@ -230,7 +230,7 @@ export default () =>
     <Code
       language="bash"
       syntax={bash}
-    >{`npm install next react react-dom --save-dev`}</Code>
+    >{`npm install next@beta react react-dom --save-dev`}</Code>
 
     <P>
       As the last installation step, we need to define{' '}
