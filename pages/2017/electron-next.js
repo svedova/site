@@ -89,6 +89,47 @@ export default () =>
       to discover!
     </P>
 
+    <H2>Chapters</H2>
+
+    <P>
+      If you want, you can jump directly to a specific section. However, if you
+      want to be guided through building an Electron app using Next.js{' '}
+      <b>from start to finish</b> (recommended), simply skip to the next
+      paragraph.
+    </P>
+
+    <UL>
+      <LI>
+        <Link href="#the-dream">The Dream</Link>
+      </LI>
+      <LI>
+        <Link href="#making-the-dream-come-true">
+          Making the Dream Come True
+        </Link>
+      </LI>
+      <LI>
+        <Link href="#installing-the-dependencies">
+          Installing the Dependencies
+        </Link>
+      </LI>
+      <LI>
+        <Link href="#testing-the-boilerplate">Testing the Boilerplate</Link>
+      </LI>
+      <LI>
+        <Link href="#preparing-the-new-renderer">
+          Preparing the New Renderer
+        </Link>
+      </LI>
+      <LI>
+        <Link href="#preparing-the-main-process">
+          Preparing the Main Process
+        </Link>
+      </LI>
+      <LI>
+        <Link href="#taking-it-to-production">Taking It to Production</Link>
+      </LI>
+    </UL>
+
     <H2>The Dream</H2>
 
     <P>
@@ -488,7 +529,7 @@ mainWindow.loadURL(entry)`}</Code>
     </P>
 
     <P>
-      It{`'`}s therefore safe for development, but not for production.
+      It{`'`}s therefore safe for development, but <b>not for production</b>.
     </P>
 
     <P>
@@ -626,9 +667,9 @@ mainWindow.loadURL(entry)`}</Code>
     <P>Now the only thing left for me to say is:</P>
 
     <P>
-      Thank you for taking the time to read this article! I{`'`}m sure that we
-      have the collective power to bring all of the web{`'`}s capabilities to
-      native (...and beyond)! 🚀
+      <b>Thank you</b> for taking the time to read this article! I{`'`}m sure
+      that we have the collective power to bring all of the web{`'`}s
+      capabilities to native (...and beyond)! 🚀
     </P>
 
     <P>
