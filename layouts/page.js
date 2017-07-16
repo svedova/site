@@ -39,7 +39,7 @@ if (global.document) {
 }
 
 const viewSource = event => {
-  const allowed = ['P', 'H1', 'SPAN']
+  const allowed = ['P', 'SPAN', 'H1', 'H2', 'H3', 'PRE', 'CODE']
 
   if (allowed.includes(event.target.tagName)) {
     return
@@ -49,7 +49,7 @@ const viewSource = event => {
   event.preventDefault()
 }
 
-export default ({ children }) => (
+export default ({ children }) =>
   <main onDoubleClick={viewSource}>
     <Head>
       <link
@@ -75,62 +75,62 @@ export default ({ children }) => (
 
     <style jsx global>
       {`
-      body {
-        font-family: -apple-system, BlinkMacSystemFont,
-        Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-        Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-        margin: 0;
-        -webkit-font-smoothing: antialiased;
-      }
-
-      html, body {
-        height: 100%;
-      }
-
-      body > div:first-child,
-      body > div:first-child > div:first-child,
-      body > div:first-child > div:first-child > div {
-        height: inherit;
-      }
-
-      main {
-        padding: 30px;
-        box-sizing: border-box;
-        position: relative;
-        min-height: 100%;
-      }
-
-      #nprogress {
-        pointer-events: none;
-      }
-
-      #nprogress .bar {
-        background: #4492ff;
-        position: fixed;
-        z-index: 1031;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-      }
-
-      #nprogress .peg {
-        display: block;
-        position: absolute;
-        right: 0px;
-        width: 100px;
-        height: 100%;
-        box-shadow: 0 0 10px #4492ff, 0 0 5px #4492ff;
-        opacity: 1.0;
-        transform: rotate(3deg) translate(0px, -4px);
-      }
-
-      @media (min-width: 768px) {
-        main {
-          padding: 45px;
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
+          margin: 0;
+          -webkit-font-smoothing: antialiased;
         }
-      }
-    `}
+
+        html,
+        body {
+          height: 100%;
+        }
+
+        body > div:first-child,
+        body > div:first-child > div:first-child,
+        body > div:first-child > div:first-child > div {
+          height: inherit;
+        }
+
+        main {
+          padding: 30px;
+          box-sizing: border-box;
+          position: relative;
+          min-height: 100%;
+        }
+
+        #nprogress {
+          pointer-events: none;
+        }
+
+        #nprogress .bar {
+          background: #4492ff;
+          position: fixed;
+          z-index: 1031;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+        }
+
+        #nprogress .peg {
+          display: block;
+          position: absolute;
+          right: 0px;
+          width: 100px;
+          height: 100%;
+          box-shadow: 0 0 10px #4492ff, 0 0 5px #4492ff;
+          opacity: 1.0;
+          transform: rotate(3deg) translate(0px, -4px);
+        }
+
+        @media (min-width: 768px) {
+          main {
+            padding: 45px;
+          }
+        }
+      `}
     </style>
   </main>
-)
