@@ -34,49 +34,64 @@ export default ({ id, hasCover }) => {
       {hasCover && <Image src={coverURL} isCover />}
       <Title value={post.title} />
 
-      <h1 className={headingClass}>{post.title}</h1>
-      <span>{date.format('MMMM Do YYYY')}</span>
+      <h1 className={headingClass}>
+        {post.title}
+      </h1>
+      <span>
+        {date.format('MMMM Do YYYY')}
+      </span>
+
+      {post.title &&
+        <Head>
+          <meta name="twitter:title" content={post.title} />
+        </Head>}
 
       {post.description &&
         <Head>
           <meta name="description" content={post.description} />
         </Head>}
 
+      {hasCover &&
+        <Head>
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content={'https://leo.im' + coverURL} />
+        </Head>}
+
       <style jsx>
         {`
-        h1 {
-          font-weight: 500;
-          margin: 0 0 8px 0;
-          font-size: 24px;
-          padding-right: 55px;
-          line-height: 1.3em;
-        }
-
-        h1.has-cover {
-          padding-right: 0;
-        }
-
-        span {
-          color: #7c7c7c;
-          font-size: 13px;
-        }
-
-        aside {
-          margin-bottom: 35px;
-          margin-top: 14px;
-        }
-
-        @media (min-width: 992px) {
           h1 {
-            font-size: 28px;
-            margin-bottom: 7px;
+            font-weight: 500;
+            margin: 0 0 8px 0;
+            font-size: 24px;
+            padding-right: 55px;
+            line-height: 1.3em;
+          }
+
+          h1.has-cover {
+            padding-right: 0;
           }
 
           span {
-            font-size: 14px;
+            color: #7c7c7c;
+            font-size: 13px;
           }
-        }
-      `}
+
+          aside {
+            margin-bottom: 35px;
+            margin-top: 14px;
+          }
+
+          @media (min-width: 992px) {
+            h1 {
+              font-size: 28px;
+              margin-bottom: 7px;
+            }
+
+            span {
+              font-size: 14px;
+            }
+          }
+        `}
       </style>
     </aside>
   )
