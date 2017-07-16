@@ -48,6 +48,7 @@ export default ({ id, hasCover }) => {
 
       {post.description &&
         <Head>
+          <meta name="twitter:description" content={post.description} />
           <meta name="description" content={post.description} />
         </Head>}
 
