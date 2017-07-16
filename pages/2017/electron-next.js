@@ -60,8 +60,8 @@ export default () =>
     <P>
       We{`'`}ve spent hours convincing our fellow coworkers that a rewrite was
       worth it. We held conferences and spread the word across the whole globe,
-      so that all of us may have the ability to make convert their app ideas
-      intro reality.
+      so that all of us may have the ability to convert their app ideas into
+      reality.
     </P>
 
     <P>
@@ -188,7 +188,7 @@ export default () =>
       <Link href="https://github.com/electron/electron-quick-start">
         skeleton app
       </Link>{' '}
-      which can easily clone to our device using this command (<Link href="https://git-scm.com">Git</Link>{' '}
+      which you can easily clone to your device (<Link href="https://git-scm.com">Git</Link>{' '}
       and <Link href="https://nodejs.org/en/">Node.js</Link> need to be
       installed):
     </P>
@@ -199,7 +199,7 @@ export default () =>
 
     <P>
       Once it has finished setting up a clone that you can interact with on your
-      local machine, move into the directory of the repository:
+      local device, move into the directory of the repository:
     </P>
 
     <Code language="bash" syntax={bash}>{`cd electron-quick-start`}</Code>
@@ -215,7 +215,7 @@ export default () =>
     <Code language="bash" syntax={bash}>{`npm install`}</Code>
 
     <P>
-      Next, install the remaining dependencies that we{`'`}ll need to the
+      Next, install the remaining dependencies that we{`'`}ll need for the
       renderer. First, we{`'`}ll start with the{' '}
       <InlineCode>devDependencies</InlineCode>: The core package of{' '}
       <Link href="https://github.com/zeit/next.js">Next.js</Link> (used in
@@ -267,13 +267,13 @@ export default () =>
     <P>
       Before we go on, I suggest ensuring that you{`'`}ve followed the
       instructions carefully. To do so, you can start the boilerplate
-      application:
+      application like this:
     </P>
 
     <Code language="bash" syntax={bash}>{`npm start`}</Code>
 
     <P>
-      If you{`'`}ve done everything right, a window like this one should open:
+      If you{`'`}ve done everything right, a window should open:
     </P>
 
     <Image
@@ -282,8 +282,8 @@ export default () =>
     />
 
     <P>
-      Saw it? Perfect, you can go on with the next section and skip the next
-      sentence. If not, please repeat the steps from{' '}
+      Saw it? Perfect! Now you can go on with the next section and skip the
+      following sentence. If not, please repeat the steps from{' '}
       <Link href="#making-the-dream-come-true">here</Link>.
     </P>
 
@@ -484,7 +484,7 @@ mainWindow.loadURL(entry)`}</Code>
       doesn{`'`}t have the same behaviour in the final app as in development is
       that opening a port (like Next.js does it for providing hot reloading and
       auto-building of your code) is generally not a good idea because it
-      introduces a security vularability on the user{`'`}s device.
+      introduces a security vulnerability on the user{`'`}s device.
     </P>
 
     <P>
@@ -539,8 +539,11 @@ mainWindow.loadURL(entry)`}</Code>
         your renderer
       </LI>
       <LI>
-        <InlineCode>dist</InlineCode> makes run the{' '}
-        <InlineCode>build</InlineCode> script before packing the app
+        <InlineCode>dist</InlineCode> makes{' '}
+        <Link href="https://github.com/electron-userland/electron-builder">
+          electron-builder
+        </Link>{' '}
+        run the <InlineCode>build</InlineCode> script before packing the app
       </LI>
     </UL>
 
@@ -572,11 +575,11 @@ mainWindow.loadURL(entry)`}</Code>
 ]`}</Code>
 
     <P>
-      This is only important because{' '}
+      The <InlineCode>build</InlineCode> property is only included because{' '}
       <Link href="https://github.com/leo/electron-next">
         electron-next
       </Link>{' '}
-      doesn{`'`}t yet support this. If you need this feature, please{' '}
+      doesn{`'`}t yet support ASAR archives. If you need this, please{' '}
       <Link href="https://github.com/leo/electron-next/issues">
         let me know
       </Link>, so that I can consider implementing it. Pull requests are also
