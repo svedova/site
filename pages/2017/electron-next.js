@@ -156,8 +156,8 @@ export default () =>
       Yes, I{`'`}m serious. It{`'`}s not just very good for sites and web apps,
       but it also makes creating Electron apps as easy as you{`'`}ve never seen
       it before. That{`'`}s because it allows us - as app developers - to
-      abstract most of the complex development environment away into a tiny
-      toolbet.
+      abstract most of the complex development environment away into a tiny tool
+      belt.
     </P>
 
     <P>
