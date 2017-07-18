@@ -137,10 +137,8 @@ export default () =>
 
     <UL>
       <LI>
-        <Link href="https://github.com/leo/electron-next">
-          electron-next
-        </Link>{' '}
-        – Prepares the renderer for the use of Next.js
+        <Link href="https://github.com/leo/electron-next">electron-next</Link> –
+        Prepares the renderer for the use of Next.js
       </LI>
       <LI>
         <Link href="https://github.com/leo/electron-next-skeleton">
