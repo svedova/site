@@ -127,6 +127,29 @@ export default () =>
       </LI>
     </UL>
 
+    <H2>Highlighted OSS Projects</H2>
+
+    <P>
+      If you want to jump right into some code, here are a few GitHub
+      repositories (this article talks about many more, but the ones below are
+      the most important):
+    </P>
+
+    <UL>
+      <LI>
+        <Link href="https://github.com/leo/electron-next">
+          electron-next
+        </Link>{' '}
+        – Prepares the renderer for the use of Next.js
+      </LI>
+      <LI>
+        <Link href="https://github.com/leo/electron-next-skeleton">
+          electron-next-skeleton
+        </Link>{' '}
+        – An example Electron app built with Next.js
+      </LI>
+    </UL>
+
     <H2>The Dream</H2>
 
     <P>
