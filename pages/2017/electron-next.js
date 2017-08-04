@@ -621,14 +621,14 @@ mainWindow.loadURL(entry)`}</Code>
     </P>
 
     <Code language="json" syntax={json}>{`"build": {
-  "asar": false
-},
-"extraResources": [
-  {
-    "from": "renderer/out",
-    "to": "app/renderer"
-  }
-]`}</Code>
+  "asar": false,
+  "extraResources": [
+    {
+      "from": "renderer/out",
+      "to": "app/renderer"
+    }
+  ]
+}`}</Code>
 
     <P>
       The <InlineCode>build</InlineCode> property is only included because{' '}
