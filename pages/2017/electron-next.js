@@ -389,10 +389,16 @@ export default () =>
     <P>
       After you{`'`}re done, create the configuration file named{' '}
       <InlineCode>next.config.js</InlineCode>. Inside it, you only need to do
-      handle one thing:
+      handle two things:
     </P>
 
     <Code language="javascript" syntax={javascript}>{`module.exports = {
+  webpack(config) {
+    // Allows you to load Electron modules and
+    // native Node.js ones into your renderer
+    config.target = 'electron-renderer'
+    return config
+  },
   exportPathMap() {
     // Let Next.js know where to find the entry page
     // when it's exporting the static bundle for the use
