@@ -61,7 +61,6 @@
     "to-id": "1.0.5"
   },
   "devDependencies": {
-    "babili-webpack-plugin": "0.1.2",
     "eslint-config-prettier": "2.6.0",
     "eslint-plugin-react": "7.4.0",
     "husky": "0.14.3",
