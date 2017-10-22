@@ -1,18 +1,14 @@
-// Packages
 import markdown from 'markdown-in-js'
-
-// Layouts
-import Post from '../../layouts/essay'
-
-// Components
-import Meta from '../../components/meta'
+import asPost from '../../layouts/post'
 import { Image } from '../../components/figure'
 import components from '../../components'
 
-export default () => (
-  <Post>{markdown(components)`
-  ${<Meta id="zeit-day-april" hasCover />}
-
+export default asPost(
+  {
+    id: 'zeit-day-april',
+    hasCover: true
+  },
+  markdown(components)`
   When we had our first internal discussion about potentially
   making a conference happen around [ZEIT](https://zeit.co),
   its products and [its community](https://zeit.chat), I got very
@@ -302,5 +298,5 @@ export default () => (
   I'll just leave this one thing here: There will
   be another [ZEIT Day](https://zeit.co/day) soon - and I'll
   be there, no doubt! 😜
-`}</Post>
+`
 )
