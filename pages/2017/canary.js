@@ -17,9 +17,9 @@ export default asPost({
 
   The list not only
   includes [Now CLI](https://zeit.co/download#command-line) and [Now Desktop](https://zeit.co/download) (which,
-  along with [our site](https://zeit.co), prepresent the most
+  along with [our site](https://zeit.co), represents the most
   important entry points to
-  our platform), but also software
+  our platform), but also projects
   like [Hyper](https://hyper.is) and [Next.js](https://github.com/zeit/next.js) - which
   eliminate all of the primary
   pain points you come across when building something online.
@@ -27,10 +27,10 @@ export default asPost({
   Summa summarum: They're all equally important to us and we
   love working on them and pushing all of them into the direction
   of a even brighter future with the help of our
-  wonderful community. 🤗
+  community. 🤗
 
-  That's also the reason why we're very excited whenever the
-  time for a new feature or release comes: It's just a
+  That's also the reason why we're very excited whenever there's the
+  time for a new feature or release: It's just a
   really great feeling to ship! 🤤
 
   However, as the number of people that are using these
@@ -51,14 +51,14 @@ export default asPost({
   ## Now CLI
 
   Just like the stable ones, the canary releases for Now CLI
-  are available through three channels: You can either install
+  are available on three channels: You can either install
   them through [npm](https://www.npmjs.com/package/now), [Now Desktop](https://zeit.co/download), or
   by downloading [the binaries](https://github.com/zeit/now-cli/releases) directly (see how to
   do that [here](https://zeit.co/blog/canary)).
 
-  In all three cases, the source [GitHub Releases](https://github.com/zeit/now-cli/releases). In between,
-  our own CDN ensures that the files get compressed (GZIP) and are available at maximum download speed for
-  any location in the world. While being streamed to the client, they're being
+  In all three cases, the source is [GitHub Releases](https://github.com/zeit/now-cli/releases). In between,
+  our CDN ensures that the files get compressed (GZIP) and are available at maximum download speed in
+  any location in the world. While being streamed to the client, they're
   decompressed and placed in your local binary directory.
 
   At this point, I'd also like to clear up some confusion about
@@ -103,14 +103,13 @@ export default asPost({
   requesting the latest release) to hit GitHub's rate limit.
 
   However, we still had to make adjustments to the way how
-  new npm package updates are published: Because there are now two
-  branches on
-  the [GitHub repository](https://github.com/zeit/now-cli) ("canary" and "master")
-  we had to configure [Travis CI](https://travis-ci.org) to set different
+  new npm package updates are published: Because there are now [two branches](#general-rules) in
+  the [GitHub repository](https://github.com/zeit/now-cli), we
+  had to configure [Travis CI](https://travis-ci.org) to set a different
   tag on each npm release depending on the branch the release commit happened in.
 
   The tricky part about this was to hand the CI a correct condition specification, under
-  which a release should happen:
+  which a release should happen.
 
   Although you can tell Travis CI to deploy a release if the commit was tagged, it
   gets a little harder if you want to check for the branch on top of that:
@@ -133,7 +132,7 @@ export default asPost({
   any information about the branch at all.
 
   To work around this technical limitation, we had to customize
-  the ${<InlineCode>install</InlineCode>} step in the CI and make sure
+  the ${<InlineCode>install</InlineCode>} step and make sure
   to clone the whole repository (instead of just checking out
   the commit, which is what Travis CI is doing by default):
 
@@ -184,9 +183,14 @@ export default asPost({
   Because we're using [Hazel](https://github.com/zeit/hazel)${(
     <Ref id="1" />
   )} to deliver updates to both
-  apps, implementing the canary channel was a matter of two major changes:
+  apps, implementing the canary channel was a matter of just two major changes:
 
-  Firstly, we had to deploy new two new update servers (since each [Hazel](https://github.com/zeit/hazel) instance is designed to handle only a single update channel). For both apps, this was as easy as running two commands:
+  Firstly, we had to deploy two new update servers (since
+  each [Hazel](https://github.com/zeit/hazel) instance is designed to
+  handle only a single update channel). For both apps, this
+  was as easy as running two commands.
+
+  The first one being the deployment:
 
   ${(
     <Code language="bash" syntax={bash}>
@@ -199,7 +203,16 @@ export default asPost({
   )} environment
   flag. It tells the update server to only pick up pre-releases.
 
-  These are the new Hazel instances providing Now Desktop and Hyper
+  Then, the second one creating an alias:
+
+  ${(
+    <Code language="bash" syntax={bash}>
+      {'now alias <deployment-id> <update-server-alias>'}
+    </Code>
+  )}
+
+  After running these two commands, we were done with
+  the server-side part of the implementation. These are the new Hazel instances providing Now Desktop and Hyper
   with canary updates (if [enabled](https://zeit.co/blog/canary) in the config):
 
   - [now-desktop-releases-canary.zeit.sh](https://now-desktop-releases-canary.zeit.sh)
@@ -224,8 +237,8 @@ export default asPost({
   Along with the adjustments mentioned above, we also ensured that
   the following rules apply to all projects with canary channels:
 
-  - Each repository contains a "master" and a "canary" branch.
-  - The "master" branch should only contain the latest stable releases and
+  - The repository contains a "master" and a "canary" branch.
+  - The "master" branch should only contain stable releases and
   should not receive any pull requests (except for hot fixes that need
   to be released to the public immediately).
   - The "canary" branch should be the default branch of the
@@ -236,8 +249,8 @@ export default asPost({
 
   Once all of the repositories of yours that support canary channels
   comply with those rules, there should be no more unforeseen consequences
-  generated by publishing code, because it all went through a staging
-  phase (canary releases).
+  generated by publishing code, because it all went through a
+  staging phase.
 
   ## Afterword
 
