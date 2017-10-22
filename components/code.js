@@ -14,9 +14,10 @@ const styles = {
   width: '100%',
   boxSizing: 'border-box',
   wordWrap: 'normal',
-  fontSize: '1.04em',
+  fontSize: '15px',
   WebkitOverflowScrolling: 'touch',
-  fontFamily: 'Menlo, Monaco, Lucida Console, Liberation Mono, Courier New, monospace, serif'
+  fontFamily:
+    'Menlo, Monaco, Lucida Console, Liberation Mono, Courier New, monospace, serif'
 }
 
 class Code extends Component {
@@ -49,16 +50,17 @@ const InlineCode = ({ children }) => (
 
     <style jsx>
       {`
-      code {
-        background: #f3f3f3;
-        padding: 2px 4px;
-        border-radius: 3px;
-        font-size: 0.85em;
-        color: #3a3a3a;
-        hyphens: none;
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono, Courier New, monospace, serif;
-      }
-    `}
+        code {
+          background: #f3f3f3;
+          padding: 2px 4px;
+          border-radius: 3px;
+          font-size: 0.85em;
+          color: #3a3a3a;
+          hyphens: none;
+          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+            Courier New, monospace, serif;
+        }
+      `}
     </style>
   </code>
 )
