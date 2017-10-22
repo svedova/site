@@ -7,6 +7,7 @@ export default asPost({
   id: 'zeit-day-april',
   hasCover: true
 })(markdown(components)`
+
   When we had our first internal discussion about potentially
   making a conference happen around [ZEIT](https://zeit.co),
   its products and [its community](https://zeit.chat), I got very
@@ -296,4 +297,5 @@ export default asPost({
   I'll just leave this one thing here: There will
   be another [ZEIT Day](https://zeit.co/day) soon - and I'll
   be there, no doubt! 😜
+
 `)
