@@ -14,7 +14,8 @@ const styles = {
   width: '100%',
   boxSizing: 'border-box',
   wordWrap: 'normal',
-  fontSize: '15px',
+  fontSize: '0.9em',
+  lineHeight: '1.5em',
   WebkitOverflowScrolling: 'touch',
   fontFamily:
     'Menlo, Monaco, Lucida Console, Liberation Mono, Courier New, monospace, serif'
