@@ -8,7 +8,8 @@ import json from 'highlight.js/lib/languages/json'
 import bash from 'highlight.js/lib/languages/bash'
 
 export default asPost({
-  id: 'canary'
+  id: 'canary',
+  hasCover: true
 })(markdown(components)`
 
   At the moment of writing, our ecosystem spans
