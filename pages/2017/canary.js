@@ -182,7 +182,11 @@ export default asPost({
 
   Firstly, we had to deploy new two new update servers (since each [Hazel](https://github.com/zeit/hazel) instance is designed to handle only a single update channel). For both apps, this was as easy as running two commands:
 
-  {<Code language="bash" syntax={bash}>now -e NODE_ENV=\"production" -e PRE="1" zeit/hazel</Code>}
+  ${(
+    <Code language="bash" syntax={bash}>
+      {'now -e NODE_ENV="production" -e PRE="1" zeit/hazel'}
+    </Code>
+  )}
 
   The most important part about the above command is the ${(
     <InlineCode>PRE</InlineCode>
