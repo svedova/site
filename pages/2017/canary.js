@@ -145,6 +145,8 @@ export default asPost({
 ]`}</Code>
   )}
 
+  Thanks to [Tim](https://twitter.com/timneutkens) for the tip!
+
   In addition to this, the [config file](https://github.com/zeit/now-cli/blob/canary/.travis.yml) also
   received custom condition properties for ensuring that
   the deployment to the ${<InlineCode>latest</InlineCode>} tag on npm
