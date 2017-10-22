@@ -3,6 +3,7 @@ import asPost from '../../layouts/post'
 import { Code, InlineCode } from '../../components/code'
 import components from '../../components'
 import json from 'highlight.js/lib/languages/json'
+import bash from 'highlight.js/lib/languages/bash'
 
 export default asPost({
   id: 'canary'
@@ -173,5 +174,40 @@ export default asPost({
   npm using the "canary" tag and all Now Desktop instances
   with the enabled "Canary Updates" preference will receive the CLI
   update automatically.
+
+  ## Now Desktop & Hyper
+
+  Because we're using [Hazel](https://github.com/zeit/hazel) to deliver updates to both
+  apps, implementing the canary channel was a matter of two major changes:
+
+  Firstly, we had to deploy new two new update servers (since each [Hazel](https://github.com/zeit/hazel) instance is designed to handle only a single update channel). For both apps, this was as easy as running two commands:
+
+  {<Code language="bash" syntax={bash}>now -e NODE_ENV=\"production" -e PRE="1" zeit/hazel</Code>}
+
+  The most important part about the above command is the ${(
+    <InlineCode>PRE</InlineCode>
+  )} environment
+  flag. It tells the update server to only pick up pre-releases.
+
+  These are the new Hazel instances providing Now Desktop and Hyper
+  with canary updates (if [enabled](https://zeit.co/blog/canary) in the config):
+
+  - [now-desktop-releases-canary.zeit.sh](https://now-desktop-releases-canary.zeit.sh)
+  - [releases-canary.hyper.is](http://releases-canary.hyper.is)
+
+  They align very nicely with the existing stable channel instances:
+
+  - [now-desktop-releases.zeit.sh](https://now-desktop-releases.zeit.sh)
+  - [releases.hyper.is](http://releases.hyper.is)
+
+  After we've ensured that the update servers are in place, the only
+  thing left was making Now Desktop ([PR](https://github.com/zeit/now-desktop/pull/383)) and
+  Hyper ([original PR](https://github.com/zeit/hyper/pull/2101), [final PR](https://github.com/zeit/hyper/pull/2127)) capable
+  of providing the user with canary updates.
+
+  Thanks to [Hazel](https://github.com/zeit/hazel)'s straightforward approach
+  to updating Electron apps, this was all we had to do. Now both apps
+  have a canary channel!
+
 
 `)
