@@ -368,5 +368,11 @@
     "title": "Building Electron Apps with Next.js",
     "description": "Next.js makes using React for building electron apps easy it has never been before.",
     "date": "17-07-2017"
+  },
+  {
+    "id": "canary",
+    "title": "Canary Releases at ZEIT",
+    "description": "How we've managed to provide canary updates for all of our software.",
+    "date": "22-10-2017"
   }
 ]
