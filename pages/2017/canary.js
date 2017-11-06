@@ -110,14 +110,12 @@ export default asPost({
   However, we still had to make adjustments to the way how
   new npm package updates are published: Because there are now [two branches](#general-rules) in
   the [GitHub repository](https://github.com/zeit/now-cli), we
-  had to configure [Travis CI](https://travis-ci.org) to set a different
-  tag on each npm release depending on the branch the release commit happened in.
+  had to implement two separate config files in order
+  for [Travis CI](https://travis-ci.org) to assign the
+  right [dist-tag](https://docs.npmjs.com/cli/dist-tag) to each npm release.
 
-  The tricky part about this was to hand the CI a correct condition specification, under
-  which a release should happen.
-
-  Although you can tell Travis CI to deploy a release if the commit was tagged, it
-  gets a little harder if you want to check for the branch on top of that:
+  Although you can tell Travis CI to deploy a release if the commit was tagged, it's
+  impossible to check for the branch on top of that:
 
   While you can set both [conditions](https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A) (which
   is needed in our case, because we only want a release
@@ -127,7 +125,7 @@ export default asPost({
   if ${<InlineCode>tags</InlineCode>} is also set:
 
   ${(
-    <Code language="javascript" syntax={json}>{`"on": {
+    <Code language="json" syntax={json}>{`"on": {
   "branch": "canary",
   "tags": true
 }`}</Code>
@@ -136,48 +134,22 @@ export default asPost({
   This is because - in the case of a tagged commit - Travis CI doesn't receive
   any information about the branch at all.
 
-  ${(
-    <P>
-      To work around this technical limitation, we had to customize the{' '}
-      {<InlineCode>install</InlineCode>} step and make sure to clone the whole
-      repository (instead of just checking out the commit, which is what Travis
-      CI is doing by default):
-    </P>
-  )}
+  In turn, we decided to simply create a separate config file for each
+  branch:
 
-  ${(
-    <Code language="javascript" syntax={json}>{`"install": [
-  "git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG",
-  "cd $TRAVIS_REPO_SLUG",
-  "yarn"
-]`}</Code>
-  )}
-
-  Thanks to [Tim](https://twitter.com/timneutkens) for the tip!
-
-  In addition to this, the [config file](https://github.com/zeit/now-cli/blob/canary/.travis.yml) also
-  received custom condition properties for ensuring that
-  the deployment to the ${<InlineCode>latest</InlineCode>} tag on npm
-  only happened for the "master" branch and ${(
+  On the "master" branch, the package will be tagged
+  with ${<InlineCode>latest</InlineCode>} on npm. For "canary", however,
+  it will be tagged with  ${(
     <InlineCode>canary</InlineCode>
-  )} only
-  received releases on the "canary" one.
+  )}. To achieve this, we only had to set a property
+  on the deployment:
 
-  ${(
-    <P>
-      Because we had fixed the {<InlineCode>install</InlineCode>} step, we were
-      now able to use the freshly obtained branch information to create a custom
-      condition (Travis CI is passing these right into a bash{' '}
-      {<InlineCode>if</InlineCode>} statement):
-    </P>
-  )}
+  ${<Code language="javascript" syntax={json}>{`tag: 'canary'`}</Code>}
 
-  ${(
-    <Code language="javascript" syntax={json}>{`"on": {
-  "condition": "\\"$(git rev-parse --abbrev-ref HEAD)\\" == \\"canary\\"",
-  "tags": true
-}`}</Code>
-  )}
+  You can find both config files here:
+
+  - [master/stable](https://github.com/zeit/now-cli/blob/master/.travis.yml)
+  - [canary](https://github.com/zeit/now-cli/blob/canary/.travis.yml)
 
   Now that all of this configuration is in place, we only need to
   push a tagged commit and create
