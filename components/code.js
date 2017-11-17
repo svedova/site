@@ -5,7 +5,7 @@ import SyntaxHighlighter, {
 
 // Helpers
 import { Component } from 'react'
-import { github } from 'react-syntax-highlighter/dist/styles'
+import { github } from 'react-syntax-highlighter/styles/hljs'
 
 const styles = {
   margin: '30px 0',
@@ -14,7 +14,7 @@ const styles = {
   width: '100%',
   boxSizing: 'border-box',
   wordWrap: 'normal',
-  fontSize: '0.9em',
+  fontSize: '14.4px',
   lineHeight: '1.5em',
   WebkitOverflowScrolling: 'touch',
   fontFamily:
