@@ -136,9 +136,7 @@ console.log('Data downloaded')`}
     </P>
 
     <P>
-      Or as Panu from <Link href="https://bytearcher.com">
-        Byte Archer
-      </Link>{' '}
+      Or as Panu from <Link href="https://bytearcher.com">Byte Archer</Link>{' '}
       puts it:
     </P>
 
@@ -369,10 +367,8 @@ console.log('Data downloaded')`}
     <P>
       As a result, we need to extend its default behavior if we want to run
       things truly in parallel. And that{`'`}s where the native{' '}
-      <Link href="https://nodeJavaScript.org/api/cluster.html">
-        cluster
-      </Link>{' '}
-      module comes in:
+      <Link href="https://nodejs.org/api/cluster.html">cluster</Link> module
+      comes in:
     </P>
 
     <P>
@@ -402,7 +398,7 @@ if (cluster.isMaster) {
 
     <P>
       Now we{`'`}re taking advantage of{' '}
-      <Link href="https://nodeJavaScript.org/api/cluster.html">cluster</Link>
+      <Link href="https://nodejs.org/api/cluster.html">cluster</Link>
       {`'`}s built-in <InlineCode>.fork</InlineCode> method to make a copy of
       the current process. In addition, we
       {`'`}
@@ -432,12 +428,10 @@ if (cluster.isMaster) {
 
     <P>
       Hence, you don{`'`}t even need{' '}
-      <Link href="https://nodeJavaScript.org/api/cluster.html">cluster</Link> if
-      your project is running on our platform. Just ensure that you{`'`}re
-      applying <Link href="#quick-await-to-the-rescue">
-        this technique
-      </Link>{' '}
-      wherever it{`'`}s possible.
+      <Link href="https://nodejs.org/api/cluster.html">cluster</Link> if your
+      project is running on our platform. Just ensure that you{`'`}re applying{' '}
+      <Link href="#quick-await-to-the-rescue">this technique</Link> wherever it{`'`}s
+      possible.
     </P>
 
     <H3>That{`'`}s It!</H3>
