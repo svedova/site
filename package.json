@@ -5,6 +5,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "prepare": "next build && next export",
     "test": "eslint .",
     "precommit": "lint-staged"
   },
