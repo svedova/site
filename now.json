@@ -2,9 +2,6 @@
     "name": "leo",
     "alias": "leo.im",
     "type": "static",
-    "features": {
-        "static": "v2"
-    },
     "static": {
         "public": "out",
         "directoryListing": false,
