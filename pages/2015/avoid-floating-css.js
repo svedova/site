@@ -1,9 +1,6 @@
 // Syntax
 import css from 'highlight.js/lib/languages/css'
 
-// Packages
-import CodePen from 'react-codepen'
-
 // Layouts
 import Post from '../../layouts/essay'
 
@@ -152,15 +149,8 @@ display: block;`}
       attributes to the child items. They will magically start
       reacting to this change and will immediately line up one
       after another. If the content elements of the container
-      aren{`'`}t modified in any other way, it will look like this:
+      aren{`'`}t modified in any other way, it will look good.
     </P>
-
-    <CodePen
-      user="mindrun"
-      hash="1becc47f9b6b90d3dad30649e061ddbc"
-      height="240"
-      theme="15948"
-    />
 
     <P>
       But beware, there are many other cool properties
@@ -238,15 +228,8 @@ display: block;`}
       into a new line instead of writing them all successively. And
       that{`'`}s great, please don{`'`}t do it otherwise! However, this
       indention will generate irritating space-characters between
-      the elements in the output — look here:
+      the elements in the output.
     </P>
-
-    <CodePen
-      user="mindrun"
-      hash="cd4a213638114aea89cbd3137b36bb19"
-      height="240"
-      theme="15948"
-    />
 
     <P>
       But of course we neither need nor want them to show up. They{`'`}re just
