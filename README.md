@@ -1,6 +1,6 @@
 # leo.im
 
-[![Build Status](https://travis-ci.org/leo/site.svg?branch=master)](https://travis-ci.org/leo/site)
+[![Build Status](https://circleci.com/gh/leo/site.svg?&style=shield)](https://circleci.com/gh/leo/site)
 
 Where the magic happens! 🎩
 
