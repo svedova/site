@@ -3,7 +3,6 @@
     "alias": "leo.im",
     "type": "static",
     "static": {
-        "public": "out",
         "directoryListing": false,
         "headers": [
             {
@@ -34,8 +33,5 @@
                 ]
             }
         ]
-    },
-    "files": [
-        "out"
-    ]
+    }
 }
