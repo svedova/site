@@ -57,9 +57,9 @@
     "next": "6.1.1",
     "nprogress": "0.2.0",
     "prop-types": "15.6.2",
-    "react": "16.4.1",
+    "react": "16.8.1",
     "react-codepen": "0.1.0",
-    "react-dom": "16.4.1",
+    "react-dom": "16.8.1",
     "react-syntax-highlighter": "8.0.1",
     "react-tweet-embed": "1.1.0",
     "to-id": "1.0.5"
