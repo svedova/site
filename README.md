@@ -6,7 +6,7 @@ If you want to see the old version of the site, you can find it [here](https://g
 
 ## Contributing
 
-1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your device
+1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
 2. Move into the repository's directory: `cd site`
 3. Install dependencies: `yarn`
 4. Run [Next.js](https://github.com/zeit/next.js) and have it watch for changes: `yarn dev`
