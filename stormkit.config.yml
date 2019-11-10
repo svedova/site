@@ -1,0 +1,12 @@
+app:
+  - redirects:
+      - from: /_next/*
+        cdn: true
+
+    envs:
+      - name: production
+        branch: master
+        publish: true
+        entry: next.config.js
+        cmd: yarn build
+        dist: .next
