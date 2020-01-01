@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "gen": "next export",
     "test": "eslint .",
     "precommit": "lint-staged"
   },
